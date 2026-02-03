@@ -1,0 +1,275 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v8.0
+build_property.RootNamespace = IFL.WebApp
+build_property.RootNamespace = IFL.WebApp
+build_property.ProjectDir = C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Projeto\IRenascer.IFL\Biblioteca.WebApp
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Assuntos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBc3N1bnRvc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Assuntos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBc3N1bnRvc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Assuntos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBc3N1bnRvc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Assuntos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBc3N1bnRvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Assuntos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBc3N1bnRvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Autores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdXRvcmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Autores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdXRvcmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Autores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdXRvcmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Autores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdXRvcmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Autores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdXRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Eventos/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFdmVudG9zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Eventos/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFdmVudG9zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Eventos/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFdmVudG9zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Eventos/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFdmVudG9zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Eventos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFdmVudG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Horarios/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxIb3Jhcmlvc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Horarios/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxIb3Jhcmlvc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Horarios/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxIb3Jhcmlvc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Horarios/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxIb3Jhcmlvc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Horarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxIb3Jhcmlvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Modalidades/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxNb2RhbGlkYWRlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Modalidades/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxNb2RhbGlkYWRlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Modalidades/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxNb2RhbGlkYWRlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Modalidades/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxNb2RhbGlkYWRlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Modalidades/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxNb2RhbGlkYWRlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Pesagens/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxQZXNhZ2Vuc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Pesagens/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxQZXNhZ2Vuc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Pesagens/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxQZXNhZ2Vuc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Pesagens/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxQZXNhZ2Vuc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Pesagens/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxQZXNhZ2Vuc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/PrecosDeVenda/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFByZWNvc0RlVmVuZGFcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/PrecosDeVenda/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFByZWNvc0RlVmVuZGFcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/PrecosDeVenda/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFByZWNvc0RlVmVuZGFcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/PrecosDeVenda/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFByZWNvc0RlVmVuZGFcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/PrecosDeVenda/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFByZWNvc0RlVmVuZGFcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/Registro/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFJlZ2lzdHJvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/Registro/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFJlZ2lzdHJvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/Registro/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFJlZ2lzdHJvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/Registro/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFJlZ2lzdHJvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Livros/Registro/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFJlZ2lzdHJvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Livros/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xMaXZyb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-al9ukonjv5

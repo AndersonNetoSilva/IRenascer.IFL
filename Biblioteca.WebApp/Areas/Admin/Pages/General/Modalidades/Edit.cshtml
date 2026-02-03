@@ -1,0 +1,61 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.Modalidades.EditModel
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<breadcrumb items="Cadastros, Gerais, Modalidades, Alterar"></breadcrumb>
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Modalidade.Nome" class="control-label"></label>
+                        <input asp-for="Modalidade.Nome" class="form-control" />
+                        <span asp-validation-for="Modalidade.Nome" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <label asp-for="Modalidade.Descricao" class="control-label"></label>
+                        <textarea asp-for="Modalidade.Descricao"
+                                  class="form-control"
+                                  rows="4"></textarea>
+                        <span asp-validation-for="Modalidade.Descricao" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group form-check">
+                    <input asp-for="Modalidade.Ativo" class="form-check-input" />
+                    <label asp-for="Modalidade.Ativo" class="form-check-label"></label>
+                    <span asp-validation-for="Modalidade.Ativo" class="text-danger"></span>
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="Modalidade.Id" />
+
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <input type="submit" value="Gravar" class="btn btn-primary" />
+
+                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

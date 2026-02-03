@@ -1,0 +1,256 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.Atletas.EditModel
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<breadcrumb items="Cadastros, Gerais, Atleta, Alterar"></breadcrumb>
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Nome" class="control-label"></label>
+                        <input asp-for="Atleta.Nome" class="form-control" />
+                        <span asp-validation-for="Atleta.Nome" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Atleta.DataNascimento" class="control-label"></label>
+                        <input asp-for="Atleta.DataNascimento" type="date" class="form-control" />
+                        <span asp-validation-for="Atleta.DataNascimento" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Atleta.DataMatricula" class="control-label"></label>
+                        <input asp-for="Atleta.DataMatricula" type="date" class="form-control" />
+                        <span asp-validation-for="Atleta.DataMatricula" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Idade" class="control-label"></label>
+                        <input asp-for="Atleta.Idade"   class="form-control" readonly/>
+                        <span asp-validation-for="Atleta.Idade" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Classe" class="control-label"></label>
+                        <input asp-for="Atleta.Classe"   class="form-control" readonly />
+                        <span asp-validation-for="Atleta.Classe" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="Atleta.Sexo" class="control-label"></label>
+                        <select asp-for="Atleta.Sexo"
+                                class="form-select"
+                                asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.Sexo>()">
+                        </select>
+                        <span asp-validation-for="Atleta.Sexo" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Atleta.CPF" class="control-label"></label>
+                        <input asp-for="Atleta.CPF" class="form-control" />
+                        <span asp-validation-for="Atleta.CPF" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Atleta.RG" class="control-label"></label>
+                        <input asp-for="Atleta.RG" class="form-control" />
+                        <span asp-validation-for="Atleta.RG" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Profissao" class="control-label"></label>
+                        <input asp-for="Atleta.Profissao" class="form-control" />
+                        <span asp-validation-for="Atleta.Profissao" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Atleta.TelefonePrincipal" class="control-label"></label>
+                        <input asp-for="Atleta.TelefonePrincipal" class="form-control" />
+                        <span asp-validation-for="Atleta.TelefonePrincipal" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Responsavel" class="control-label"></label>
+                        <input asp-for="Atleta.Responsavel" class="form-control" />
+                        <span asp-validation-for="Atleta.Responsavel" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Atleta.TelefoneResponsavel" class="control-label"></label>
+                        <input asp-for="Atleta.TelefoneResponsavel" class="form-control" />
+                        <span asp-validation-for="Atleta.TelefoneResponsavel" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Email" class="control-label"></label>
+                        <input asp-for="Atleta.Email" class="form-control" />
+                        <span asp-validation-for="Atleta.Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="Atleta.TipoEscola" class="control-label"></label>
+                        <select asp-for="Atleta.TipoEscola"
+                                class="form-select"
+                                asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.TipoEscola>()">
+                        </select>
+                        <span asp-validation-for="Atleta.TipoEscola" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Escola" class="control-label"></label>
+                        <input asp-for="Atleta.Escola" class="form-control" />
+                        <span asp-validation-for="Atleta.Escola" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Logradouro" class="control-label"></label>
+                        <input asp-for="Atleta.Logradouro" class="form-control" />
+                        <span asp-validation-for="Atleta.Logradouro" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Bairro" class="control-label"></label>
+                        <input asp-for="Atleta.Bairro" class="form-control" />
+                        <span asp-validation-for="Atleta.Bairro" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Atleta.Municipio" class="control-label"></label>
+                        <input asp-for="Atleta.Municipio" class="form-control" />
+                        <span asp-validation-for="Atleta.Municipio" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Atleta.CEP" class="control-label"></label>
+                        <input asp-for="Atleta.CEP" class="form-control" />
+                        <span asp-validation-for="Atleta.CEP" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-3">
+                <div class="form-group form-check">
+                    <input asp-for="Atleta.ProblemaSaude" class="form-check-input" />
+                    <label asp-for="Atleta.ProblemaSaude" class="form-check-label"></label>
+                    <span asp-validation-for="Atleta.ProblemaSaude" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group form-check">
+                    <input asp-for="Atleta.PCD" class="form-check-input" />
+                    <label asp-for="Atleta.PCD" class="form-check-label"></label>
+                    <span asp-validation-for="Atleta.PCD" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Atleta.DescricaoProblemaSaude" class="control-label"></label>
+                        <input asp-for="Atleta.DescricaoProblemaSaude" class="form-control" />
+                        <span asp-validation-for="Atleta.DescricaoProblemaSaude" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="Atleta.AcionarUrgencia" class="control-label"></label>
+                        <input asp-for="Atleta.AcionarUrgencia" class="form-control" />
+                        <span asp-validation-for="Atleta.AcionarUrgencia" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group form-check">
+                    <input asp-for="Atleta.Ativo" class="form-check-input" />
+                    <label asp-for="Atleta.Ativo" class="form-check-label"></label>
+                    <span asp-validation-for="Atleta.Ativo" class="text-danger"></span>
+                </div>
+            </div>
+
+
+            <input type="hidden" asp-for="Atleta.Id" />
+
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <input type="submit" value="Gravar" class="btn btn-primary" />
+
+                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,166 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.Pesagens.EditModel
+
+@{
+    ViewData["Title"] = "Alterar";
+}
+
+<breadcrumb items="Cadastros, Gerais, Pesagens, Alterar"></breadcrumb>
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.EventoId"></label>
+                        <select asp-for="Pesagem.EventoId" asp-items="Model.Eventos" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="Pesagem.EventoId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.AtletaId"></label>
+                        <select asp-for="Pesagem.AtletaId" asp-items="Model.Atletas" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="Pesagem.AtletaId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Atleta.Classe" class="control-label"></label>
+                        <input asp-for="Pesagem.Atleta.Classe" class="form-control" readonly />
+                        <span asp-validation-for="Pesagem.Atleta.Classe" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Pesagem1" class="control-label"></label>
+                        <input asp-for="Pesagem.Pesagem1" type="date" class="form-control" />
+                        <span asp-validation-for="Pesagem.Pesagem1" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="Pesagem.Peso1AsString" class="control-label"></label>
+                        <input asp-for="Pesagem.Peso1AsString" class="form-control" />
+                        <span asp-validation-for="Pesagem.Peso1AsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Obs1" class="control-label"></label>
+                        <input asp-for="Pesagem.Obs1" class="form-control" />
+                        <span asp-validation-for="Pesagem.Obs1" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Categoria1" class="control-label"></label>
+                        <input asp-for="Pesagem.Categoria1" class="form-control" readonly />
+                        <span asp-validation-for="Pesagem.Categoria1" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Pesagem2" class="control-label"></label>
+                        <input asp-for="Pesagem.Pesagem2" type="date" class="form-control" />
+                        <span asp-validation-for="Pesagem.Pesagem2" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="Pesagem.Peso2AsString" class="control-label"></label>
+                        <input asp-for="Pesagem.Peso2AsString" class="form-control" />
+                        <span asp-validation-for="Pesagem.Peso2AsString" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Obs2" class="control-label"></label>
+                        <input asp-for="Pesagem.Obs2" class="form-control" />
+                        <span asp-validation-for="Pesagem.Obs2" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Categoria2" class="control-label"></label>
+                        <input asp-for="Pesagem.Categoria2" class="form-control" readonly />
+                        <span asp-validation-for="Pesagem.Categoria2" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Pesagem3" class="control-label"></label>
+                        <input asp-for="Pesagem.Pesagem3" type="date" class="form-control" />
+                        <span asp-validation-for="Pesagem.Pesagem3" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="Pesagem.Peso3AsString" class="control-label"></label>
+                        <input asp-for="Pesagem.Peso3AsString" class="form-control" />
+                        <span asp-validation-for="Pesagem.Peso3AsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Obs3" class="control-label"></label>
+                        <input asp-for="Pesagem.Obs3" class="form-control" />
+                        <span asp-validation-for="Pesagem.Obs3" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="Pesagem.Categoria3" class="control-label"></label>
+                        <input asp-for="Pesagem.Categoria3" class="form-control" readonly />
+                        <span asp-validation-for="Pesagem.Categoria3" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <input type="hidden" asp-for="Pesagem.Id" />
+
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <input type="submit" value="Gravar" class="btn btn-primary" />
+
+                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
