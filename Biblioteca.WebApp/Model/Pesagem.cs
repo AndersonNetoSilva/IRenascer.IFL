@@ -40,34 +40,37 @@ namespace IFL.WebApp.Model
         public DateTime? Pesagem3 { get; set; }
 
 
-        [Range(5, 200)]
+        [Range(0, 200)]
         [Column(TypeName = "decimal(6,2)")]
         [Display(Name = "Peso 1")]
-        public decimal? Peso1 { get; set; }
+        public decimal? Peso1 { get; set; } = 0;
 
         [Required(ErrorMessage = "O Peso 1 é obrigatório")]
         [Display(Name = "Peso 1")]
         [NotMapped]
+        [RegularExpression(@"^\d+(,\d{2})$", ErrorMessage = "Informe um valor com exatamente 2 casas decimais.")]
         public string Peso1AsString { get; set; }
 
         [Display(Name = "Peso 2")]
         [NotMapped]
+        [RegularExpression(@"^\d+(,\d{2})$", ErrorMessage = "Informe um valor com exatamente 2 casas decimais.")]
         public string? Peso2AsString { get; set; }
 
         [Display(Name = "Peso 3")]
         [NotMapped]
+        [RegularExpression(@"^\d+(,\d{2})$", ErrorMessage = "Informe um valor com exatamente 2 casas decimais.")]
         public string? Peso3AsString { get; set; }
 
 
-        [Range(5, 200)]
+        [Range(0, 200)]
         [Column(TypeName = "decimal(6,2)")]
         [Display(Name = "Peso 2")]
-        public decimal? Peso2 { get; set; }
+        public decimal? Peso2 { get; set; } = 0;
 
-        [Range(5, 200)]
+        [Range(0, 200)]
         [Display(Name = "Peso 3")]
         [Column(TypeName = "decimal(6,2)")]
-        public decimal? Peso3 { get; set; }
+        public decimal? Peso3 { get; set; } = 0;
 
         [StringLength(200)]
         [Display(Name = "Observação")]
@@ -81,19 +84,19 @@ namespace IFL.WebApp.Model
         [Display(Name = "Observação")]
         public string? Obs3 { get; set; }
 
-        [StringLength(20)]
+        [StringLength(60)]
         [Display(Name = "Categoria")]
         public string? Categoria1 { get; set; }
 
-        [StringLength(20)]
+        [StringLength(60)]
         [Display(Name = "Categoria")]
         public string? Categoria2 { get; set; }
 
-        [StringLength(20)]
+        [StringLength(60)]
         [Display(Name = "Categoria")]
         public string? Categoria3 { get; set; }
 
-        [StringLength(20)]
+        [StringLength(60)]
         [Display(Name = "Categoria")]
         public string? Categoria4 { get; set; }
 

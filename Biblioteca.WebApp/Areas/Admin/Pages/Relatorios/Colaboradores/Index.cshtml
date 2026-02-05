@@ -1,0 +1,105 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.Relatorios.Colaboradores.IndexModel
+
+@{
+    ViewData["Title"] = "Colaboradores";
+}
+
+<style>
+    @@page {
+        size: A4 landscape;
+        margin: 20mm;
+    }
+
+    @@media print {
+        body * {
+            visibility: hidden;
+        }
+
+        #print-area,
+        #print-area * {
+            visibility: visible;
+        }
+
+        #print-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+</style>
+
+<breadcrumb items="Relatorios, Colaboradores"></breadcrumb>
+
+<!-- filtro -->
+<natural-filter fields="Colaboradores"
+                placeholder="Pesquisar…"
+                example="Título:IFL;Atleta:José"
+                value="@Model.Search">
+</natural-filter>
+
+<button class="btn btn-primary" onclick="window.print()">Imprimir</button>
+
+<!-- Dados -->
+<div id="print-area">
+    <table id="reportTable" class="table mb-3">
+        <thead>
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    DataNascimento
+                </th>
+                <th>
+                    Profissão
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    TelefonePrincipal
+                </th>
+                <th>
+                    Endereco
+                </th>
+ 
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model.ReportColaboradoresViewList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DataNascimento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Profissao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Tipo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem =>  item.TelefonePrincipal)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Endereco)
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<pager page="/Admin/General/Autores/Index"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

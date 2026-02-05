@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IFL.WebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2d0c9900a495deee94b55b801de118c3912e8288")]
 [assembly: System.Reflection.AssemblyProductAttribute("IFL.WebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IFL.WebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

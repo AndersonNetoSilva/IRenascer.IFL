@@ -28,7 +28,6 @@ namespace IFL.WebApp.Data
         public DbSet<Colaborador> Colaboradores { get; set; }
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Evento> Eventos { get; set; }
-
         public DbSet<Pesagem> Pesagens { get; set; }
         public DbSet<ReportLivrosView> ReportLivrosViewSet => Set<ReportLivrosView>();
                 

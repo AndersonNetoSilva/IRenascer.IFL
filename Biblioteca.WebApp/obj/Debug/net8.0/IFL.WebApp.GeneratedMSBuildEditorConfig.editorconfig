@@ -234,6 +234,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcTGl2cm9zXFJlZ2lzdHJvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Atletas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xBdGxldGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Colaboradores/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xDb2xhYm9yYWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Livros/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xMaXZyb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -31,7 +31,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Pesagens
         private void BindSelectLists()
         {
             Eventos = _eventoRepository.Query()
-                        .Where(a => !a.Encerrado)
+                        .Where(a => !a.Encerrado && a.TipoEvento == TipoEvento.Competicao)
                         .Select(a => new SelectListItem { Value = a.Id.ToString(), Text = a.Nome })
                         .OrderBy(a => a.Text)
                         .ToList();
@@ -82,8 +82,13 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Pesagens
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            Pesagem.Atleta = _atletaRepository.Query().Where(a => Pesagem.AtletaId == a.Id).FirstOrDefault();
+            Pesagem.Evento = _eventoRepository.Query().Where(a => Pesagem.EventoId == a.Id).FirstOrDefault();
+
             IFL.WebApp.Areas.Admin.Pages.General.Pesagens.CreateModel.ValidarValor(Pesagem);
-            
+
+            if(Pesagem.Atleta != null)
+                IFL.WebApp.Areas.Admin.Pages.General.Pesagens.CreateModel.SetCategoria(Pesagem);
 
             if (!ModelState.IsValid)
             {

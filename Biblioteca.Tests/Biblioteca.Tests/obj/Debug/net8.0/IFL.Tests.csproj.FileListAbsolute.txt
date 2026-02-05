@@ -360,3 +360,4 @@ C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\refi
 C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\IFL.Tests.pdb
 C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\IFL.Tests.genruntimeconfig.cache
 C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\ref\IFL.Tests.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\IFL.Tests.sourcelink.json

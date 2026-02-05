@@ -289,3 +289,4 @@ C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\refint\IFL.WebApp.dl
 C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.pdb
 C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.genruntimeconfig.cache
 C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\ref\IFL.WebApp.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.sourcelink.json

@@ -12,7 +12,21 @@ namespace IFL.WebApp.Model
         [Required]
         [StringLength(60)]
         [Display(Name = "Nome")]
-        public required string Nome { get; set; }
+        public required string Nome { get; set; }        
+
+        [NotMapped]
+        [Display(Name = "Nome com PCD")]
+        public string? NomeComPCD {
+            get
+            {
+                string nome = Nome;
+
+                if (PCD)
+                    nome = nome + "(*)";
+
+                return nome;
+            }
+        }
 
         [Required]
         [StringLength(60)]
