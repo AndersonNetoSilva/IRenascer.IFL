@@ -94,6 +94,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdXRvcmVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

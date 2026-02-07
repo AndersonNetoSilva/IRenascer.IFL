@@ -14,6 +14,7 @@ namespace IFL.WebApp.Data
 
         }
 
+
         public DbSet<Assunto> Assuntos { get; set; }
 
         public DbSet<Autor> Autores { get; set; }
@@ -29,11 +30,19 @@ namespace IFL.WebApp.Data
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Pesagem> Pesagens { get; set; }
+        public DbSet<AvaliacaoNutricional> AvaliacoesFuncionais { get; set; }
+        public DbSet<Arquivo> Arquivos { get; set; }
+
         public DbSet<ReportLivrosView> ReportLivrosViewSet => Set<ReportLivrosView>();
                 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
+
+            builder.Entity<AvaliacaoNutricional>()
+                    .HasOne(x => x.ArquivoImagem)
+                    .WithOne()
+                    .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Pesagem>()
                 .Property(c => c.Peso1)

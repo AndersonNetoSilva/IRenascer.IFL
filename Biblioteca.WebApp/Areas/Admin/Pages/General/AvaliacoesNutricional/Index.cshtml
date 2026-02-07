@@ -1,0 +1,57 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional.IndexModel
+
+@{
+    ViewData["Title"] = "Avaliaçõe Nutricional";
+}
+
+<breadcrumb items="Cadastros, Gerais, AvaliacoesNutricional"></breadcrumb>
+
+<!-- filtro -->
+<natural-filter fields="Nome"
+                placeholder="Pesquisar…"
+                example="Nome:João"
+                value="@Model.Search">
+</natural-filter>
+
+<!-- Dados -->
+<table class="table mb-3">
+    <thead>
+        <tr>
+            <action-link-button action="IFL.WebApp.TagHelpers.ButtonActionType.Create">
+            </action-link-button>
+            <th class="text-center text-nowrap" style="width:1%;">
+            </th>
+            <th class="text-center text-nowrap" style="width:1%;">
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvaliacoesNutricional[0].Atleta.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvaliacoesNutricional[0].Data)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.AvaliacoesNutricional)
+        {
+            <tr>
+                <action-link-button action="IFL.WebApp.TagHelpers.ButtonActionType.Edit" route-id="@item.Id"></action-link-button>
+                <action-link-button action="IFL.WebApp.TagHelpers.ButtonActionType.Details" route-id="@item.Id"></action-link-button>
+                <action-link-button action="IFL.WebApp.TagHelpers.ButtonActionType.Delete" route-id="@item.Id"></action-link-button>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Atleta.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginação -->
+<pager page="/Admin/General/AvaliacoesNutricional/Index"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

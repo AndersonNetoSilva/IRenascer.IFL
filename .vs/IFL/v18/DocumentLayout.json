@@ -3,40 +3,64 @@
   "WorkspaceRootPath": "C:\\Projeto\\IRenascer.IFL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\avaliacaonutricional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\avaliacaonutricional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\eventos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\eventos\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\pesagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\pesagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Migrations\\20260207050057_add-Avaliacao-Altura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca.WebApp\\Migrations\\20260207050057_add-Avaliacao-Altura.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\repositories\\avaliacaonutricionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\repositories\\avaliacaonutricionalrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\colaboradores\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\colaboradores\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\colaboradores\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\colaboradores\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\atletas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\atletas\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\atletas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\atletas\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\extensions\\dependencyinjectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\extensions\\dependencyinjectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\delete.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Migrations\\20260207043146_add-Avaliacao-Arquivo-Cascade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Biblioteca.WebApp\\Migrations\\20260207043146_add-Avaliacao-Arquivo-Cascade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\services\\avaliacaonutricionalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\services\\avaliacaonutricionalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\arquivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\arquivo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,119 +74,197 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Eventos\\Create.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Eventos\\Create.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Eventos\\Create.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Eventos\\Create.cshtml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T21:34:52.544Z",
+              "DocumentIndex": 4,
+              "Title": "20260207050057_add-Avaliacao-Altura.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Migrations\\20260207050057_add-Avaliacao-Altura.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Migrations\\20260207050057_add-Avaliacao-Altura.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Migrations\\20260207050057_add-Avaliacao-Altura.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Migrations\\20260207050057_add-Avaliacao-Altura.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T05:00:57.862Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAAD8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T21:05:19.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T20:56:04.012Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Atletas\\Index.cshtml.cs",
-              "ViewState": "AgIAAFYAAAAAAAAAAAAwwB0AAAAMAAAAAAAAAA==",
+              "Title": "AvaliacaoNutricional.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:20:42.292Z",
+              "WhenOpened": "2026-02-07T04:58:53.954Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAADcAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-04T20:55:35.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Index.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\Colaboradores\\Index.cshtml.cs",
-              "ViewState": "AgIAAEQAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "Delete.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Delete.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Delete.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Delete.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Delete.cshtml.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAADwvwkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:55:28.383Z",
+              "WhenOpened": "2026-02-07T04:19:47.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAIA4wDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T03:49:24.284Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Edit.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
-              "ViewState": "AgIAAE8AAAAAAAAAAAAMwFQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:17:57.783Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "ViewState": "AgIAACYAAAAAAAAAAAAIwJUAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-07T03:47:23.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwEkAAAA3AAAAAAAAAA==",
+              "DocumentIndex": 14,
+              "Title": "Arquivo.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Arquivo.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\Arquivo.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Arquivo.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Model\\Arquivo.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAywBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:17:21.213Z",
+              "WhenOpened": "2026-02-07T03:37:15.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-07T03:01:44.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Pesagem.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "ViewState": "AgIAACwAAAAAAAAAAAAQwDsAAAATAAAAAAAAAA==",
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Edit.cshtml.cs",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAmwFcAAABcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T20:16:56.482Z",
+              "WhenOpened": "2026-02-07T03:01:44.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DependencyInjectionExtensions.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T03:22:22.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAA6wDEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T03:20:48.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-07T03:12:47.619Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AvaliacaoNutricionalRepository.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Repositories\\AvaliacaoNutricionalRepository.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Repositories\\AvaliacaoNutricionalRepository.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Repositories\\AvaliacaoNutricionalRepository.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Repositories\\AvaliacaoNutricionalRepository.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T03:07:30.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAcwIAAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T03:01:11.438Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20260207043146_add-Avaliacao-Arquivo-Cascade.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Migrations\\20260207043146_add-Avaliacao-Arquivo-Cascade.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Migrations\\20260207043146_add-Avaliacao-Arquivo-Cascade.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Migrations\\20260207043146_add-Avaliacao-Arquivo-Cascade.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Migrations\\20260207043146_add-Avaliacao-Arquivo-Cascade.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowAsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T04:31:46.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AvaliacaoNutricionalService.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\AvaliacaoNutricionalService.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Services\\AvaliacaoNutricionalService.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\AvaliacaoNutricionalService.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Services\\AvaliacaoNutricionalService.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAAMwDcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-07T03:01:44.601Z",
               "EditorCaption": ""
             }
           ]

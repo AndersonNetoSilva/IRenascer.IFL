@@ -23,7 +23,8 @@ namespace IFL.WebApp.Infrastructure.Extensions
             services.AddScoped<IEventoRepository, EventoRepository>();
             services.AddScoped<IHorarioRepository, HorarioRepository>();
             services.AddScoped<IPesagemRepository, PesagemRepository>();
-
+            services.AddScoped<IAvaliacaoNutricionalRepository, AvaliacaoNutricionalRepository>();
+            services.AddScoped<IAvaliacaoNutricionalService, AvaliacaoNutricionalService>();
             services.AddScoped<IPrecoDeVendaRepository, PrecoDeVendaRepository>();
 
             // Unit of Work

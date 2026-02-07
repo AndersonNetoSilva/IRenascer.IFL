@@ -1,0 +1,139 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional.CreateModel
+
+@{
+    ViewData["Title"] = "Inserir";
+}
+
+<breadcrumb items="Cadastros, Gerais, AvaliacoesNutricional, Inserir"></breadcrumb>
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.AtletaId"></label>
+                        <select asp-for="AvaliacaoNutricional.AtletaId" asp-items="Model.Atletas" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="AvaliacaoNutricional.AtletaId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.Data" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.Data" type="date" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.Data" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="AvaliacaoNutricional.PesoAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.PesoAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.PesoAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.AlturaAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.AlturaAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.AlturaAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.GorduraViceralAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.GorduraViceralAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.GorduraViceralAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.AguaCorporalAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.AguaCorporalAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.AguaCorporalAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.PctGorduraAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.PctGorduraAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.PctGorduraAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.MassaMuscularAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.MassaMuscularAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.MassaMuscularAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="AvaliacaoNutricional.MassaLivreAsString" class="control-label"></label>
+                        <input asp-for="AvaliacaoNutricional.MassaLivreAsString" class="form-control" />
+                        <span asp-validation-for="AvaliacaoNutricional.MassaLivreAsString" class="text-danger"></span>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+            <div class="col-md-8">
+                <div class="form-group">
+                    <label asp-for="AvaliacaoNutricional.Obs" class="control-label"></label>
+                    <textarea asp-for="AvaliacaoNutricional.Obs"
+                              class="form-control"
+                              rows="4"></textarea>
+                    <span asp-validation-for="AvaliacaoNutricional.Obs" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb3">
+                    <label class="form-label">Imagem</label>
+                    <input asp-for="ArquivoImagem.FormFile"
+                           type="file"
+                           class="form-control"
+                           accept="image/*" />
+                    <span asp-validation-for="ArquivoImagem.FormFile" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <input type="submit" value="Gravar" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -52,6 +52,44 @@ namespace IFL.WebApp.Migrations
                     b.ToTable("AutorLivro");
                 });
 
+            modelBuilder.Entity("IFL.WebApp.Model.Arquivo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("Conteudo")
+                        .IsRequired()
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<DateTime>("DataCriacao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DataUltimaAlteracao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NomeOriginal")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tamanho")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Arquivos");
+                });
+
             modelBuilder.Entity("IFL.WebApp.Model.Assunto", b =>
                 {
                     b.Property<int>("Id")
@@ -187,6 +225,60 @@ namespace IFL.WebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Autores");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricional", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal?>("AguaCorporal")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<decimal?>("Altura")
+                        .HasColumnType("decimal(3,2)");
+
+                    b.Property<int?>("ArquivoImagemId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AtletaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Data")
+                        .IsRequired()
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal?>("GorduraViceral")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<decimal?>("MassaLivre")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<decimal?>("MassaMuscular")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<string>("Obs")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
+
+                    b.Property<decimal?>("PctGordura")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.Property<decimal?>("Peso")
+                        .HasColumnType("decimal(6,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ArquivoImagemId")
+                        .IsUnique()
+                        .HasFilter("[ArquivoImagemId] IS NOT NULL");
+
+                    b.HasIndex("AtletaId");
+
+                    b.ToTable("AvaliacoesFuncionais");
                 });
 
             modelBuilder.Entity("IFL.WebApp.Model.Colaborador", b =>
@@ -561,6 +653,24 @@ namespace IFL.WebApp.Migrations
                         .HasForeignKey("LivrosId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricional", b =>
+                {
+                    b.HasOne("IFL.WebApp.Model.Arquivo", "ArquivoImagem")
+                        .WithOne()
+                        .HasForeignKey("IFL.WebApp.Model.AvaliacaoNutricional", "ArquivoImagemId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("IFL.WebApp.Model.Atleta", "Atleta")
+                        .WithMany()
+                        .HasForeignKey("AtletaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ArquivoImagem");
+
+                    b.Navigation("Atleta");
                 });
 
             modelBuilder.Entity("IFL.WebApp.Model.Pesagem", b =>
