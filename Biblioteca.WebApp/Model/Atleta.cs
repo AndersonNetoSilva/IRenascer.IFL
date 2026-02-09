@@ -175,11 +175,18 @@ namespace IFL.WebApp.Model
                 return classe;
             }
 
-
-
         }
 
         public required Sexo Sexo { get; set; } = Sexo.Masculino;
+
+        public List<AtletaGrade> AtletaGrades { get; set; } = new();
+
+        [ForeignKey(nameof(ArquivoImagem))]
+        [Display(Name = "Imagem")]
+        public int? ArquivoImagemId { get; set; }
+
+        [Display(Name = "Imagem")]
+        public Arquivo? ArquivoImagem { get; set; }
 
     }
     public enum Sexo

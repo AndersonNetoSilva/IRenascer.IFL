@@ -9,7 +9,7 @@
 
 <div class="row">
     <div class="col-md-8">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="row">
@@ -223,6 +223,65 @@
             </div>
 
  
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="mt-4">Modalidades e Horários</h5>
+
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button type="button" class="btn btn-outline-primary btn-sm p-1"
+                                            onclick="adicionarLinha()">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </button>
+                                </th>
+                                <th>Modalidade</th>
+                                <th>Horário</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.AtletaGrades.Count; i++)
+                            {
+                                <tr data-index="@i">
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                                onclick="marcarParaExclusao(this, 'PrecosDeVenda');">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                        <input type="hidden" asp-for="AtletaGrades[@i].Id" />
+                                        <input type="hidden" asp-for="AtletaGrades[@i].MarcadoParaExclusao" />
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label asp-for="AtletaGrades[@i].ModalidadeId"></label>
+                                                <select asp-for="AtletaGrades[@i].ModalidadeId" asp-items="Model.Modalidades" class="form-select">
+                                                    <option value="">Selecione</option>
+                                                </select>
+                                                <span asp-validation-for="AtletaGrades[@i].ModalidadeId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label asp-for="AtletaGrades[@i].HorarioId"></label>
+                                                <select asp-for="AtletaGrades[@i].HorarioId" asp-items="Model.Horarios" class="form-select">
+                                                    <option value="">Selecione</option>
+                                                </select>
+                                                <span asp-validation-for="AtletaGrades[@i].HorarioId" class="text-danger"></span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
 
 
 
@@ -238,4 +297,59 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+
+    <script>
+                let contador = `@Model.AtletaGrades.Count`;
+
+                const horarios = `@Html.Raw(string.Join("",
+                                                Model.Horarios.Select(e => $"<option value=\"{e.Value}\">{e.Text}</option>")))`
+
+                const modalidades = `@Html.Raw(string.Join("",
+                                                                Model.Modalidades.Select(e => $"<option value=\"{e.Value}\">{e.Text}</option>")))`;
+
+    function adicionarLinha() {
+        const tbody = document.querySelector('table tbody');
+
+                    const novaLinha = document.createElement('tr');
+                    novaLinha.innerHTML = `
+                        <td>
+                            <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                    onclick="this.closest('tr').remove()">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                            <input type="hidden" name="AtletaGrades[${contador}].Id" value="0" />
+                        </td>
+                        <td>
+                            <select name="AtletaGrades[${contador}].HorarioId" class="form-select">
+                                    ${horarios}
+                            </select>
+                        </td>
+                        <td>
+                            <select name="AtletaGrades[${contador}].ModalidadeId" class="form-select">
+                                    ${modalidades}
+                            </select>
+                        </td>
+                    `;
+
+                    tbody.appendChild(novaLinha);
+                    contador++;
+                };
+
+                function marcarParaExclusao(button, arrayName) {
+                    const row = button.closest('tr');
+
+                    const hidden = row.querySelector(
+                        `input[type="hidden"][name^="${arrayName}["][name$=".MarcadoParaExclusao"]`
+                    );
+
+                    if (!hidden) return;
+
+                    hidden.value = "true";
+
+                    row.classList.add('table-danger', 'text-muted');
+
+                    button.disabled = true;
+                };
+    </script>
 }

@@ -42,21 +42,21 @@ namespace IFL.WebApp.Model
 
         [Range(0, 200)]
         [Column(TypeName = "decimal(6,2)")]
-        [Display(Name = "Peso 1")]
+        [Display(Name = "Peso ")]
         public decimal? Peso1 { get; set; } = 0;
 
         [Required(ErrorMessage = "O Peso 1 é obrigatório")]
-        [Display(Name = "Peso 1")]
+        [Display(Name = "Peso ")]
         [NotMapped]
         [RegularExpression(@"^\d+(,\d{2})$", ErrorMessage = "Informe um valor com exatamente 2 casas decimais.")]
         public string Peso1AsString { get; set; }
 
-        [Display(Name = "Peso 2")]
+        [Display(Name = "Peso ")]
         [NotMapped]
         [RegularExpression(@"^\d+(,\d{2})$", ErrorMessage = "Informe um valor com exatamente 2 casas decimais.")]
         public string? Peso2AsString { get; set; }
 
-        [Display(Name = "Peso 3")]
+        [Display(Name = "Peso ")]
         [NotMapped]
         [RegularExpression(@"^\d+(,\d{2})$", ErrorMessage = "Informe um valor com exatamente 2 casas decimais.")]
         public string? Peso3AsString { get; set; }
@@ -64,11 +64,11 @@ namespace IFL.WebApp.Model
 
         [Range(0, 200)]
         [Column(TypeName = "decimal(6,2)")]
-        [Display(Name = "Peso 2")]
+        [Display(Name = "Peso ")]
         public decimal? Peso2 { get; set; } = 0;
 
         [Range(0, 200)]
-        [Display(Name = "Peso 3")]
+        [Display(Name = "Peso ")]
         [Column(TypeName = "decimal(6,2)")]
         public decimal? Peso3 { get; set; } = 0;
 

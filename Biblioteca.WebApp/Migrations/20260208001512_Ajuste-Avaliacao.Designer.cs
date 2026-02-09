@@ -4,6 +4,7 @@ using IFL.WebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IFL.WebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260208001512_Ajuste-Avaliacao")]
+    partial class AjusteAvaliacao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,9 +123,6 @@ namespace IFL.WebApp.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int?>("ArquivoImagemId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Ativo")
                         .HasColumnType("bit");
 
@@ -209,37 +209,7 @@ namespace IFL.WebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ArquivoImagemId");
-
                     b.ToTable("Atletas");
-                });
-
-            modelBuilder.Entity("IFL.WebApp.Model.AtletaGrade", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("AtletaId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HorarioId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ModalidadeId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AtletaId");
-
-                    b.HasIndex("HorarioId");
-
-                    b.HasIndex("ModalidadeId");
-
-                    b.ToTable("AtletaGrade");
                 });
 
             modelBuilder.Entity("IFL.WebApp.Model.Autor", b =>
@@ -686,42 +656,6 @@ namespace IFL.WebApp.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("IFL.WebApp.Model.Atleta", b =>
-                {
-                    b.HasOne("IFL.WebApp.Model.Arquivo", "ArquivoImagem")
-                        .WithMany()
-                        .HasForeignKey("ArquivoImagemId");
-
-                    b.Navigation("ArquivoImagem");
-                });
-
-            modelBuilder.Entity("IFL.WebApp.Model.AtletaGrade", b =>
-                {
-                    b.HasOne("IFL.WebApp.Model.Atleta", "Atleta")
-                        .WithMany("AtletaGrades")
-                        .HasForeignKey("AtletaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("IFL.WebApp.Model.Horario", "Horario")
-                        .WithMany()
-                        .HasForeignKey("HorarioId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("IFL.WebApp.Model.Modalidade", "Modalidade")
-                        .WithMany()
-                        .HasForeignKey("ModalidadeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Atleta");
-
-                    b.Navigation("Horario");
-
-                    b.Navigation("Modalidade");
-                });
-
             modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricional", b =>
                 {
                     b.HasOne("IFL.WebApp.Model.Arquivo", "ArquivoImagem")
@@ -768,11 +702,6 @@ namespace IFL.WebApp.Migrations
                         .IsRequired();
 
                     b.Navigation("Livro");
-                });
-
-            modelBuilder.Entity("IFL.WebApp.Model.Atleta", b =>
-                {
-                    b.Navigation("AtletaGrades");
                 });
 #pragma warning restore 612, 618
         }

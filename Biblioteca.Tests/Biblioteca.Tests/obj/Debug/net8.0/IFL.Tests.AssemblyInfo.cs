@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("IFL.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5bd81301af663c6380cbc8b4bd70d0c5cae91941")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2f7a48dee0d44b3371e1ce7c78cdeecb10ac528e")]
 [assembly: System.Reflection.AssemblyProductAttribute("IFL.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("IFL.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

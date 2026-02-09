@@ -40,9 +40,10 @@ namespace IFL.WebApp.Data
             base.OnModelCreating(builder);
 
             builder.Entity<AvaliacaoNutricional>()
-                    .HasOne(x => x.ArquivoImagem)
-                    .WithOne()
-                    .OnDelete(DeleteBehavior.Cascade);
+                .HasOne(l => l.ArquivoImagem)
+                .WithMany()
+                .HasForeignKey(l => l.ArquivoImagemId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.Entity<Pesagem>()
                 .Property(c => c.Peso1)
@@ -77,6 +78,9 @@ namespace IFL.WebApp.Data
                 entity.HasNoKey();
                 entity.ToView("vw_ReportLivros");
             });
+
+            builder.Entity<Atleta>()
+                .HasMany(p => p.AtletaGrades);
         }
     }
 }
