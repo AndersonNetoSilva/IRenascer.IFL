@@ -31,6 +31,9 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
         [BindProperty]
         public ArquivoVM ArquivoImagem { get; set; } = new();
 
+        [BindProperty]
+        public List<AvaliacaoNutricionalAnexoVM> Anexos { get; set; } = new();
+
         private void BindSelectLists()
         {
 
@@ -41,6 +44,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
                             .ToList();
         }
         public List<SelectListItem> Atletas { get; set; } = new();
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -80,6 +84,15 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
             if (avaliacaoNutricional.AguaCorporal.HasValue)
                 avaliacaoNutricional.AguaCorporalAsString = avaliacaoNutricional.AguaCorporal.Value.ToString(new System.Globalization.CultureInfo("pt-BR"));
 
+            Anexos = avaliacaoNutricional.Anexos
+                                .Select(a => new AvaliacaoNutricionalAnexoVM
+                                {
+                                    Id = a.Id,
+                                    Descricao = a.Descricao,
+                                    MarcadoParaExclusao = false
+                                })
+                                .ToList();
+
             AvaliacaoNutricional = avaliacaoNutricional;
 
             return Page();
@@ -105,29 +118,6 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
         public async Task<IActionResult> OnPostAsync()
         {
 
-            //if (!ModelState.IsValid)
-            //{
-            //    BindSelectLists();
-            //    return Page();
-            //}
-
-            //try
-            //{
-            //    _repository.Update(AvaliacaoNutricional);
-            //    await _unitOfWork.CommitAsync();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (await _repository.ExistsAsync(x => x.Id == AvaliacaoNutricional.Id))
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
             //return RedirectToPage("./Index");
             IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional.CreateModel.ValidarValor(AvaliacaoNutricional);
             AvaliacaoNutricional.Atleta = _atletaRepository.Query().Where(a => AvaliacaoNutricional.AtletaId == a.Id).FirstOrDefault();
@@ -140,7 +130,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
 
             try
             {
-                await _avaliacaoService.UpdateAsync(AvaliacaoNutricional, ArquivoImagem);
+                await _avaliacaoService.UpdateAsync(AvaliacaoNutricional, ArquivoImagem, Anexos);
             }
             catch (KeyNotFoundException)
             {
@@ -158,6 +148,28 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
             }
 
             return RedirectToPage("./Index");
+        }
+
+        public async Task<IActionResult> OnGetDownloadDoAnexoAsync(int avaliacaoId, int anexoId)
+        {
+            var avaliacaoNutricional = await _repository.Query()
+                                                .Include(x => x.Anexos)
+                                                .ThenInclude(x => x.Anexo)
+                                            .FirstOrDefaultAsync(x => x.Id == avaliacaoId && x.Anexos.Any(a => a.Id == anexoId));
+
+            if (avaliacaoNutricional == null)
+                return NotFound();
+
+            var anexoDoLivro = avaliacaoNutricional.Anexos.FirstOrDefault(x => x.Id == anexoId);
+
+            if (anexoDoLivro?.Anexo == null)
+                return NotFound();
+
+            return File(
+                anexoDoLivro.Anexo.Conteudo,
+                anexoDoLivro.Anexo.ContentType,
+                anexoDoLivro.Anexo.NomeOriginal
+            );
         }
     }
 }

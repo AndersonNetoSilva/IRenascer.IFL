@@ -70,6 +70,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/FiltroEstatiscaCompeticao.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXEZpbHRyb0VzdGF0aXNjYUNvbXBldGljYW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Atletas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdGxldGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -132,6 +136,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Colaboradores/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxDb2xhYm9yYWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/EstatisticasCompeticao/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFc3RhdGlzdGljYXNDb21wZXRpY2FvXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/EstatisticasCompeticao/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFc3RhdGlzdGljYXNDb21wZXRpY2FvXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/EstatisticasCompeticao/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFc3RhdGlzdGljYXNDb21wZXRpY2FvXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/EstatisticasCompeticao/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFc3RhdGlzdGljYXNDb21wZXRpY2FvXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/EstatisticasCompeticao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxFc3RhdGlzdGljYXNDb21wZXRpY2FvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/Eventos/Create.cshtml]
@@ -260,6 +284,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Colaboradores/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xDb2xhYm9yYWRvcmVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/EstatisticasCompeticao/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xFc3RhdGlzdGljYXNDb21wZXRpY2FvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Livros/Index.cshtml]

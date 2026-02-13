@@ -30,10 +30,11 @@ namespace IFL.WebApp.Infrastructure.Services
         }
 
         public async Task AddAsync(
-            AvaliacaoNutricional avaliacaoNutricional,           
-            ArquivoVM? arquivoImagem)
+                                    AvaliacaoNutricional avaliacaoNutricional,
+                                    ArquivoVM? arquivoImagem,
+                                    IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
+                                    )
         {
-            //ValidarValor(livro);
 
             if (arquivoImagem?.FormFile?.Length > 0)
             {
@@ -41,8 +42,10 @@ namespace IFL.WebApp.Infrastructure.Services
                       l => l.ArquivoImagemId == null ? null : _dbContext.Arquivos.First(x => x.Id == l.ArquivoImagemId),
                       (l, a) => l.ArquivoImagem = a);
             }
-            
-            _avaliacaoRepository.Add(avaliacaoNutricional); 
+
+            _avaliacaoRepository.Add(avaliacaoNutricional);
+
+            await SyncAnexosAsync(avaliacaoNutricional, anexos);
 
             await _unitOfWork.CommitAsync();
         }
@@ -86,8 +89,102 @@ namespace IFL.WebApp.Infrastructure.Services
             }
         }
 
+        private async Task SyncAnexosAsync(AvaliacaoNutricional avaliacao, IEnumerable<AvaliacaoNutricionalAnexoVM> anexoList)
+        {
+            var idsParaExclusao = anexoList
+                        .Where(x => x.Id.HasValue && x.MarcadoParaExclusao)
+                        .Select(x => x.Id.Value)
+                        .ToHashSet();
+
+            avaliacao.Anexos.RemoveAll(p => idsParaExclusao.Contains(p.Id));
+
+            var indice = 0;
+
+            foreach (var anexoVM in anexoList)
+            {
+                if (!anexoVM.MarcadoParaExclusao)
+                {
+                    if (anexoVM.Id.HasValue && anexoVM.Id.Value > 0)
+                    {
+                        var anexoDoLivro = avaliacao.Anexos.First(p => p.Id == anexoVM.Id);
+
+                        await SalvarOuSubstituirAnexoAsync(avaliacao, anexoDoLivro, anexoVM);
+                    }
+                    else
+                    {
+                        var anexo = await SalvarOuSubstituirAnexoAsync(avaliacao, null, anexoVM);
+
+                        if (anexo != null)
+                            avaliacao.Anexos.Add(anexo);
+                    }
+                }
+
+                indice++;
+            }
+
+        }
+
+        private async Task<AvaliacaoNutricionalAnexo> SalvarOuSubstituirAnexoAsync(AvaliacaoNutricional avaliacao, AvaliacaoNutricionalAnexo avaliacaoAnexo, AvaliacaoNutricionalAnexoVM anexoMV)
+        {
+            if (anexoMV?.FormFile == null || anexoMV?.FormFile?.Length <= 0)
+                return avaliacaoAnexo;
+
+            using var ms = new MemoryStream();
+
+            await anexoMV.FormFile.CopyToAsync(ms);
+
+            if (avaliacaoAnexo?.Anexo != null)
+            {
+                avaliacaoAnexo.Anexo.Conteudo = ms.ToArray();
+                avaliacaoAnexo.Anexo.ContentType = anexoMV.FormFile.ContentType;
+                avaliacaoAnexo.Anexo.Tamanho = (int)anexoMV.FormFile.Length;
+                avaliacaoAnexo.Anexo.NomeOriginal = anexoMV.FormFile.FileName;
+                avaliacaoAnexo.Anexo.Descricao = anexoMV.Descricao ?? anexoMV.FormFile.FileName;
+                avaliacaoAnexo.Anexo.DataUltimaAlteracao = DateTime.UtcNow;
+                avaliacaoAnexo.Descricao = anexoMV.Descricao ?? anexoMV.FormFile.FileName;
+                avaliacaoAnexo.Tipo = IsImageFileName(avaliacaoAnexo.Anexo.NomeOriginal) ? TipoANexo.Imagem : TipoANexo.Arquivo;
+            }
+            else
+            {
+                var anexo = new Arquivo
+                {
+                    Conteudo = ms.ToArray(),
+                    ContentType = anexoMV.FormFile.ContentType,
+                    Tamanho = (int)anexoMV.FormFile.Length,
+                    NomeOriginal = anexoMV.FormFile.FileName,
+                    Descricao = anexoMV.Descricao ?? anexoMV.FormFile.FileName,
+                    DataCriacao = DateTime.UtcNow
+                };
+
+                avaliacaoAnexo = new AvaliacaoNutricionalAnexo
+                {
+                    Anexo = anexo,
+                    Descricao = anexoMV.Descricao ?? anexoMV.FormFile.FileName,
+                    Tipo = IsImageFileName(anexo.NomeOriginal) ? TipoANexo.Imagem : TipoANexo.Arquivo
+                };
+
+                avaliacao.Anexos.Add(avaliacaoAnexo);
+            }
+
+            return avaliacaoAnexo;
+        }
+
+        private bool IsImageFileName(string nomeOriginal)
+        {
+            if (string.IsNullOrWhiteSpace(nomeOriginal))
+                return false;
+
+            string extension = Path.GetExtension(nomeOriginal).ToLowerInvariant();
+
+            string[] imageExtensions = { ".jpg", ".jpeg", ".png", ".gif", ".bmp", ".tiff", ".webp" };
+
+            return Array.Exists(imageExtensions, ext => ext == extension);
+        }
+
         public async Task UpdateAsync(AvaliacaoNutricional AvaliacaoNutricional,
-                                        ArquivoVM? arquivoImagem)
+                                        ArquivoVM? arquivoImagem,
+                                        IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
+                                        )
         {
             var avaliacao = await _avaliacaoRepository.GetForUpdateAsync(AvaliacaoNutricional.Id);
 
@@ -101,7 +198,9 @@ namespace IFL.WebApp.Infrastructure.Services
                           l => l.ArquivoImagemId == null ? null : _dbContext.Arquivos.First(x => x.Id == l.ArquivoImagemId),
                           (l, a) => l.ArquivoImagem = a);
                 }
-               
+
+                await SyncAnexosAsync(avaliacao, anexos);
+
                 try
                 {
                     await _unitOfWork.CommitAsync();

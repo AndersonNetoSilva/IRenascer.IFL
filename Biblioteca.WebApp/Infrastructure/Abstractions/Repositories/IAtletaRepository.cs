@@ -5,5 +5,6 @@ namespace IFL.WebApp.Infrastructure.Abstractions.Repositories
     public interface IAtletaRepository : IRepository<Atleta>
     {
         Task<Atleta?> GetForUpdateAsync(int? id);
+        bool ExiteAtletaNaModalidade(int? modalidadeId);
     }
 }

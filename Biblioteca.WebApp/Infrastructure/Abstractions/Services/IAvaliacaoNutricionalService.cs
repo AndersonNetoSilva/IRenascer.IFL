@@ -6,9 +6,13 @@ namespace IFL.WebApp.Infrastructure.Abstractions.Services
     public interface IAvaliacaoNutricionalService
     {
         Task UpdateAsync(AvaliacaoNutricional avaliacaoNutricional,
-                            ArquivoVM? arquivoImagem);
+                            ArquivoVM? arquivoImagem,
+                            IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
+                        );
 
         Task AddAsync(AvaliacaoNutricional avaliacaoNutricional, 
-                        ArquivoVM? arquivoImagem);
+                        ArquivoVM? arquivoImagem,
+                        IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
+                        );
     }
 }

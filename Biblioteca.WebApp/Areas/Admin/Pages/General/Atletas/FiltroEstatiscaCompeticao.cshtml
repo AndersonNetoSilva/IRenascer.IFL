@@ -1,0 +1,59 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.Atletas.FiltroEstatiscaCompeticaoModel
+
+@{
+    ViewData["Title"] = "Atletas";
+}
+
+<breadcrumb items="Cadastros, Gerais, Atletas"></breadcrumb>
+
+<!-- filtro -->
+<natural-filter fields="Nome,Evento"
+                placeholder="Pesquisar…"
+                example="Nome:João, Evento:Rajime"
+                value="@Model.Search">
+</natural-filter>
+
+<!-- Dados -->
+<table class="table mb-3">
+    <thead>
+        <tr>         
+
+            <th class="text-center text-nowrap" style="width:1%;">
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstatisticasCompeticao[0].Atleta.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstatisticasCompeticao[0].Evento.Nome)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.EstatisticasCompeticao)
+        {
+            <tr>
+                 
+                <td class="text-center text-nowrap" style="width:1%">
+                    <a href="/Admin/Relatorios/EstatisticasCompeticao/Index?idAtleta=@item.AtletaId&idEvento=@item.EventoId" class="btn btn-outline-secondary btn-sm p-1" data-bs-toggle="tooltip" title="Alterar" target="_blank">
+                        <i class="bi bi-printer"></i>
+                    </a>
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Atleta.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Evento.Nome)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginação -->
+<pager page="/Admin/General/Atletas/FiltroEstatiscaCompeticao"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

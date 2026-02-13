@@ -1,0 +1,103 @@
+1. Adicionar a pasta Areas\Identity
+2. Adicionar a pasta Pages\Shared\_LoginPartial.cshtml
+3. Instalar o Pacote Microsoft.AspNetCore.Identity.EntityFrameworkCore 8.0.20
+4. Instalar o Pacote Microsoft.AspNetCore.Identity.UI 8.0.20
+5. Acrescentar o Método abaixo na Classe Data\DbInitializer
+	Ele vai criar um Role Admin e um Usuário Padrão. Bota suas informações de email e usuário pra logar.
+
+        public static async Task SeedRolesAndAdminAsync(IServiceProvider rootServiceProvider)
+        {
+            using (var scope = rootServiceProvider.CreateScope())
+            {
+                var serviceProvider = scope.ServiceProvider;
+                try
+                {
+                    var roleManager = serviceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+                    var userManager = serviceProvider.GetRequiredService<UserManager<IdentityUser>>();
+                    var context = serviceProvider.GetRequiredService<ApplicationDbContext>();
+
+                    if (!await roleManager.RoleExistsAsync("Admin"))
+                    {
+                        var role = new IdentityRole("Admin");
+
+                        var result = await roleManager.CreateAsync(role);
+
+                        if (result.Succeeded)
+                        {
+                            await roleManager.AddClaimAsync(role, new System.Security.Claims.Claim("system_main_claim", "Admin"));
+                        }
+                    }
+
+                    if (!await roleManager.RoleExistsAsync("User"))
+                    {
+                        await roleManager.CreateAsync(new IdentityRole("User"));
+                    }
+
+                    var adminUser = await userManager.FindByEmailAsync("viegaslgc@gmail.com");
+
+                    if (adminUser == null)
+                    {
+                        var user = new IdentityUser
+                        {
+                            UserName = "viegaslgc@gmail.com",
+                            Email = "viegaslgc@gmail.com",
+                            EmailConfirmed = true
+                        };
+
+                        var result = await userManager.CreateAsync(user, "PasswordSegura123!");
+
+                        if (result.Succeeded)
+                        {
+                            await userManager.AddToRoleAsync(user, "Admin");
+                        }
+                    }
+                    else
+                        await userManager.AddToRoleAsync(adminUser, "Admin");
+                }
+                catch (Exception ex)
+                {
+                    var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "Ocorreu um erro ao popular a base de dados (Data Seeding).");
+                }
+            }
+        }
+
+
+6. No Program.CS
+
+6.1 Acrescentar Antes do builder.Services.AddRazorPages();
+
+            builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+                options.Tokens.AuthenticatorTokenProvider = TokenOptions.DefaultAuthenticatorProvider;
+            })
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+				
+6.2 Acrescentar Antes do app.MapRazorPages();
+
+			app.UseAuthorization();
+
+6.3 Acrescentar Antes do App.Run
+
+	DbInitializer.SeedRolesAndAdminAsync(app.Services).Wait();
+	
+7 Coloque em todas as _ViewImports.cshtml 
+
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Identity
+
+...
+
+@attribute [Authorize(Roles = "Admin")]
+
+geralmente estão em
+
+\Pages\_ViewImports.cshtml 
+\Areas\Admin\Pages\_ViewImports.cshtml
+\Areas\Admin\Pages\_ViewImports.cshtml
+
+9. Mude a Herança do seu ApplicationDbContext de DbContext para ApplicationDbContext IdentityDbContext
+
+10. Add Migration e Update-DataBase. Logue com o usuário do email que vc botou no seed no ponto 5 acima.

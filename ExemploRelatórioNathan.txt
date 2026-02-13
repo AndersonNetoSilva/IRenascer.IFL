@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Atleta - Judô</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Roboto', sans-serif;
+        }
+        .athlete-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .photo-placeholder {
+            width: 100%;
+            aspect-ratio: 1/1;
+            background-color: #e9ecef;
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .photo-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .info-label {
+            font-weight: bold;
+            color: #6c757d;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+        }
+        .info-value {
+            font-size: 1.1rem;
+            color: #212529;
+            margin-bottom: 10px;
+        }
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            height: 100%;
+        }
+        .quote-section {
+            font-style: italic;
+            border-left: 5px solid #0d6efd;
+            padding-left: 15px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container py-5">
+    <div class="quote-section">
+        <h4 class="mb-0">"A simplicidade é o último grau de toda arte superior, da vida e do judô."</h4>
+        <footer class="blockquote-footer mt-1">Jigoro Kano</footer>
+    </div>
+
+    <div class="athlete-card">
+        <div class="row align-items-center">
+            <div class="col-md-3 mb-3 mb-md-0">
+                <div class="photo-placeholder">
+                    <img src="https://via.placeholder.com/300x300?text=Foto+Atleta" alt="Atleta">
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Nome Completo</div>
+                        <div class="info-value">Gabriel Silva Santos</div>
+                    </div>
+                    <div class="col-sm-6 col-lg-2">
+                        <div class="info-label">Idade</div>
+                        <div class="info-value">22 Anos</div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="info-label">Categoria/Peso</div>
+                        <div class="info-value">Meio-Médio (-81kg)</div>
+                    </div>
+                    <div class="col-sm-6 col-lg-3">
+                        <div class="info-label">Localidade</div>
+                        <div class="info-value">Rio de Janeiro, RJ</div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Clube / Escola</div>
+                        <div class="info-value">Liga Fluminense de Judô</div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Graduação</div>
+                        <div class="info-value">Faixa Preta (1º Dan)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="chart-container">
+                <h6 class="text-center mb-4 text-secondary">Desempenho por Técnica (Ippons)</h6>
+                <canvas id="chartIppons"></canvas>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="chart-container">
+                <h6 class="text-center mb-4 text-secondary">Vitórias vs Derrotas</h6>
+                <canvas id="chartVitorias"></canvas>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="chart-container">
+                <h6 class="text-center mb-4 text-secondary">Histórico de Pontuação no Ano</h6>
+                <canvas id="chartEvolucao" style="max-height: 300px;"></canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Gráfico de Barras - Técnicas
+    const ctxIppons = document.getElementById('chartIppons').getContext('2d');
+    new Chart(ctxIppons, {
+        type: 'bar',
+        data: {
+            labels: ['Seoi Nage', 'Osoto Gari', 'Uchi Mata', 'Harai Goshi'],
+            datasets: [{
+                label: 'Qtd de Ippons',
+                data: [12, 19, 7, 10],
+                backgroundColor: ['#0d6efd', '#6610f2', '#0dcaf0', '#20c997']
+            }]
+        },
+        options: { responsive: true, plugins: { legend: { display: false } } }
+    });
+
+    // Gráfico de Pizza - Vitórias
+    const ctxVitorias = document.getElementById('chartVitorias').getContext('2d');
+    new Chart(ctxVitorias, {
+        type: 'doughnut',
+        data: {
+            labels: ['Vitórias', 'Derrotas'],
+            datasets: [{
+                data: [45, 12],
+                backgroundColor: ['#198754', '#dc3545']
+            }]
+        }
+    });
+
+    // Gráfico de Linha - Evolução
+    const ctxEvolucao = document.getElementById('chartEvolucao').getContext('2d');
+    new Chart(ctxEvolucao, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+            datasets: [{
+                label: 'Pontos no Ranking',
+                data: [120, 150, 140, 180, 210, 250],
+                borderColor: '#0d6efd',
+                fill: true,
+                backgroundColor: 'rgba(13, 110, 253, 0.1)'
+            }]
+        }
+    });
+</script>
+
+</body>
+</html>

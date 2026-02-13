@@ -1,0 +1,344 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao.IndexModel
+
+@{
+    ViewData["Title"] = "Atleta";
+}
+
+@section Scripts
+{
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="text/javascript">
+
+
+        function drawSexoDonutsChart()
+        {
+            var chartData = @Html.Raw(Json.Serialize(Model.LutasDonutsModeList))
+
+            // soma total
+            var total = chartData.reduce(function (acc, item) {
+                return acc + item.value;
+            }, 0);
+
+            Morris.Donut({
+                element: 'chart-SexoDonuts',
+                data: chartData,
+                formatter: function (y) {
+
+                    if (total === 0)
+                        return '0%';
+
+                    var percentual = (y / total) * 100;
+                    return percentual.toFixed(1).replace('.', ',') + '%';
+                },
+                colors: [
+                    '#3498DB', // azul
+                    '#E74C3C'  // vermelho
+                ]
+            });
+        };       
+
+         function drawPontuacaoChart() {
+                var chartData = @Html.Raw(Json.Serialize(Model.PontucaoDTOList))
+
+                     Morris.Bar({
+                            element: 'chart-PontuacaoDTO',
+                            data: chartData,
+                            xkey: 'label',
+                            ykeys: ['quantidade'],
+                            labels: ['Qtd'],
+                            hideHover: 'auto',
+                            xLabelAngle: 0,
+
+                            barColors: function (row, series, type) {
+
+                                var colors = [
+                                    '#2ECC71',
+                                    '#3498DB',
+                                    '#9B59B6',
+                                    '#F1C40F',
+                                    '#E67E22',
+                                    '#E74C3C',
+                                    '#1ABC9C'
+                                ];
+
+                                return colors[row.x % colors.length];
+                            }
+                        });
+            };
+
+        $(document).ready(function () {
+                    drawSexoDonutsChart();
+                    drawPontuacaoChart();
+                })
+    </script>
+}
+
+<style>
+    /* Configurações de Página e Base */
+    @@page {
+        size: A4;
+        margin: 1cm;
+    }
+
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px; /* Base relativa */
+    }
+
+    /* Card do Atleta */
+    .athlete-card {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Foto Adaptável */
+    .photo-container {
+        width: 100%;
+        max-width: 12rem; /* Tamanho máximo relativo */
+        aspect-ratio: 1/1;
+        background-color: #e9ecef;
+        border: 2px solid #dee2e6;
+        border-radius: 1rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    /* Tipografia de Informação */
+    .info-label {
+        font-weight: bold;
+        color: #6c757d;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        margin-bottom: 0.1rem;
+    }
+
+    .info-value {
+        font-size: 0.9rem;
+        color: #212529;
+        margin-bottom: 0.75rem;
+        word-break: break-word;
+    }
+
+    .chart-container {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Ajustes Específicos para Impressão */
+    @@media print {
+        body {
+            background-color: white !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .btn, .natural-filter, breadcrumb, pager {
+            display: none !important;
+        }
+
+        #print-area,
+        #print-area * {
+            visibility: visible;
+        }
+
+        #print-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .athlete-card, .chart-container {
+            box-shadow: none !important;
+            border: 1px solid #eee !important;
+        }
+        /* Garante que o Grid do Bootstrap não quebre na impressão */
+        .col-print-3 {
+            width: 25% !important;
+            float: left;
+        }
+
+        .col-print-9 {
+            width: 75% !important;
+            float: left;
+        }
+
+        .col-print-4 {
+            width: 33.33% !important;
+            float: left;
+        }
+
+        .row {
+            display: flex !important;
+            flex-wrap: wrap !important;
+        }
+        /* Força a cor dos gráficos e fundos */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+    }
+</style>
+
+<breadcrumb items="Relatorios, Estatistica de Competição"></breadcrumb>
+
+<button class="btn btn-primary" onclick="window.print()">Imprimir</button>
+
+<hr class="no-print">
+
+<!-- Dados -->
+<div id="print-area" class="container-fluid">
+
+    <div class="athlete-card">
+        <div class="row align-items-center">
+         
+                    <div class="col-3 col-print-3">
+                        <div class="photo-container">
+                            @if (Model._ReportAtletasVW?.ArquivoImagemId > 0)
+                            {
+                                <img src="@Url.Page(null, "ConteudoDoArquivo", new { atletaId = Model._ReportAtletasVW.Id })"
+                                     alt="Foto do Atleta" />
+                            }
+                            else
+                            {
+                                <span class="text-muted">Sem Foto</span>
+                            }
+                        </div>
+                    </div>
+             
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-sm-4 col-lg-4">
+                                <div class="info-label">Atleta</div>
+                                <div class="info-value">
+                                    @{
+                                        @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Nome)
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="info-label">Idade</div>
+                                <div class="info-value">
+                                    @{
+                                        @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Idade)
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="info-label">Telefone</div>
+                                    <div class="info-value">
+                                        @{
+                                            @Html.DisplayFor(modelItem => Model._ReportAtletasVW.TelefonePrincipal)
+                                    }
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="info-label">Localidade</div>
+                                        <div class="info-value">
+                                            @{
+                                            @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Endereco)
+                                            }
+                                </div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="info-label">Clube / Escola</div>
+                                <div class="info-value">IFL</div>
+                            </div>
+                            <div class="col-sm-6 col-lg-4">
+                                <div class="info-label">Graduação</div>
+                                <div class="info-value">
+                                    @{
+                                        @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Graduacao)
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-print-6">
+                    <div class="chart-container">
+                        <h6 class="text-center mb-4 text-secondary">Vitórias</h6>
+                        <div id="chart-SexoDonuts" style="height:15rem!important;"></div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-print-6">
+                    <div class="chart-container">
+                        <h6 class="text-center mb-4 text-secondary">Vitórias por pontos</h6>
+                        <div id="chart-PontuacaoDTO" style="height:15rem!important;"></div>
+                    </div>
+                </div>
+
+                <div class="row margin-bottom-20" style="margin-top:20px!important;">
+                    <div class="col-md-12">
+                        <div class="row servive-block margin-bottom-10">
+
+
+
+                            <div class="col-md-4 col-sm-6">
+                                <div>
+                                    <div class=" panel panel-default">
+                                        <div class="panel-heading">
+                                            <i class="fa fa-bell fa-fw"></i> Painel de Notificações
+                                        </div>
+                                        <!-- /.panel-heading -->
+                                        <div class="panel-body">
+                                            <div class="list-group">
+                                                <a href="#" class="list-group-item">
+                                                    <i class="icon-envelope"></i> Tempo médio de lutas
+                                                    <span class="pull-right text-muted small">
+                                                        <em>@Model.TempoMedioLutas</em>
+                                                    </span>
+                                                </a>
+                                                <a href="#" class="list-group-item">
+                                                    <i class="icon-magic"></i> Golden Score(s)
+                                                    <span class="pull-right text-muted small">
+                                                        <em>@Model.QtdGoldemScores</em>
+                                                    </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            
+
+        </div>
+    </div>
+</div>
+
+<!-- Paginação -->
+<pager page="/Admin/General/Autores/Index"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

@@ -127,6 +127,7 @@ namespace IFL.WebApp.Infrastructure.Services
 
             if (atleta != null)
             {
+                Atleta.GraduacaoAsString = Atleta.Graduacao.GetDescription();
                 _dbContext.Entry(atleta).CurrentValues.SetValues(Atleta);
 
                 if (arquivoImagem?.FormFile?.Length > 0)

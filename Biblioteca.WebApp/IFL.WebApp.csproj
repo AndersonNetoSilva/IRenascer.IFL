@@ -10,6 +10,7 @@
   <ItemGroup>
     <Compile Remove="Migrations\20260202214707_Add-Pesagem.cs" />
     <Compile Remove="Migrations\20260202214707_Add-Pesagem.Designer.cs" />
+    <Compile Remove="Model\AnexoBase.cs" />
   </ItemGroup>
 
   <ItemGroup>

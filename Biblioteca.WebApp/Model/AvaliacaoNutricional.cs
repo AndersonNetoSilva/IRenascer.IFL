@@ -108,6 +108,7 @@ namespace IFL.WebApp.Model
         [Display(Name = "Imagem")]
         public Arquivo? ArquivoImagem { get; set; }
 
+        public List<AvaliacaoNutricionalAnexo> Anexos { get; set; } = new();
     }
 
 }

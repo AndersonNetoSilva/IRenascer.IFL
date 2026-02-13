@@ -45,15 +45,24 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Atletas
                 return NotFound();
             }
 
-            var atleta = await _repository.GetByIdAsync(id ?? throw new ArgumentException(nameof(id)));
-
-            if (atleta != null)
+            try
             {
-                Atleta = atleta;
+                var atleta = await _repository.GetForUpdateAsync(id);               
 
-                _repository.Remove(Atleta);
-                await _unitOfWork.CommitAsync();
+                if (atleta != null)
+                {
+                    Atleta = atleta;
+
+                    _repository.Remove(Atleta);
+                    await _unitOfWork.CommitAsync();
+                }
             }
+            catch (Exception ex)
+            {
+                ModelState.AddModelError("1", ex.Message);
+                throw;
+            }
+            
 
             return RedirectToPage("./Index");
         }

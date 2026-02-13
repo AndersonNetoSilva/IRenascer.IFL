@@ -159,6 +159,12 @@ namespace IFL.WebApp.Migrations
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
+                    b.Property<int>("Graduacao")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GraduacaoAsString")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Logradouro")
                         .IsRequired()
                         .HasMaxLength(40)
@@ -309,7 +315,38 @@ namespace IFL.WebApp.Migrations
 
                     b.HasIndex("AtletaId");
 
-                    b.ToTable("AvaliacoesFuncionais");
+                    b.ToTable("AvaliacoesNutricionais");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricionalAnexo", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AnexoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("AvaliacaoNutricionalId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasMaxLength(40)
+                        .HasColumnType("nvarchar(40)");
+
+                    b.Property<int?>("Tipo")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AnexoId");
+
+                    b.HasIndex("AvaliacaoNutricionalId");
+
+                    b.ToTable("AvaliacaoNutricionalAnexo");
                 });
 
             modelBuilder.Entity("IFL.WebApp.Model.Colaborador", b =>
@@ -380,6 +417,83 @@ namespace IFL.WebApp.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colaboradores");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.EstatisticaCompeticao", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AtletaId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("Data")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EventoId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AtletaId");
+
+                    b.HasIndex("EventoId");
+
+                    b.ToTable("EstatisticasCompeticao");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.EstatisticaCompeticaoDetalhe", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("EstatisticaCompeticaoId")
+                        .HasColumnType("int");
+
+                    b.Property<bool?>("GoldenScore")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Hansokumake")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Ippon")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Shido")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TecnicaAplicou")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TecnicaRecebeu")
+                        .HasColumnType("int");
+
+                    b.Property<TimeSpan>("TempoDaLuta")
+                        .HasColumnType("time");
+
+                    b.Property<TimeSpan>("TempoDoGoldenScore")
+                        .HasColumnType("time");
+
+                    b.Property<bool?>("Vitoria")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("Wazari")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Yuko")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EstatisticaCompeticaoId");
+
+                    b.ToTable("EstatisticaCompeticaoDetalhe");
                 });
 
             modelBuilder.Entity("IFL.WebApp.Model.Evento", b =>
@@ -740,6 +854,53 @@ namespace IFL.WebApp.Migrations
                     b.Navigation("Atleta");
                 });
 
+            modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricionalAnexo", b =>
+                {
+                    b.HasOne("IFL.WebApp.Model.Arquivo", "Anexo")
+                        .WithMany()
+                        .HasForeignKey("AnexoId");
+
+                    b.HasOne("IFL.WebApp.Model.AvaliacaoNutricional", "AvaliacaoNutricional")
+                        .WithMany("Anexos")
+                        .HasForeignKey("AvaliacaoNutricionalId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Anexo");
+
+                    b.Navigation("AvaliacaoNutricional");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.EstatisticaCompeticao", b =>
+                {
+                    b.HasOne("IFL.WebApp.Model.Atleta", "Atleta")
+                        .WithMany()
+                        .HasForeignKey("AtletaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("IFL.WebApp.Model.Evento", "Evento")
+                        .WithMany()
+                        .HasForeignKey("EventoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Atleta");
+
+                    b.Navigation("Evento");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.EstatisticaCompeticaoDetalhe", b =>
+                {
+                    b.HasOne("IFL.WebApp.Model.EstatisticaCompeticao", "EstatisticaCompeticao")
+                        .WithMany("Detalhes")
+                        .HasForeignKey("EstatisticaCompeticaoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EstatisticaCompeticao");
+                });
+
             modelBuilder.Entity("IFL.WebApp.Model.Pesagem", b =>
                 {
                     b.HasOne("IFL.WebApp.Model.Atleta", "Atleta")
@@ -773,6 +934,16 @@ namespace IFL.WebApp.Migrations
             modelBuilder.Entity("IFL.WebApp.Model.Atleta", b =>
                 {
                     b.Navigation("AtletaGrades");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricional", b =>
+                {
+                    b.Navigation("Anexos");
+                });
+
+            modelBuilder.Entity("IFL.WebApp.Model.EstatisticaCompeticao", b =>
+                {
+                    b.Navigation("Detalhes");
                 });
 #pragma warning restore 612, 618
         }

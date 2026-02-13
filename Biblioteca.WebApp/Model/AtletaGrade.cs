@@ -39,10 +39,16 @@ namespace IFL.WebApp.Model
     public class AtletaGradeVM : IPermiteMarcarParaExclusao
     {
         public int? Id { get; set; }
-        public TipoDeVenda Tipo { get; set; }
+
+        [Display(Name = "Modalidade")]
         public int ModalidadeId { get; set; }
+
+        [Display(Name = "Horario")]
         public int HorarioId { get; set; }
+
+        [Display(Name = "Atleta")]
         public int AtletaId { get; set; }
+
         public bool MarcadoParaExclusao { get; set; } = false;
     }
 

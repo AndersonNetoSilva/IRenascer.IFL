@@ -5,7 +5,7 @@
     ViewData["Title"] = "Inserir";
 }
 
-<breadcrumb items="Cadastros, Gerais, AvaliacoesNutricional, Inserir"></breadcrumb>
+<breadcrumb items="Cadastros, Gerais, Avaliação Nutricional, Inserir"></breadcrumb>
 
 <div class="row">
     <div class="col-md-10">
@@ -83,7 +83,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="form-group">
                         <label asp-for="AvaliacaoNutricional.MassaMuscularAsString" class="control-label"></label>
                         <input asp-for="AvaliacaoNutricional.MassaMuscularAsString" class="form-control" />
@@ -124,6 +124,56 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-md-12">
+                    <h5 class="mt-4">Anexos</h5>
+
+                    <table id="tabelaAnexos" class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button type="button" class="btn btn-outline-primary btn-sm p-1"
+                                            onclick="adicionarAnexo()">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </button>
+                                </th>
+                                <th>Descrição</th>
+                                <th>Arquivo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Anexos.Count; i++)
+                            {
+                                <tr data-index="@i">
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                                onclick="marcarParaExclusao(this, 'Anexos');">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                        <input type="hidden" asp-for="Anexos[@i].Id" />
+                                        <input type="hidden" asp-for="Anexos[@i].MarcadoParaExclusao" />
+                                    </td>
+                                    <td>
+                                        <input asp-for="Anexos[@i].Descricao" class="form-control" />
+                                        <span asp-validation-for="Anexos[@i].Descricao" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Anexos[@i].FormFile"
+                                               type="file"
+                                               class="form-control"
+                                               accept="*" />
+                                        <span asp-validation-for="Anexos[@i].FormFile" class="text-danger"></span>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
             <div class="form-group mt-3 d-flex justify-content-between">
                 <input type="submit" value="Gravar" class="btn btn-primary" />
                 <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
@@ -136,4 +186,57 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    <script>
+                
+                let contadorAnexo = `@Model.Anexos.Count`;
+
+                function adicionarAnexo() {
+                    const tbody = document.querySelector('#tabelaAnexos tbody');
+
+                    const novaLinha = document.createElement('tr');
+                    novaLinha.innerHTML = `
+                        <td>
+                            <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                    onclick="marcarParaExclusao(this, 'Anexos');">
+                                <i class="bi bi-trash"></i>
+                            </button>
+
+                        <input type="hidden" name="Anexos[${contadorAnexo}].Id" value="0"/>
+                        <input type="hidden" name="Anexos[${contadorAnexo}].MarcadoParaExclusao" value="false"/>
+                        </td>
+                        <td>
+                        <input name="Anexos[${contadorAnexo}].Descricao" class="form-control" />
+                                <span class="text-danger field-validation-valid"
+                                           data-valmsg-for="Anexos[${contadorAnexo}].Descricao"
+                                       data-valmsg-replace="true"></span>
+                        </td>
+                        <td>
+                        <input name="Anexos[${contadorAnexo}].FormFile"
+                                   type="file"
+                                   class="form-control"
+                                   accept="*" />
+                        </td>
+                    `;
+
+                    tbody.appendChild(novaLinha);
+                    contadorAnexo++;
+                }
+
+                function marcarParaExclusao(button, arrayName) {
+                    const row = button.closest('tr');
+
+                    const hidden = row.querySelector(
+                        `input[type="hidden"][name^="${arrayName}["][name$=".MarcadoParaExclusao"]`
+                    );
+
+                    if (!hidden) return;
+
+                    hidden.value = "true";
+
+                    row.classList.add('table-danger', 'text-muted');
+
+                    button.disabled = true;
+                };
+    </script>
 }

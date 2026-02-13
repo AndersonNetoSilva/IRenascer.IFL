@@ -18,6 +18,7 @@ namespace IFL.WebApp.Infrastructure.Repositories
             return await Query()
                 .Include(x => x.Atleta)
                 .Include(x => x.ArquivoImagem)
+                .Include(x=> x.Anexos)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
     }

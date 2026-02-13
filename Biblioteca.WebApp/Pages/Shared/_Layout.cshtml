@@ -20,7 +20,7 @@
                         new MenuItem { Title = "Competições/Eventos",   Url = "/Admin/General/Eventos/Index" },
                         new MenuItem { Title = "Horários",              Url = "/Admin/General/Horarios/Index" },
                         new MenuItem { Title = "Modalidades",           Url = "/Admin/General/Modalidades/Index" },
-                        new MenuItem { Title = "   ", Url = "/Admin/Livros/Registro/Index" },
+                        //new MenuItem { Title = "   ", Url = "/Admin/Livros/Registro/Index" },
                     }
                 },
                 new MenuItem
@@ -28,13 +28,12 @@
                     Title = "Operacional",
                     Children = new List<MenuItem>
                     {
-                        new MenuItem { Title = "Anaminese Nutri", Url = "/Admin/Livros/Registro/Index" },
-                        new MenuItem { Title = "Estatística Competição", Url = "/Admin/Livros/Registro/Index" },
+                        new MenuItem { Title = "Estatística Competição", Url = "/Admin/General/EstatisticasCompeticao/Index" },
                         new MenuItem { Title = "Graduação", Url = "/Admin/Livros/Registro/Index" },
                         new MenuItem { Title = "Presença", Url = "/Admin/Livros/Registro/Index" },
-                        new MenuItem { Title = "---------------", Url = "/Admin/Livros/Registro/Index" },
-                        new MenuItem { Title = "Cadastro", Url = "/Admin/Livros/Registro/Index" },
-                        new MenuItem { Title = "Preço de Venda", Url = "/Admin/Livros/PrecosDeVenda/Index" },
+                        //new MenuItem { Title = "---------------", Url = "/Admin/Livros/Registro/Index" },
+                        //new MenuItem { Title = "Cadastro", Url = "/Admin/Livros/Registro/Index" },
+                        //new MenuItem { Title = "Preço de Venda", Url = "/Admin/Livros/PrecosDeVenda/Index" },
                     }
                 },
                 new MenuItem
@@ -61,6 +60,8 @@
                         new MenuItem { Title = "Autores e Livros", Url = "/Admin/Relatorios/Livros/Index" },
                         new MenuItem { Title = "Atletas", Url = "/Admin/Relatorios/Atletas/Index" },
                         new MenuItem { Title = "Colaboradores", Url = "/Admin/Relatorios/Colaboradores/Index" },
+                        new MenuItem { Title = "Estatistica de Competição", Url = "/Admin/General/Atletas/FiltroEstatiscaCompeticao" },
+
                     }
                 }
             }

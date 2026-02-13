@@ -109,6 +109,11 @@ namespace IFL.WebApp.Model
         [Display(Name = "Tipo de Escola")]
         public required TipoEscola TipoEscola { get; set; }
 
+        [Display(Name = "Graduação")]
+        public required GraduacaoJudo Graduacao { get; set; }
+
+        public string? GraduacaoAsString { get; set; }
+
         [Display(Name = "Atleta Ativo")]
         public bool Ativo { get; set; } = true;
 
@@ -202,6 +207,56 @@ namespace IFL.WebApp.Model
         NaoInformar = 2
     }
 
+    public enum GraduacaoJudo
+    {
+        [Display(Name = "Faixa Branca")]
+        [Description("Faixa Branca")]
+        FaixaBranca = 0,
+
+        [Display(Name = "Faixa Cinza")]
+        [Description("Faixa Cinza")]
+        FaixaCinza = 1,
+
+        [Display(Name = "Faixa Azul")]
+        [Description("Faixa Azul")]
+        FaixaAzul = 2,
+
+        [Display(Name = "Faixa Amarela")]
+        [Description("Faixa Amarela")]
+        FaixaAmarela = 3,
+
+        [Display(Name = "Faixa Laranja")]
+        [Description("Faixa Laranja")]
+        FaixaLaranja = 4,
+
+        [Display(Name = "Faixa Verde")]
+        [Description("Faixa Verde")]
+        FaixaVerde = 5,
+
+        [Display(Name = "Faixa Roxa")]
+        [Description("Faixa Roxa")]
+        FaixaRoxa = 6,
+
+        [Display(Name = "Faixa Marrom")]
+        [Description("Faixa Marrom")]
+        FaixaMarrom = 7,
+
+        [Display(Name = "Faixa Preta - 1º DAN")]
+        [Description("Faixa Preta - 1º DAN")]
+        FaixaPreta = 8,
+
+        [Display(Name = "Faixa Preta - 2º DAN")]
+        [Description("Faixa Preta - 2º DAN")]
+        FaixaPreta2 = 9,
+
+        [Display(Name = "Faixa Preta - 3º DAN")]
+        [Description("Faixa Preta - 3º DAN")]
+        FaixaPreta3 = 10,
+
+        [Display(Name = "Faixa Preta - 4º DAN")]
+        [Description("Faixa Preta - 4º DAN")]
+        FaixaPreta4 = 11
+    }
     public enum TipoEscola
     {
         [Display(Name = "Privada")]

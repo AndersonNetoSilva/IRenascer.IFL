@@ -1,5 +1,9 @@
 ﻿using IFL.WebApp.Infrastructure.Abstractions.Repositories;
+using IFL.WebApp.Infrastructure.Abstractions.Services;
+using IFL.WebApp.Infrastructure.Exceptions;
 using IFL.WebApp.Infrastructure.Pages;
+using IFL.WebApp.Infrastructure.Repositories;
+using IFL.WebApp.Infrastructure.Services;
 using IFL.WebApp.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -10,15 +14,47 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Atletas
 {
     public class EditModel : CrudPageModel<Atleta, IAtletaRepository>
     {
-        public EditModel(IAtletaRepository repository, IUnitOfWork unitOfWork)
+        private readonly IModalidadeRepository _modalidadeRepository;
+        private readonly IHorarioRepository _horarioRepository;
+        private readonly IAtletaService _atletaService;
+
+        public EditModel(IAtletaRepository repository,
+                         IModalidadeRepository modalidadeRepository,
+                         IHorarioRepository horarioRepository,
+                         IAtletaService atletaService,
+                         IUnitOfWork unitOfWork)
             : base(repository, unitOfWork)
         {
+            _modalidadeRepository = modalidadeRepository;
+            _horarioRepository = horarioRepository;
+            _atletaService = atletaService;
 
         }
 
         [BindProperty]
         public Atleta Atleta { get; set; } = default!;
 
+        [BindProperty]
+        public List<AtletaGradeVM> AtletaGrades { get; set; } = new();
+        public List<SelectListItem> Horarios { get; set; } = new();
+        public List<SelectListItem> Modalidades { get; set; } = new();
+
+        [BindProperty]
+        public ArquivoVM ArquivoImagem { get; set; } = new();
+        private void BindSelectLists()
+        {
+            Horarios = _horarioRepository.Query()
+                           .Where(a => a.Ativo)
+                           .Select(a => new SelectListItem { Value = a.Id.ToString(), Text = a.Nome })
+                           .OrderBy(a => a.Text)
+                           .ToList();
+
+            Modalidades = _modalidadeRepository.Query()
+                           .Where(a => a.Ativo)
+                           .Select(a => new SelectListItem { Value = a.Id.ToString(), Text = a.Nome })
+                           .OrderBy(a => a.Text)
+                           .ToList();
+        }
         public async Task<IActionResult> OnGetAsync(int? id)
         {
             if (id == null)
@@ -26,16 +62,42 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Atletas
                 return NotFound();
             }
 
-            var atleta = await _repository.GetByIdAsync(id ?? throw new ArgumentException(nameof(id)));
+            var atleta = await _repository.GetForUpdateAsync(id);
 
             if (atleta == null)
             {
                 return NotFound();
             }
 
+            AtletaGrades = atleta.AtletaGrades
+                                .Select(p => new AtletaGradeVM
+                                {
+                                    Id = p.Id,
+                                    ModalidadeId = p.ModalidadeId,
+                                    HorarioId = p.HorarioId
+                                })
+                                .ToList();
+
             Atleta = atleta;
 
+            BindSelectLists();
+
             return Page();
+        }
+
+        public async Task<IActionResult> OnGetConteudoDoArquivoAsync(int atletaId)
+        {
+            var atleta = await _repository.Query()
+                                .Include(x => x.ArquivoImagem)
+                                .FirstOrDefaultAsync(x => x.Id == atletaId);
+
+            if (atleta?.ArquivoImagem == null)
+                return NotFound();
+
+            return File(
+                atleta.ArquivoImagem.Conteudo,
+                atleta.ArquivoImagem.ContentType
+            );
         }
 
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -44,24 +106,27 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Atletas
         {
             if (!ModelState.IsValid)
             {
+                BindSelectLists();
                 return Page();
             }
 
             try
             {
-                _repository.Update(Atleta);
-                await _unitOfWork.CommitAsync();
+                await _atletaService.UpdateAsync(Atleta, AtletaGrades, ArquivoImagem);
             }
-            catch (DbUpdateConcurrencyException)
+            catch (KeyNotFoundException)
             {
-                if (await _repository.ExistsAsync(x => x.Id == Atleta.Id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
+                BindSelectLists();
+                return NotFound();
+            }
+            catch (ValidationListException ex)
+            {
+                BindSelectLists();
+
+                foreach (var error in ex.Errors)
+                    ModelState.AddModelError(error.Key, error.Value);
+
+                return Page();
             }
 
             return RedirectToPage("./Index");

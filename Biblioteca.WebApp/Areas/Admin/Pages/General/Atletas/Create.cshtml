@@ -204,7 +204,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-8">
                     <div class="form-group">
                         <label asp-for="Atleta.AcionarUrgencia" class="control-label"></label>
                         <input asp-for="Atleta.AcionarUrgencia" class="form-control" />
@@ -216,13 +216,38 @@
 
             <div class="col-md-3">
                 <div class="form-group form-check">
-                    <input asp-for="Atleta.Ativo" class="form-check-input" />
+                    <input asp-for="Atleta.Ativo" class="form-check-input" checked="checked" />
                     <label asp-for="Atleta.Ativo" class="form-check-label"></label>
                     <span asp-validation-for="Atleta.Ativo" class="text-danger"></span>
                 </div>
             </div>
 
- 
+
+            <div class="row">
+                <div class="col-md-6 mb3">
+                    <label class="form-label">Imagem</label>
+                    <input asp-for="ArquivoImagem.FormFile"
+                           type="file"
+                           class="form-control"
+                           accept="image/*" />
+                    <span asp-validation-for="ArquivoImagem.FormFile" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <span class="text-danger">*</span>
+                        <label asp-for="Atleta.Graduacao" class="control-label"></label>
+                        <select asp-for="Atleta.Graduacao"
+                                class="form-select"
+                                asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.GraduacaoJudo>()">
+                        </select>
+                        <span asp-validation-for="Atleta.Graduacao" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+             
+
+
             <div class="row">
                 <div class="col-md-12">
                     <h5 class="mt-4">Modalidades e Horários</h5>
@@ -246,7 +271,7 @@
                                 <tr data-index="@i">
                                     <td>
                                         <button type="button" class="btn btn-outline-danger btn-sm p-1"
-                                                onclick="marcarParaExclusao(this, 'PrecosDeVenda');">
+                                                onclick="marcarParaExclusao(this, 'AtletaGrades');">
                                             <i class="bi bi-trash"></i>
                                         </button>
 
@@ -303,53 +328,54 @@
                 let contador = `@Model.AtletaGrades.Count`;
 
                 const horarios = `@Html.Raw(string.Join("",
-                                                Model.Horarios.Select(e => $"<option value=\"{e.Value}\">{e.Text}</option>")))`
+                                                      Model.Horarios.Select(e => $"<option value=\"{e.Value}\">{e.Text}</option>")))`
 
                 const modalidades = `@Html.Raw(string.Join("",
-                                                                Model.Modalidades.Select(e => $"<option value=\"{e.Value}\">{e.Text}</option>")))`;
+                                              Model.Modalidades.Select(e => $"<option value=\"{e.Value}\">{e.Text}</option>")))`;
 
     function adicionarLinha() {
         const tbody = document.querySelector('table tbody');
 
-                    const novaLinha = document.createElement('tr');
-                    novaLinha.innerHTML = `
-                        <td>
-                            <button type="button" class="btn btn-outline-danger btn-sm p-1"
-                                    onclick="this.closest('tr').remove()">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                            <input type="hidden" name="AtletaGrades[${contador}].Id" value="0" />
-                        </td>
-                        <td>
-                            <select name="AtletaGrades[${contador}].HorarioId" class="form-select">
-                                    ${horarios}
-                            </select>
-                        </td>
-                        <td>
-                            <select name="AtletaGrades[${contador}].ModalidadeId" class="form-select">
-                                    ${modalidades}
-                            </select>
-                        </td>
-                    `;
+                        const novaLinha = document.createElement('tr');
+                        novaLinha.innerHTML = `
+                            <td>
+                                <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                        onclick="this.closest('tr').remove()">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                                <input type="hidden" name="AtletaGrades[${contador}].Id" value="0" />
+                            </td>
+                            <td>
+                                <select name="AtletaGrades[${contador}].ModalidadeId" class="form-select">
+                                        ${modalidades}
+                                </select>
 
-                    tbody.appendChild(novaLinha);
-                    contador++;
-                };
+                            </td>
+                            <td>
+                                <select name="AtletaGrades[${contador}].HorarioId" class="form-select">
+                                        ${horarios}
+                                </select>
+                            </td>
+                        `;
 
-                function marcarParaExclusao(button, arrayName) {
-                    const row = button.closest('tr');
+                        tbody.appendChild(novaLinha);
+                        contador++;
+                    };
 
-                    const hidden = row.querySelector(
-                        `input[type="hidden"][name^="${arrayName}["][name$=".MarcadoParaExclusao"]`
-                    );
+                    function marcarParaExclusao(button, arrayName) {
+                        const row = button.closest('tr');
 
-                    if (!hidden) return;
+                        const hidden = row.querySelector(
+                            `input[type="hidden"][name^="${arrayName}["][name$=".MarcadoParaExclusao"]`
+                        );
 
-                    hidden.value = "true";
+                        if (!hidden) return;
 
-                    row.classList.add('table-danger', 'text-muted');
+                        hidden.value = "true";
 
-                    button.disabled = true;
-                };
+                        row.classList.add('table-danger', 'text-muted');
+
+                        button.disabled = true;
+                    };
     </script>
 }

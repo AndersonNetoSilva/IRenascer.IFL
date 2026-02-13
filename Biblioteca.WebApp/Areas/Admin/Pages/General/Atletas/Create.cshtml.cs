@@ -29,7 +29,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Atletas
         }
 
         public IActionResult OnGet()
-        {
+        {          
             BindSelectLists();
             return Page();
         }

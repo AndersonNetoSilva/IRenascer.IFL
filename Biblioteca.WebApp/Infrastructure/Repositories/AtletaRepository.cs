@@ -21,5 +21,13 @@ namespace IFL.WebApp.Infrastructure.Repositories
                 .Include(x => x.ArquivoImagem)
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
+
+        public  bool ExiteAtletaNaModalidade(int? modalidadeId)
+
+        {
+            return  Query()
+                      .Any(x => x.AtletaGrades.Any(g=> g.ModalidadeId == modalidadeId));
+        }
+
     }
 }

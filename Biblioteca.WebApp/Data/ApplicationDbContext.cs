@@ -16,11 +16,8 @@ namespace IFL.WebApp.Data
 
 
         public DbSet<Assunto> Assuntos { get; set; }
-
         public DbSet<Autor> Autores { get; set; }
-
         public DbSet<Livro> Livros { get; set; }
-
         public DbSet<PrecoDeVenda> PrecosDeVenda { get; set; }
 
         //IFL
@@ -30,8 +27,10 @@ namespace IFL.WebApp.Data
         public DbSet<Horario> Horarios { get; set; }
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Pesagem> Pesagens { get; set; }
-        public DbSet<AvaliacaoNutricional> AvaliacoesFuncionais { get; set; }
+        public DbSet<AvaliacaoNutricional> AvaliacoesNutricionais { get; set; }
         public DbSet<Arquivo> Arquivos { get; set; }
+
+        public DbSet<EstatisticaCompeticao> EstatisticasCompeticao { get; set; }
 
         public DbSet<ReportLivrosView> ReportLivrosViewSet => Set<ReportLivrosView>();
                 
@@ -81,6 +80,13 @@ namespace IFL.WebApp.Data
 
             builder.Entity<Atleta>()
                 .HasMany(p => p.AtletaGrades);
+
+            builder.Entity<AvaliacaoNutricional>()
+                .HasMany(p => p.Anexos);
+
+            builder.Entity<EstatisticaCompeticao>()
+                .HasMany(p => p.Detalhes);
+
         }
     }
 }

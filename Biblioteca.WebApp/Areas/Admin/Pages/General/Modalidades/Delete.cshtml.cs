@@ -4,15 +4,18 @@ using IFL.WebApp.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace IFL.WebApp.Areas.Admin.Pages.General.Modalidades
 {
     public class DeleteModel : CrudPageModel<Modalidade, IModalidadeRepository>
     {
-        public DeleteModel(IModalidadeRepository repository, IUnitOfWork unitOfWork)
+        private readonly IAtletaRepository _atletaRepository;
+        public DeleteModel(IModalidadeRepository repository, IUnitOfWork unitOfWork,
+                                IAtletaRepository atletaRepository)
             : base(repository, unitOfWork)
         {
-
+            _atletaRepository = atletaRepository;       
         }
 
         [BindProperty]
@@ -51,8 +54,20 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Modalidades
             {
                 Modalidade = modalidade;
 
-                _repository.Remove(Modalidade);
-                await _unitOfWork.CommitAsync();
+                try
+                {
+                    if (_atletaRepository.ExiteAtletaNaModalidade(id))
+                        throw new Exception("Existe Modalidade associada a Atleta.");
+
+                    _repository.Remove(Modalidade);
+                    await _unitOfWork.CommitAsync();
+                }
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError(string.Empty, ex.Message);
+                    return Page();
+                }
+
             }
 
             return RedirectToPage("./Index");

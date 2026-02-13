@@ -1,0 +1,260 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.EstatisticasCompeticao.CreateModel
+
+@{
+    ViewData["Title"] = "Inserir";
+}
+
+<breadcrumb items="Cadastros, Gerais, Estatisticas Competicao, Inserir"></breadcrumb>
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="form-group">
+                        <label asp-for="EstatisticaCompeticao.EventoId"></label>
+                        <select asp-for="EstatisticaCompeticao.EventoId" asp-items="Model.Eventos" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="EstatisticaCompeticao.EventoId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="EstatisticaCompeticao.AtletaId"></label>
+                        <select asp-for="EstatisticaCompeticao.AtletaId" asp-items="Model.Atletas" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="EstatisticaCompeticao.AtletaId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="EstatisticaCompeticao.Data" class="control-label"></label>
+                        <input asp-for="EstatisticaCompeticao.Data" type="date" class="form-control" />
+                        <span asp-validation-for="EstatisticaCompeticao.Data" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="col-md-15">
+                    <h5 class="mt-4">Lutas</h5>
+
+                    <table id="tabelaAnexos" class="table table-sm w-100">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <button type="button" class="btn btn-outline-primary btn-sm p-1"
+                                            onclick="adicionarDetalhe()">
+                                        <i class="bi bi-plus-circle"></i>
+                                    </button>
+                                </th>
+                                <th>Vitória</th>
+                                <th>Yuko</th>
+                                <th>Wazari</th>
+                                <th>Ippon</th>
+                                <th>Hansokumake</th>
+                                <th>Shido</th>
+                                <th>Tempo</th>
+                                <th>G. Score</th>
+                                <th>Tempo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Detalhes.Count; i++)
+                            {
+                                <tr data-index="@i">
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                                onclick="marcarParaExclusao(this, 'AnexosDoLivro');">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                        <input type="hidden" asp-for="Detalhes[@i].Id" />
+                                        <input type="hidden" asp-for="Detalhes[@i].MarcadoParaExclusao" />
+                                    </td>
+                                    <td>
+                                        <div class="col-md-1">
+                                            <input asp-for="Detalhes[@i].Vitoria" class="form-check-input" />
+                                            <span asp-validation-for="Detalhes[@i].Vitoria" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="col-md-1">
+                                            <input asp-for="Detalhes[@i].Yuko" class="form-control" />
+                                            <span asp-validation-for="Detalhes[@i].Yuko" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Detalhes[@i].Wazari" class="form-control" />
+                                        <span asp-validation-for="Detalhes[@i].Wazari" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Detalhes[@i].Ippon" class="form-control" />
+                                        <span asp-validation-for="Detalhes[@i].Ippon" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Detalhes[@i].Hansokumake" class="form-control" />
+                                        <span asp-validation-for="Detalhes[@i].Hansokumake" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Detalhes[@i].Shido" class="form-control" />
+                                        <span asp-validation-for="Detalhes[@i].Shido" class="text-danger"></span>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Detalhes[@i].TempoDaLuta" type="time" class="form-control" />
+                                    </td> 
+                                    <td>
+                                        <div class="col-md-1">
+                                            <input asp-for="Detalhes[@i].GoldenScore" class="form-check-input" />
+                                            <span asp-validation-for="Detalhes[@i].GoldenScore" class="text-danger"></span>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <input asp-for="Detalhes[@i].TempoDoGoldenScore" type="time" class="form-control" />
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+           
+
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <input type="submit" value="Gravar" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+                let contadorAnexo = `@Model.Detalhes.Count`;
+    
+                function adicionarDetalhe() {
+                    const tbody = document.querySelector('#tabelaAnexos tbody');
+
+                    const novaLinha = document.createElement('tr');
+                    novaLinha.innerHTML = `
+                                <tr>
+                                    <td>
+                                        <button type="button" class="btn btn-outline-danger btn-sm p-1"
+                                                onclick="marcarParaExclusao(this, 'Detalhes');">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                        <input type="hidden" name="Detalhes[${contadorAnexo}].Id" value="0"/>
+                                        <input type="hidden" name="Detalhes[${contadorAnexo}].MarcadoParaExclusao" value="false"/>
+                                    </td>
+
+                                    <td class="text-center">
+                                        <input type="checkbox"
+                                               name="Detalhes[${contadorAnexo}].Vitoria"
+                                               value="true"
+                                               class="form-check-input" />
+
+                                        <input type="hidden"
+                                               name="Detalhes[${contadorAnexo}].Vitoria"
+                                               value="false" />
+                                    </td>
+
+                                        <td>
+                                            <input name="Detalhes[${contadorAnexo}].Yuko"
+                                                   class="form-control form-control-sm"
+                                                   style="max-width:60px" />
+
+                                            <span class="text-danger field-validation-valid"
+                                                  data-valmsg-for="Detalhes[${contadorAnexo}].Yuko"
+                                                  data-valmsg-replace="true"></span>
+                                        </td>
+
+                                    <td>
+                                        <input name="Detalhes[${contadorAnexo}].Wazari" 
+                                                class="form-control form-control-sm"
+                                                style="max-width:60px"/>
+                                        <span class="text-danger field-validation-valid"
+                                              data-valmsg-for="Detalhes[${contadorAnexo}].Wazari"
+                                              data-valmsg-replace="true"></span>
+                                    </td>
+
+                                    <td>
+                                <input name="Detalhes[${contadorAnexo}].Ippon" 
+                                            class="form-control form-control-sm"
+                                           style="max-width:60px" />
+                                        <span class="text-danger field-validation-valid"
+                                              data-valmsg-for="Detalhes[${contadorAnexo}].Ippon"
+                                              data-valmsg-replace="true"></span>
+                                    </td>
+
+                                    <td>
+                                <input name="Detalhes[${contadorAnexo}].Hansokumake" class="form-control form-control-sm"
+                                           style="max-width:100px" />
+                                        <span class="text-danger field-validation-valid"
+                                              data-valmsg-for="Detalhes[${contadorAnexo}].Hansokumake"
+                                              data-valmsg-replace="true"></span>
+                                    </td>
+
+                                    <td>
+                                <input name="Detalhes[${contadorAnexo}].Shido" class="form-control form-control-sm"
+                                           style="max-width:60px" />
+                                        <span class="text-danger field-validation-valid"
+                                              data-valmsg-for="Detalhes[${contadorAnexo}].Shido"
+                                              data-valmsg-replace="true"></span>
+                                    </td>
+
+                                   <td>
+                                    <input asp-for="Detalhes[${contadorAnexo}].TempoDaLuta" type="time" class="form-control" style="max-width:110px"/>
+                                   </td>
+
+                                   <td class="text-center">
+                                        <input type="checkbox"
+                                               name="Detalhes[${contadorAnexo}].GoldenScore"
+                                               value="true"
+                                               class="form-check-input" />
+
+                                        <input type="hidden"
+                                       name="Detalhes[${contadorAnexo}].GoldenScore"
+                                               value="false" />
+                                    </td>
+                                  <td>
+                             <input asp-for="Detalhes[${contadorAnexo}].TempoDoGoldenScore" type="time" class="form-control" style="max-width:110px"/>
+                                  </td>
+                                </tr>
+                        
+                    `;
+
+                    tbody.appendChild(novaLinha);
+                    contadorAnexo++;
+                }
+
+                function marcarParaExclusao(button, arrayName) {
+                    const row = button.closest('tr');
+
+                    const hidden = row.querySelector(
+                        `input[type="hidden"][name^="${arrayName}["][name$=".MarcadoParaExclusao"]`
+                    );
+
+                    if (!hidden) return;
+
+                    hidden.value = "true";
+
+                    row.classList.add('table-danger', 'text-muted');
+
+                    button.disabled = true;
+                };
+    </script>
+ 
+}

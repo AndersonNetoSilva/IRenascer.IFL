@@ -65,7 +65,10 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
 
         [BindProperty]
         public ArquivoVM ArquivoImagem { get; set; } = new();
-        
+
+        [BindProperty]
+        public List<AvaliacaoNutricionalAnexoVM> Anexos { get; set; } = new();
+
         public static void ValidarValor(AvaliacaoNutricional avaliacaoNutricional)
         {
             if (!avaliacaoNutricional.PesoAsString.TryParseValor(out string errorMessage, out var valorDecimal))
@@ -134,7 +137,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
 
             try
             {
-                await _avaliacaoService.AddAsync(AvaliacaoNutricional, ArquivoImagem);
+                await _avaliacaoService.AddAsync(AvaliacaoNutricional, ArquivoImagem, Anexos);
             }
             catch (KeyNotFoundException)
             {

@@ -3,56 +3,44 @@
   "WorkspaceRootPath": "C:\\Projeto\\IRenascer.IFL\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\extensions\\dependencyinjectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\extensions\\dependencyinjectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\pages\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\filtroestatiscacompeticao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\filtroestatiscacompeticao.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\filtroestatiscacompeticao.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\filtroestatiscacompeticao.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\estatisticacompeticaodetalhe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\estatisticacompeticaodetalhe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\pesagens\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\avaliacoesnutricional\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\atletas\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\services\\atletaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\services\\atletaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\atleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\atleta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\repositories\\atletarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\repositories\\atletarepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\avaliacaonutricional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\avaliacaonutricional.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\pesagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\pesagem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -67,170 +55,131 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DependencyInjectionExtensions.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Extensions\\DependencyInjectionExtensions.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAgwBsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T01:52:06.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAMgAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-09T01:36:39.887Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml",
-              "ViewState": "AgIAAEMBAAAAAAAAAAAYwEsBAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-09T01:33:47.005Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAIwEAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T01:30:04.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Pesagens\\Create.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T01:29:59.698Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Create.cshtml.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Create.cshtml.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAIwDgAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T01:22:53.898Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AtletaService.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\AtletaService.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Services\\AtletaService.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\AtletaService.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Services\\AtletaService.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAgwDMAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T00:35:05.151Z",
+              "WhenOpened": "2026-02-13T22:22:10.941Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAIwE8AAAAPAAAAAAAAAA==",
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAUwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T00:33:49.694Z",
+              "WhenOpened": "2026-02-13T22:23:01.311Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AvaliacaoNutricional.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Model\\AvaliacaoNutricional.cs",
-              "ViewState": "AgIAAGEAAAAAAAAAAAAQwGcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T00:32:16.506Z",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Pages\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAADcAAAAAAAAAAAAUwD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-13T22:10:13.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Pesagem.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Model\\Pesagem.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "FiltroEstatiscaCompeticao.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAwwC8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T00:32:08.013Z",
+              "WhenOpened": "2026-02-13T21:58:20.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FiltroEstatiscaCompeticao.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\FiltroEstatiscaCompeticao.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAUwCYAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-13T21:57:38.875Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EstatisticaCompeticaoDetalhe.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T21:20:08.332Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAD4v1AAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-13T21:12:02.407Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "Atleta.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Atleta.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\Atleta.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\Atleta.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Model\\Atleta.cs",
-              "ViewState": "AgIAAKwAAAAAAAAAAAAuwLUAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T00:30:10.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "AtletaRepository.cs",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Repositories\\AtletaRepository.cs",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Repositories\\AtletaRepository.cs",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Repositories\\AtletaRepository.cs",
-              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Repositories\\AtletaRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAYwA8AAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-09T00:29:10.225Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAIwF0AAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-13T21:11:59.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
-              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
-              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
-              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Create.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Edit.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Edit.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\Atletas\\Edit.cshtml",
+              "ViewState": "AgIAADIBAAAAAAAAAAAAAFgBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-02-07T03:12:47.619Z",
+              "WhenOpened": "2026-02-13T20:55:03.175Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\AvaliacoesNutricional\\Edit.cshtml",
+              "ViewState": "AgIAAMYAAAAAAAAAAAAAAMsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-02-13T20:54:16.322Z",
               "EditorCaption": ""
             }
           ]
