@@ -8,6 +8,7 @@ using IFL.WebApp.Pages;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NuGet.Protocol.Core.Types;
+using System.Drawing;
 
 namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
 {
@@ -31,7 +32,11 @@ namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
         public List<DonutsModel> SexoDonutsModeList { get; set; }
         public List<DonutsModel> LutasDonutsModeList { get; set; }
         public List<DadosChartDTO> PontucaoDTOList { get; set; }
+        public List<DadosPontuacaoChartDTO> PontuacaoxLutaDTOList { get; set; }
 
+        public List<DadosTempoChartDTO> TempoxLutaDTOList { get; set; }
+
+        
         [BindProperty]
         public ArquivoVM ArquivoImagem { get; set; } = new();
 
@@ -71,22 +76,81 @@ namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
                                             DataNascimento  = x.Atleta.DataNascimento.ToString("dd/MM/yyyy"),
                                             Idade           = x.Atleta.Idade,
                                             TelefonePrincipal = FormatarTelefone(x.Atleta.TelefonePrincipal),
-                                            Graduacao         = x.Atleta.GraduacaoAsString
+                                            Graduacao         = x.Atleta.GraduacaoAsString,
+                                            Data = x.Evento.Data,
+                                            Evento  = x.Evento.Nome + " - Local : " + x.Evento.Local
                                     })
                                     .OrderBy(y => y.Nome)
                                     .FirstOrDefault();
 
-            SexoDonutsModeList  = GetSexoDonutsModelList();
-            LutasDonutsModeList = GetLutasDonutsModelList(_ReportAtletasVW.Id);
-            PontucaoDTOList     = GetPontuacaoChartDTO(_ReportAtletasVW.Id);
-            GetInfo(_ReportAtletasVW.Id);
+            SexoDonutsModeList    = GetSexoDonutsModelList();
+            LutasDonutsModeList   = GetLutasDonutsModelList(idAtleta, idEvento);
+            PontucaoDTOList       = GetPontuacaoChartDTO(idAtleta, idEvento);
+            PontuacaoxLutaDTOList = GetPontuacaoxLutaChartDTO(idAtleta, idEvento);
+            TempoxLutaDTOList     = GetTempoxLutaChartDTO(idAtleta, idEvento);
+
+            GetInfo(idAtleta, idEvento);
         }
 
-        private void GetInfo(int? idAtleta)
+        private List<DadosTempoChartDTO> GetTempoxLutaChartDTO(int idAtleta, int idEvento)
+        {
+            List<DadosTempoChartDTO> returnList = new List<DadosTempoChartDTO>();
+
+            EstatisticaCompeticao estatistica = _estatisticaRepository
+                                                        .Query()
+                                                        .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
+                                                        .Include(x => x.Detalhes)
+                                                        .FirstOrDefault();
+
+            if (estatistica != null)
+            {
+                int i = 1;
+                foreach (var item in estatistica.Detalhes)
+                {
+                    returnList.Add(new DadosTempoChartDTO(item.TempoDaLuta,
+                                                            " Luta " + i.ToString()
+                                                         ));
+                    i++;
+                }
+            }
+
+            return returnList;
+        }
+
+        private List<DadosPontuacaoChartDTO> GetPontuacaoxLutaChartDTO(int idAtleta, int idEvento)
+        {
+            List<DadosPontuacaoChartDTO> returnList = new List<DadosPontuacaoChartDTO>();
+
+            EstatisticaCompeticao estatistica = _estatisticaRepository
+                                                        .Query()
+                                                        .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
+                                                        .Include(x => x.Detalhes)
+                                                        .FirstOrDefault();
+
+            if (estatistica != null)
+            {
+                int i = 1;
+                foreach (var item in estatistica.Detalhes)
+                {
+                    returnList.Add(new DadosPontuacaoChartDTO(" Luta " + i.ToString(),
+                                                            int.TryParse(item.Yuko.ToString(),   out var v) ? v : 0,
+                                                            int.TryParse(item.Shido.ToString(),  out  v) ? v : 0,
+                                                            int.TryParse(item.Wazari.ToString(), out  v) ? v : 0,
+                                                            int.TryParse(item.Ippon.ToString(),  out  v) ? v : 0
+                                                            ));
+
+                    i++;
+                }                
+            }
+
+            return returnList;
+        }
+
+        private void GetInfo(int? idAtleta, int? idEvento)
         {
             EstatisticaCompeticao estatistica = _estatisticaRepository
                                                     .Query()
-                                                    .Where(x => x.AtletaId == idAtleta)
+                                                    .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
                                                     .Include(x => x.Detalhes)
                                                     .FirstOrDefault();
 
@@ -102,13 +166,13 @@ namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
                 
         }
 
-        private List<DadosChartDTO> GetPontuacaoChartDTO(int? idAtleta)
+        private List<DadosChartDTO> GetPontuacaoChartDTO(int? idAtleta, int? idEvento)
         {
             List<DadosChartDTO> returnList = new List<DadosChartDTO>();
 
             EstatisticaCompeticao estatistica = _estatisticaRepository
                                                         .Query()
-                                                        .Where(x => x.AtletaId == idAtleta)
+                                                        .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
                                                         .Include(x => x.Detalhes)
                                                         .FirstOrDefault();
 
@@ -127,15 +191,15 @@ namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
 
         }
 
-        private List<DonutsModel> GetLutasDonutsModelList(int? idAtleta)
+        private List<DonutsModel> GetLutasDonutsModelList(int? idAtleta, int? idEvento)
         {
             List<DonutsModel> returnList = new List<DonutsModel>();
 
             EstatisticaCompeticao estatistica = _estatisticaRepository
-                                            .Query()
-                                            .Where(x => x.AtletaId == idAtleta)
-                                            .Include(x => x.Detalhes)
-                                            .FirstOrDefault();
+                                                    .Query()
+                                                    .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
+                                                    .Include(x => x.Detalhes)
+                                                    .FirstOrDefault();
                                             
             if( estatistica != null)
             {

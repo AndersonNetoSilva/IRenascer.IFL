@@ -11,8 +11,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script type="text/javascript">
 
@@ -42,7 +41,7 @@
                     '#E74C3C'  // vermelho
                 ]
             });
-        };       
+        };
 
          function drawPontuacaoChart() {
                 var chartData = @Html.Raw(Json.Serialize(Model.PontucaoDTOList))
@@ -71,12 +70,179 @@
                                 return colors[row.x % colors.length];
                             }
                         });
-            };
+         };
+
+         function drawHorizontalBarAgrupadoChart() {
+
+            var chartData = @Html.Raw(Json.Serialize(Model.PontuacaoxLutaDTOList));
+
+            var labels  = chartData.map(x => x.luta);
+            var valuesY = chartData.map(x => x.yuko);
+            var valuesS = chartData.map(x => x.shido);
+            var valuesW = chartData.map(x => x.wazari);
+            var valuesI = chartData.map(x => x.ippon);
+
+            new Chart(document.getElementById("bar-chart-grouped"), {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: "Yuko",
+                            backgroundColor: "#00B0FF", // azul vivo
+                            data: valuesY
+                        },
+                        {
+                            label: "Shido",
+                            backgroundColor: "#FF5252", // vermelho vivo
+                            data: valuesS
+                        },
+                        {
+                            label: "Wazari",
+                            backgroundColor: "#FFC107", // amarelo forte
+                            data: valuesW
+                        },
+                        {
+                            label: "Ipon",
+                            backgroundColor: "#00E676", // verde vivo
+                            data: valuesI
+                        }
+                        ]
+                },
+                options: {
+                    indexAxis: 'x',   // <-- deixa o gráfico horizontal
+
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Lutas x Pontuação',
+                            font: {
+                                size: 20   // <-- tamanho da fonte
+                            }
+                        }
+                    }
+                }
+            });
+        };
+
+
+         function drawLineDecimalChart() {
+
+            var chartData = @Html.Raw(Json.Serialize(Model.TempoxLutaDTOList));
+
+            var labels  = chartData.map(x => x.label);
+            var valores = chartData.map(x => timeSpanToSeconds(x.tempo));
+
+            new Chart(document.getElementById('line-decimal-chart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Minutos',
+                        data: valores,
+                        borderColor: '#00B0FF',
+                        backgroundColor: 'rgba(0,176,255,0.25)',
+                        tension: 0.3,
+                        fill: true,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Tempo x Luta',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+
+                            // garante que o eixo trabalha com números decimais
+                            ticks: {
+                                callback: function (value) {
+                                    // formata com 2 casas decimais
+                                    return Number(value).toFixed(2);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function timeSpanToSeconds(timeSpan) {
+
+                if (!timeSpan)
+                    return 0;
+
+                // ex: 01:12:35
+                var parts = timeSpan.split(':');
+
+                var h = parseInt(parts[0]);
+                var m = parseInt(parts[1]);
+                var s = parseFloat(parts[2].replace(',', '.'));
+
+                return (h * 60 + m + s) / 60;
+            }
+
+        function drawLineChart() {
+
+            var chartData = @Html.Raw(Json.Serialize(Model.TempoxLutaDTOList));            
+
+            var labels  = chartData.map(x => x.label);
+            var valuesY = chartData.map(x => timeSpanToSeconds(x.tempo));
+
+
+            console.log(chartData);
+            console.log(labels);
+            console.log(valuesY);
+
+            new Chart(document.getElementById('line-chart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Pontuação',
+                        data: valuesY,
+                        borderColor: '#00B0FF',
+                        backgroundColor: 'rgba(0,176,255,0.2)',
+                        tension: 0.3,       // deixa a linha suavizada
+                        fill: true,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Tempo x Luta',
+                            font: {
+                                size: 20,       // <-- exatamente o modelo que você pediu
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        };
 
         $(document).ready(function () {
-                    drawSexoDonutsChart();
-                    drawPontuacaoChart();
-                })
+                                drawSexoDonutsChart();
+                                drawPontuacaoChart();
+                                drawHorizontalBarAgrupadoChart();
+                                drawLineDecimalChart();
+                                })
     </script>
 }
 
@@ -211,84 +377,118 @@
 
     <div class="athlete-card">
         <div class="row align-items-center">
-         
-                    <div class="col-3 col-print-3">
-                        <div class="photo-container">
-                            @if (Model._ReportAtletasVW?.ArquivoImagemId > 0)
-                            {
-                                <img src="@Url.Page(null, "ConteudoDoArquivo", new { atletaId = Model._ReportAtletasVW.Id })"
-                                     alt="Foto do Atleta" />
-                            }
-                            else
-                            {
-                                <span class="text-muted">Sem Foto</span>
+
+            <div class="col-3 col-print-3">
+                <div class="photo-container">
+                    @if (Model._ReportAtletasVW?.ArquivoImagemId > 0)
+                    {
+                        <img src="@Url.Page(null, "ConteudoDoArquivo", new { atletaId = Model._ReportAtletasVW.Id })"
+                             alt="Foto do Atleta" />
+                    }
+                    else
+                    {
+                        <span class="text-muted">Sem Foto</span>
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-sm-4 col-lg-4">
+                        <div class="info-label">Atleta</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Nome)
                             }
                         </div>
                     </div>
-             
-                    <div class="col-md-9">
-                        <div class="row">
-                            <div class="col-sm-4 col-lg-4">
-                                <div class="info-label">Atleta</div>
-                                <div class="info-value">
-                                    @{
-                                        @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Nome)
-                                    }
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="info-label">Idade</div>
-                                <div class="info-value">
-                                    @{
-                                        @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Idade)
-                                    }
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="info-label">Telefone</div>
-                                    <div class="info-value">
-                                        @{
-                                            @Html.DisplayFor(modelItem => Model._ReportAtletasVW.TelefonePrincipal)
-                                    }
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="info-label">Localidade</div>
-                                        <div class="info-value">
-                                            @{
-                                            @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Endereco)
-                                            }
-                                </div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="info-label">Clube / Escola</div>
-                                <div class="info-value">IFL</div>
-                            </div>
-                            <div class="col-sm-6 col-lg-4">
-                                <div class="info-label">Graduação</div>
-                                <div class="info-value">
-                                    @{
-                                        @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Graduacao)
-                                    }
-                                </div>
-                            </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Idade</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Idade)
+                            }
                         </div>
                     </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Telefone</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.TelefonePrincipal)
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Localidade</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Endereco)
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Clube / Escola</div>
+                        <div class="info-value">IFL</div>
+                    </div>
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Graduação</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Graduacao)
+                            }
+                        </div>
+                    </div
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Evento</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Evento)
+                            }
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="info-label">Data</div>
+                        <div class="info-value">
+                            @{
+                                @Html.DisplayFor(modelItem => Model._ReportAtletasVW.Data )
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <div class="row g-4">
                 <div class="col-md-6 col-print-6">
                     <div class="chart-container">
-                        <h6 class="text-center mb-4 text-secondary">Vitórias</h6>
+                        <h4 class="text-center mb-4 text-secondary"
+                            style="font-size:20px; font-weight:700;">
+                            Vitórias
+                        </h4>
                         <div id="chart-SexoDonuts" style="height:15rem!important;"></div>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-print-6">
                     <div class="chart-container">
-                        <h6 class="text-center mb-4 text-secondary">Vitórias por pontos</h6>
+                        <h4 class="text-center mb-4 text-secondary"
+                            style="font-size:20px; font-weight:700;">
+                            Vitórias por pontos
+                        </h4>
                         <div id="chart-PontuacaoDTO" style="height:15rem!important;"></div>
                     </div>
                 </div>
+
+                <div class="col-md-6">
+                    <canvas id="bar-chart-grouped" style="height:250px!important" ;></canvas>
+                </div>
+
+                <div class="col-md-6">
+                    <canvas id="line-decimal-chart" style="height:250px!important" ;></canvas>
+                </div>
+                
+
 
                 <div class="row margin-bottom-20" style="margin-top:20px!important;">
                     <div class="col-md-12">
@@ -331,7 +531,7 @@
 
 
 
-            
+
 
         </div>
     </div>

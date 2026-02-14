@@ -216,6 +216,23 @@ namespace IFL.WebApp.Pages
         public string Label { get; set; }
     }
 
+    public class DadosTempoChartDTO
+    {
+        public DadosTempoChartDTO()
+        {
+            Label = string.Empty;
+        }
+        public DadosTempoChartDTO(TimeSpan tempo, string label)
+        {
+            Tempo = tempo;
+            Label = label;
+        }
+
+        public TimeSpan Tempo { get; set; }
+        public string Label { get; set; }
+    }
+
+
     [Serializable]
     public class EventoDTO
     {
@@ -257,5 +274,28 @@ namespace IFL.WebApp.Pages
 
         public string Label { get; set; }
     }
- 
+
+    [Serializable]
+    public class DadosPontuacaoChartDTO
+    {
+        public DadosPontuacaoChartDTO()
+        {
+            
+        }
+        public DadosPontuacaoChartDTO(string luta, int yuko, int shido, int wazari, int ippon)
+        {
+            Luta    = luta;
+            Yuko    = yuko;
+            Shido   = shido;  
+            Wazari  = wazari;  
+            Ippon   = ippon;
+        }
+
+        public string Luta { get; set; }
+        public int Yuko { get; set; }
+        public int Shido { get; set; }
+        public int Wazari { get; set; }
+        public int Ippon { get; set; }
+    }
+
 }
