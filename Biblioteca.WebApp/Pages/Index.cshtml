@@ -84,33 +84,87 @@
                         });
             };
 
-             function drawClasseChart() {
-                var chartData = @Html.Raw(Json.Serialize(Model.ClassesDTOList))
+             function drawAtletaGraducaoChart() {
+                var chartData = @Html.Raw(Json.Serialize(Model.AtlestaGraduacaoDTOList))
+                // var labels = chartData.map(x => x.label);
+                // var values = chartData.map(x => x.quantidade);
 
-                     Morris.Bar({
-                            element: 'chart-ClasseDTO',
-                            data: chartData,
-                            xkey: 'label',
-                            ykeys: ['quantidade'],
-                            labels: ['Qtd'],
-                            hideHover: 'auto',
-                            xLabelAngle: 0,
+                // console.log(labels);
+                // console.log(values);
 
-                            barColors: function (row, series, type) {
+                // new Chart(document.getElementById("chart-AtletaGraducaoDTO"), {
+                // type: 'horizontalBar',
+                // data: {
+                //     labels: labels,
+                //     datasets: [
+                //     {
+                //         label: "Quantidade",
+                //                         backgroundColor:  [
+                //                                             '#F0F8FF', // Branca Gelo
+                //                                             '#D3D3D3', // Cinza Claro
+                //                                             '#808080', // Cinza
+                //                                             '#ADD8E6', // Azul Claro
+                //                                             '#4682B4', // Azul Médio (Steel Blue)
+                //                                             '#FFF9C4', // Amarela Médio (Claro suave)
+                //                                             '#FFFF00', // Amarelo
+                //                                             '#FFB74D', // Laranja Médio
+                //                                             '#FF8C00', // Laranja (Dark Orange)
+                //                                             '#228B22', // Verde
+                //                                             '#800080', // Roxa
+                //                                             '#A52A2A', // Marrom Claro
+                //                                             '#5D4037', // Marrom Escuro
+                //                                             '#333333', // Preto Claro
+                //                                             '#000000'  // Preto Escuro
+                //                                         ],
+                //         data: values
+                //     }]
+                //     },
+                //     options: {
+                //         legend: { display: false },
+                //         title: {
+                //             display: true,
+                //             text: 'Atletas por Classe'
+                //         }
+                //     }
+                // });
 
-                                var colors = [
-                                    '#2ECC71',
-                                    '#3498DB',
-                                    '#9B59B6',
-                                    '#F1C40F',
-                                    '#E67E22',
-                                    '#E74C3C',
-                                    '#1ABC9C'
-                                ];
+                // 1. Encontrar o valor máximo de 'quantidade' nos dados
+                var maxQuantidade = Math.max.apply(Math, chartData.map(function(o) {
+                    return o.quantidade;
+                }));
 
-                                return colors[row.x % colors.length];
-                            }
-                        });
+                    Morris.Bar({
+                        element: 'chart-AtletaGraducaoDTO',
+                        data: chartData,
+                        xkey: 'label',
+                        ykeys: ['quantidade'],
+                        labels: ['Qtd'],
+                        hideHover: 'auto',
+                        xLabelAngle: 0,
+                        ymax: maxQuantidade,
+
+                        barColors: function (row, series, type) {
+                            var colors = [
+                                '#F0F8FF', // Branca Gelo
+                                '#D3D3D3', // Cinza Claro
+                                '#808080', // Cinza
+                                '#ADD8E6', // Azul Claro
+                                '#0000FF', // Azul
+                                '#FFFACD', // Amarela Claro
+                                '#FFFF00', // Amarelo
+                                '#FFCC80', // Laranja Claro
+                                '#FF8C00', // Laranja
+                                '#228B22', // Verde
+                                '#800080', // Roxa
+                                '#A52A2A', // Marrom Claro
+                                '#5D4037', // Marrom Escuro
+                                '#333333', // Preto Claro
+                                '#000000'  // Preto Escuro
+                            ];
+
+                            return colors[row.x % colors.length];
+                        }
+                    });
             };
 
 
@@ -185,11 +239,11 @@
                   datasets: [
                     {
                       label: "Feminino",
-                      backgroundColor: "#3e95cd",
+                      backgroundColor: "#FF0000",
                       data: valuesF
                     }, {
                       label: "Masculino",
-                      backgroundColor: "#8e5ea2",
+                      backgroundColor: "#0000FF",
                       data: valuesM
                     }
                   ]
@@ -197,7 +251,7 @@
                 options: {
                   title: {
                     display: true,
-                    text: 'Classe x Sexo'
+                    text: 'Classe por Sexo'
                   }
                 }
             });
@@ -208,7 +262,7 @@
                     drawEventoChart();
                     //drawAutoresPorLivroDonutsChart();
                     drawSexoDonutsChart();
-                    drawClasseChart();
+                    drawAtletaGraducaoChart();
                     drawHorizontalBarChart();
                     drawHorizontalBarAgrupadoChart();
                     drawEscolaChart();
@@ -229,15 +283,14 @@
     </div>
     <div class="col-md-6">
         <canvas id="bar-chart-grouped" style="height:250px!important" ;></canvas>
-    </div>
-    
+    </div>    
 </div>
 
 <div class="row margin-bottom-20">
     <div class="col-md-6">
 
         <div class="card-header text-center fw-bold">
-            Atleta x Escola
+            Atleta por Escola
         </div>
 
         <div id="chart-EscolaDTO" style="height:250px!important;"></div>
@@ -256,23 +309,23 @@
 
 <div class="row margin-bottom-20">
 
-
-
     <div class="col-md-6 col-sm-5">
         <div class="card-header text-center fw-bold">
             Atletas por Gênero
         </div>
         <div id="chart-SexoDonuts" style="height:250px!important;"></div>
     </div>
-
-    <div class="col-md-6">
-
+        
+    <div class="col-md-6 col-sm-5">
         <div class="card-header text-center fw-bold">
-            Atletas por Classe
+            Atleta por Graduação
         </div>
-
-        <div id="chart-ClasseDTO" style="height:250px!important;"></div>
+        <div id="chart-AtletaGraducaoDTO" style="height:250px!important;"></div>
     </div>
+
+@*     <div class="col-md-6">
+        <canvas id="" style="height:250px!important" ;></canvas>
+    </div> *@
 
 </div>
 

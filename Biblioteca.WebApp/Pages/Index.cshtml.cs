@@ -34,6 +34,7 @@ namespace IFL.WebApp.Pages
         public Notificacoes Notificacoes { get; set; }
         public Notificacoes EventosMes { get; set; }
         public List<DadosChartDTO> ClassesDTOList { get; set; }
+        public List<DadosChartDTO> AtlestaGraduacaoDTOList { get; set; }
         public List<DadosChartDTO> EscolaDTOList { get; set; }
         public List<DadosChartDTO> ClassesFemininaDTOList { get; set; }
         public List<DadosChartDTO> ClassesMasculinaDTOList { get; set; }
@@ -48,8 +49,25 @@ namespace IFL.WebApp.Pages
             Notificacoes        = GetNotificacoes();
             EventosMes          = GetEventoMes();
             ClassesDTOList      = GetClasseChartDTO();
+            AtlestaGraduacaoDTOList = GetAtletaGraduacaoChartDTO();
             ClassesFemininaDTOList =  GetClasseChartDTO(Sexo.Feminino);
             ClassesMasculinaDTOList = GetClasseChartDTO(Sexo.Masculino);
+        }
+
+        private List<DadosChartDTO> GetAtletaGraduacaoChartDTO()
+        {
+            var lista = _atletaRepository
+                            .Query()
+                            .ToList();  
+
+            lista = lista.OrderBy(x => x.Graduacao).ToList();
+
+            var result = lista
+                            .GroupBy(x => x.GraduacaoAsString)
+                            .Select(x => new DadosChartDTO(x.Count(), x.Key.ToString()))
+                            .ToList();
+
+            return result;
         }
 
         private Notificacoes GetNotificacoes()

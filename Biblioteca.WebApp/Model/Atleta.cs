@@ -213,49 +213,65 @@ namespace IFL.WebApp.Model
         [Description("Faixa Branca")]
         FaixaBranca = 0,
 
+        [Display(Name = "Faixa Branca Ponta Cinza")]
+        [Description("Faixa Branca Ponta Cinza")]
+        FaixaBrancaPontaCinza = 1,
+
         [Display(Name = "Faixa Cinza")]
         [Description("Faixa Cinza")]
-        FaixaCinza = 1,
+        FaixaCinza = 2,
+
+        [Display(Name = "Faixa Cinza Ponta Azul")]
+        [Description("Faixa Cinza Ponta Azul")]
+        FaixaCinzaPontaAzul = 3,
 
         [Display(Name = "Faixa Azul")]
         [Description("Faixa Azul")]
-        FaixaAzul = 2,
+        FaixaAzul = 4,
+
+        [Display(Name = "Faixa Azul Ponta Amarela")]
+        [Description("Faixa Azul Ponta Amarela")]
+        FaixaAzulPontaAmarela = 5,
 
         [Display(Name = "Faixa Amarela")]
         [Description("Faixa Amarela")]
-        FaixaAmarela = 3,
+        FaixaAmarela = 6,
+
+        [Display(Name = "Faixa Amarela Ponta Laranja")]
+        [Description("Faixa Amarela Ponta Laranja")]
+        FaixaAmarelaPontaLaranja = 7,
 
         [Display(Name = "Faixa Laranja")]
         [Description("Faixa Laranja")]
-        FaixaLaranja = 4,
+        FaixaLaranja = 8,
 
         [Display(Name = "Faixa Verde")]
         [Description("Faixa Verde")]
-        FaixaVerde = 5,
+        FaixaVerde = 9,
 
         [Display(Name = "Faixa Roxa")]
         [Description("Faixa Roxa")]
-        FaixaRoxa = 6,
+        FaixaRoxa = 10,
 
         [Display(Name = "Faixa Marrom")]
         [Description("Faixa Marrom")]
-        FaixaMarrom = 7,
+        FaixaMarrom = 11,
 
         [Display(Name = "Faixa Preta - 1º DAN")]
         [Description("Faixa Preta - 1º DAN")]
-        FaixaPreta = 8,
+        FaixaPreta = 12,
 
         [Display(Name = "Faixa Preta - 2º DAN")]
         [Description("Faixa Preta - 2º DAN")]
-        FaixaPreta2 = 9,
+        FaixaPreta2 = 13,
 
         [Display(Name = "Faixa Preta - 3º DAN")]
         [Description("Faixa Preta - 3º DAN")]
-        FaixaPreta3 = 10,
+        FaixaPreta3 = 14,
 
         [Display(Name = "Faixa Preta - 4º DAN")]
         [Description("Faixa Preta - 4º DAN")]
-        FaixaPreta4 = 11
+        FaixaPreta4 = 15
     }
     public enum TipoEscola
     {
