@@ -32,15 +32,25 @@ namespace IFL.WebApp.Infrastructure.Services
         public async Task AddAsync(
                                     AvaliacaoNutricional avaliacaoNutricional,
                                     ArquivoVM? arquivoImagem,
+                                    ArquivoVM? arquivoImagemCostas,
                                     IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
                                     )
         {
 
+            //Salvar Arquivo de Frente
             if (arquivoImagem?.FormFile?.Length > 0)
             {
                 await SalvarOuSubstituirArquivoAsync(avaliacaoNutricional, arquivoImagem,
                       l => l.ArquivoImagemId == null ? null : _dbContext.Arquivos.First(x => x.Id == l.ArquivoImagemId),
                       (l, a) => l.ArquivoImagem = a);
+            }
+
+            //Salvar Arquivo de costas
+            if (arquivoImagemCostas?.FormFile?.Length > 0)
+            {
+                await SalvarOuSubstituirArquivoAsync(avaliacaoNutricional, arquivoImagemCostas,
+                      l => l.ArquivoImagemCostasId == null ? null : _dbContext.Arquivos.First(x => x.Id == l.ArquivoImagemCostasId),
+                      (l, a) => l.ArquivoImagemCostas = a);
             }
 
             _avaliacaoRepository.Add(avaliacaoNutricional);
@@ -183,6 +193,7 @@ namespace IFL.WebApp.Infrastructure.Services
 
         public async Task UpdateAsync(AvaliacaoNutricional AvaliacaoNutricional,
                                         ArquivoVM? arquivoImagem,
+                                        ArquivoVM? arquivoImagemCostas,
                                         IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
                                         )
         {
@@ -197,6 +208,13 @@ namespace IFL.WebApp.Infrastructure.Services
                     await SalvarOuSubstituirArquivoAsync(avaliacao, arquivoImagem,
                           l => l.ArquivoImagemId == null ? null : _dbContext.Arquivos.First(x => x.Id == l.ArquivoImagemId),
                           (l, a) => l.ArquivoImagem = a);
+                }
+
+                if (arquivoImagemCostas?.FormFile?.Length > 0)
+                {
+                    await SalvarOuSubstituirArquivoAsync(avaliacao, arquivoImagemCostas,
+                          l => l.ArquivoImagemCostasId == null ? null : _dbContext.Arquivos.First(x => x.Id == l.ArquivoImagemCostasId),
+                          (l, a) => l.ArquivoImagemCostas = a);
                 }
 
                 await SyncAnexosAsync(avaliacao, anexos);

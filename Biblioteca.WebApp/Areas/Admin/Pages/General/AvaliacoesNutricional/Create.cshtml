@@ -115,12 +115,23 @@
 
             <div class="row">
                 <div class="col-md-6 mb3">
-                    <label class="form-label">Imagem</label>
+                    <label class="form-label">Imagem de Frente</label>
                     <input asp-for="ArquivoImagem.FormFile"
                            type="file"
                            class="form-control"
                            accept="image/*" />
                     <span asp-validation-for="ArquivoImagem.FormFile" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb3">
+                    <label class="form-label">Imagem de Costas</label>
+                    <input asp-for="ArquivoImagemCostas.FormFile"
+                           type="file"
+                           class="form-control"
+                           accept="image/*" />
+                    <span asp-validation-for="ArquivoImagemCostas.FormFile" class="text-danger"></span>
                 </div>
             </div>
 

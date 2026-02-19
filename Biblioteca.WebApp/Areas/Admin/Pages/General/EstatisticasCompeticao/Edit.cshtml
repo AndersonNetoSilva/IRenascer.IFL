@@ -86,6 +86,7 @@
                                 <th>Tempo</th>
                                 <th>G. Score</th>
                                 <th>Tempo</th>
+                                <th>Técnica Aplicada</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -97,22 +98,11 @@
                                                 onclick="marcarParaExclusao(this, 'Detalhes');">
                                             <i class="bi bi-trash"></i>
                                         </button>
-
                                         <input type="hidden" asp-for="Detalhes[@i].Id" />
                                         <input type="hidden" asp-for="Detalhes[@i].MarcadoParaExclusao" />
                                     </td>
                                     <td>
-
-@*                                             <input type="hidden"
-                                                   name="Detalhes[@i].Vitoria"
-                                                   value="true" />
-
-                                            <input type="checkbox"
-                                               name="Detalhes[@i].Vitoria"
-                                                   value="true"
-                                                   class="form-check-input" /> *@
-                                        <input asp-for="Detalhes[@i].Vitoria" type="checkbox" />
-                                        
+                                        <input asp-for="Detalhes[@i].Vitoria" type="checkbox" />                                        
                                     </td>
                                     <td>
                                          
@@ -140,21 +130,20 @@
                                         <input asp-for="Detalhes[@i].TempoDaLuta" type="time" class="form-control" style="max-width:110px" />
                                     </td>
                                     <td>
-                                        
-@*                                         <input type="checkbox"
-                                               name="Detalhes[@i].GoldenScore"
-                                               value="true"
-                                               class="form-check-input" />
-
-                                        <input type="hidden"
-                                               name="Detalhes[@i].GoldenScore"
-                                               value="false" /> *@
-
                                         <input asp-for="Detalhes[@i].GoldenScore" type="checkbox" />
-
                                     </td>
                                     <td>
                                         <input asp-for="Detalhes[@i].TempoDoGoldenScore" type="time" class="form-control" style="max-width:110px" />
+                                    </td>
+
+                                    <td>
+                                        <div class="form-group w-100">
+                                            <select asp-for="Detalhes[@i].TecnicaAplicou"
+                                                    class="form-select"
+                                                    asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.Tecnica>()">
+                                            </select>
+                                            <span asp-validation-for="Detalhes[@i].TecnicaAplicou" class="text-danger"></span>
+                                        </div>
                                     </td>
                                 </tr>
                             }
@@ -181,6 +170,16 @@
     }
 
     <script>
+
+        // Gera as opções do Enum no servidor para usar no JavaScript
+        const opcoesTecnica = `
+            <option value="">Selecione uma técnica</option>
+            @foreach (var item in Html.GetEnumSelectList<IFL.WebApp.Model.Tecnica>())
+            {
+                    <option value="@item.Value">@item.Text</option>
+            }
+        `;
+
         let contadorAnexo = `@Model.Detalhes.Count`;
 
         function adicionarDetalhe() {
@@ -280,6 +279,20 @@
                            class="form-control"
                            style="max-width:110px"/>
                 </td>
+
+                <td>
+                     
+                        <select name="Detalhes[${contadorAnexo}].TecnicaAplicou"
+                            id="Detalhes[${contadorAnexo}].TecnicaAplicou"
+                                class="form-select w-100">
+                            ${opcoesTecnica}
+                        </select>
+                        <span class="text-danger field-validation-valid"
+                                data-valmsg-for="Detalhes[${contadorAnexo}].TecnicaAplicou"
+                                data-valmsg-replace="true"></span>
+                     
+                </td>
+                
             `;
 
             tbody.appendChild(novaLinha);

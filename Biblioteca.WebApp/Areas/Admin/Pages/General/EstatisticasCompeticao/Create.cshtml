@@ -65,6 +65,7 @@
                                 <th>Tempo</th>
                                 <th>G. Score</th>
                                 <th>Tempo</th>
+                                <th>Técnica Aplicada</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -120,6 +121,15 @@
                                     <td>
                                         <input asp-for="Detalhes[@i].TempoDoGoldenScore" type="time" class="form-control" />
                                     </td>
+                                    <td>
+                                        <div class="form-group w-100">
+                                            <select asp-for="Detalhes[@i].TecnicaAplicou"
+                                                    class="form-select"
+                                                    asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.Tecnica>()">
+                                            </select>
+                                            <span asp-validation-for="Detalhes[@i].TecnicaAplicou" class="text-danger"></span>
+                                        </div>
+                                    </td>
                                 </tr>
                             }
                         </tbody>
@@ -142,8 +152,17 @@
     }
 
     <script>
+            // Gera as opções do Enum no servidor para usar no JavaScript
+                const opcoesTecnica = `
+                    <option value="">Selecione uma técnica</option>
+                    @foreach (var item in Html.GetEnumSelectList<IFL.WebApp.Model.Tecnica>())
+                    {
+                        <option value="@item.Value">@item.Text</option>
+                    }
+                `;
+
                 let contadorAnexo = `@Model.Detalhes.Count`;
-    
+
                 function adicionarDetalhe() {
                     const tbody = document.querySelector('#tabelaAnexos tbody');
 
@@ -230,8 +249,20 @@
                                                value="false" />
                                     </td>
                                   <td>
-                             <input asp-for="Detalhes[${contadorAnexo}].TempoDoGoldenScore" type="time" class="form-control" style="max-width:110px"/>
+                                    <input asp-for="Detalhes[${contadorAnexo}].TempoDoGoldenScore" type="time" class="form-control" style="max-width:110px"/>
                                   </td>
+                             
+                                 <td>
+                                        <select name="Detalhes[${contadorAnexo}].TecnicaAplicou"
+                                            id="Detalhes[${contadorAnexo}].TecnicaAplicou"
+                                                class="form-select w-100">
+                                            ${opcoesTecnica}
+                                        </select>
+                                        <span class="text-danger field-validation-valid"
+                                                data-valmsg-for="Detalhes[${contadorAnexo}].TecnicaAplicou"
+                                                data-valmsg-replace="true"></span>
+                                </td>                         
+
                                 </tr>
                         
                     `;

@@ -114,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/FiltroAvaliacaoNutricional.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcRmlsdHJvQXZhbGlhY2FvTnV0cmljaW9uYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/General/AvaliacoesNutricional/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcR2VuZXJhbFxBdmFsaWFjb2VzTnV0cmljaW9uYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -280,6 +284,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Atletas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xBdGxldGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/AvaliacoesNutricional/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xBdmFsaWFjb2VzTnV0cmljaW9uYWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Colaboradores/Index.cshtml]

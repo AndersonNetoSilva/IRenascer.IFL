@@ -1,0 +1,446 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.Relatorios.AvaliacoesNutricional.IndexModel
+
+@{
+    ViewData["Title"] = "Avaliação";
+}
+
+@section Scripts
+{
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script type="text/javascript">
+          
+
+
+         function drawLineDecimalChart() {
+
+            var chartData = @Html.Raw(Json.Serialize(Model.PesoDTOList));
+
+            var labels  = chartData.map(x => x.label);
+            var valores = chartData.map(x => x.valor);
+
+            new Chart(document.getElementById('line-decimal-chart'), {
+                type: 'line',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Data',
+                        data: valores,
+                        borderColor: '#00B0FF',
+                        backgroundColor: 'rgba(0,176,255,0.25)',
+                        tension: 0.3,
+                        fill: true,
+                        pointRadius: 5
+                    }]
+                },
+                options: {
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Ultimas pesagens - Competição',
+                            font: {
+                                size: 18,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+
+                            // garante que o eixo trabalha com números decimais
+                            ticks: {
+                                callback: function (value) {
+                                    // formata com 2 casas decimais
+                                    return Number(value).toFixed(2);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function timeSpanToSeconds(timeSpan) {
+
+                if (!timeSpan)
+                    return 0;
+
+                // ex: 01:12:35
+                var parts = timeSpan.split(':');
+
+                var h = parseInt(parts[0]);
+                var m = parseInt(parts[1]);
+                var s = parseFloat(parts[2].replace(',', '.'));
+
+                return (h * 60 + m + s) / 60;
+            }
+
+
+        $(document).ready(function () {
+                               
+                                drawLineDecimalChart();
+                                })
+    </script>
+}
+
+<style>
+    /* Configurações de Página e Base */
+    @@page {
+        size: A4;
+        margin: 1cm;
+    }
+
+    body {
+        background-color: #f8f9fa;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px; /* Base relativa */
+    }
+
+    /* Card do Atleta */
+    /* Card do Atleta - Padronizado */
+    .athlete-card {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid #e9ecef;
+        border-left: 5px solid #007bff; /* Azul para diferenciar da Nutrição */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    /* Foto Adaptável - Melhorada */
+    .photo-container {
+        width: 100%;
+        max-width: 10rem;
+        aspect-ratio: 1/1;
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 0.75rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+        .photo-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    /* Labels e Valores padronizados com o estilo nutricional */
+    .info-label {
+        font-weight: bold;
+        color: #6c757d;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 0.2rem;
+    }
+
+    .info-value {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 1rem;
+        word-break: break-word;
+    }
+
+    /* Avaliação Nutricional */
+    .nutrition-card {
+        background: #ffffff;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-left: 5px solid #28a745; /* Linha verde para diferenciar */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .nutrition-title {
+        color: #28a745;
+        font-size: 1.1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-bottom: 1.2rem;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .metric-container {
+        background: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 0.5rem;
+        padding: 1rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .metric-value {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #198754;
+        display: block;
+    }
+
+    .metric-unit {
+        font-size: 0.75rem;
+        color: #6c757d;
+        font-weight: normal;
+    }
+
+    /* Container para fotos comparativas */
+    .comparison-photos {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        justify-content: center;
+    }
+    .photo-item {
+        flex: 1;
+        max-width: 400px; /* Ajuste conforme necessário */
+        text-align: center;
+    }
+    .photo-box {
+        width: 100%;
+        aspect-ratio: 4/3; /* Proporção retangular comum para fotos de corpo */
+        background-color: #f8f9fa;
+        border: 1px solid #e9ecef;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+    }
+    .photo-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Ajustes Específicos para Impressão */
+    @@media print {
+        body {
+            background-color: white !important;
+            -webkit-print-color-adjust: exact;
+        }
+
+        .btn, .natural-filter, breadcrumb, pager {
+            display: none !important;
+        }
+
+        #print-area,
+        #print-area * {
+            visibility: visible;
+        }
+
+        #print-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .athlete-card, .chart-container {
+            box-shadow: none !important;
+            border: 1px solid #eee !important;
+        }
+        /* Garante que o Grid do Bootstrap não quebre na impressão */
+        .col-print-3 {
+            width: 25% !important;
+            float: left;
+        }
+
+        .col-print-9 {
+            width: 75% !important;
+            float: left;
+        }
+
+        .col-print-4 {
+            width: 33.33% !important;
+            float: left;
+        }
+
+        .row {
+            display: flex !important;
+            flex-wrap: wrap !important;
+        }
+        /* Força a cor dos gráficos e fundos */
+        * {
+            -webkit-print-color-adjust: exact !important;
+            print-color-adjust: exact !important;
+        }
+    }
+</style>
+
+<breadcrumb items="Relatorios, Avaliação Nutricional"></breadcrumb>
+
+<button class="btn btn-primary" onclick="window.print()">Imprimir</button>
+
+<hr class="no-print">
+
+<!-- Dados -->
+<div id="print-area" class="container-fluid">
+
+    <div class="athlete-card">
+        <div class="row align-items-center">
+
+            <div class="col-3 col-print-3 text-center">
+                <div class="photo-container mx-auto">
+                    @if (Model._ReportAtletasVW?.ArquivoImagemId > 0)
+                    {
+                        <img src="@Url.Page(null, "ConteudoDoArquivo", new { atletaId = Model._ReportAtletasVW.Id })" alt="Foto" />
+                    }
+                    else
+                    {
+                        <span class="text-muted" style="font-size: 10px;">SEM FOTO</span>
+                    }
+                </div>
+            </div>
+
+            <div class="col-9 col-print-9">
+                <div class="row">
+                    <div class="col-sm-4 col-print-4">
+                        <div class="info-label">Atleta</div>
+                        <div class="info-value">@Model._ReportAtletasVW.Nome</div>
+                    </div>
+                    <div class="col-sm-4 col-print-4">
+                        <div class="info-label">Idade</div>
+                        <div class="info-value">@Model._ReportAtletasVW.Idade anos</div>
+                    </div>
+                    <div class="col-sm-4 col-print-4">
+                        <div class="info-label">Graduação</div>
+                        <div class="info-value">@Model._ReportAtletasVW.Graduacao</div>
+                    </div>
+
+                    <div class="col-sm-4 col-print-4">
+                        <div class="info-label">Telefone</div>
+                        <div class="info-value">@Model._ReportAtletasVW.TelefonePrincipal</div>
+                    </div>
+                    <div class="col-sm-8 col-print-8">
+                        <div class="info-label">Endereço</div>
+                        <div class="info-value">@Model._ReportAtletasVW.Endereco</div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="nutrition-card">
+                <div class="nutrition-title">
+                    <i class="fas fa-apple-alt me-2"></i> Detalhes da Avaliação Nutricional - Data : @Model._ReportAvaliacoesNutricionaisVW.Data
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">Peso Atual</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.Peso<span class="metric-unit">kg</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">Altura</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.Altura <span class="metric-unit">m</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">Gordura Viceral</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.GorduraViceral <span class="metric-unit">kg/m²</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">Massa Livre de Gordura</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.MassaLivre<span class="metric-unit">%</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">Massa Muscular</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.MassaMuscular<span class="metric-unit">kg/m²</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">% Gordura</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.PctGordura<span class="metric-unit">%</span></span>
+                        </div>
+                    </div>
+                    <div class="col-sm-3 col-print-3 mb-3">
+                        <div class="metric-container">
+                            <div class="info-label">% Água Corporal</div>
+                            <span class="metric-value">@Model._ReportAvaliacoesNutricionaisVW.AguaCorporal<span class="metric-unit">%</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-12">
+                        <div class="info-label">Observações Nutricionais</div>
+                        <div class="info-value">
+                            @Model._ReportAvaliacoesNutricionaisVW.Obs
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row g-4 mt-3">
+                <div class="col-md-12">
+
+                    <div class="comparison-photos">
+                        <div class="photo-item">
+                            <div class="info-label">Avaliação de Frente</div>
+                            <div class="photo-box">
+                                @if (Model._ReportAvaliacoesNutricionaisVW?.ArquivoImagemFrenteId > 0)
+                                {
+                                    <img src="@Url.Page(null, "ConteudoFotoNutri", new { avaliacaoId = Model._ReportAvaliacoesNutricionaisVW.Id, idArquivo = Model._ReportAvaliacoesNutricionaisVW.ArquivoImagemFrenteId })" alt="Foto Frente" />
+                                }
+                                else
+                                {
+                                    <span class="text-muted" style="font-size: 10px;">SEM FOTO</span>
+                                }
+                            </div>
+                        </div>
+
+                        <div class="photo-item">
+                            <div class="info-label">Avaliação de Costas</div>
+                            <div class="photo-box">
+                                @if (Model._ReportAvaliacoesNutricionaisVW?.ArquivoImagemCostasId > 0)
+                                {
+                                    <img src="@Url.Page(null, "ConteudoFotoNutriCostas", new { avaliacaoId = Model._ReportAvaliacoesNutricionaisVW.Id, idArquivo = Model._ReportAvaliacoesNutricionaisVW.ArquivoImagemCostasId })" alt="Foto Costas" />
+                                }
+                                else
+                                {
+                                    <span class="text-muted" style="font-size: 10px;">SEM FOTO</span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <canvas id="line-decimal-chart" style="height:250px!important" ;></canvas>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Paginação -->
+<pager page="/Admin/General/Autores/Index"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

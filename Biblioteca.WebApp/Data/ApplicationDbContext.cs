@@ -39,10 +39,17 @@ namespace IFL.WebApp.Data
             base.OnModelCreating(builder);
 
             builder.Entity<AvaliacaoNutricional>()
-                .HasOne(l => l.ArquivoImagem)
+                    .HasOne(l => l.ArquivoImagem)
+                    .WithMany()
+                    .HasForeignKey(l => l.ArquivoImagemId)
+                    .OnDelete(DeleteBehavior.NoAction); // Evita erro de múltiplos caminhos de cascata
+
+            // Mapeamento para a Foto de Costas (ArquivoImagemCostas)
+            builder.Entity<AvaliacaoNutricional>()
+                .HasOne(l => l.ArquivoImagemCostas)
                 .WithMany()
-                .HasForeignKey(l => l.ArquivoImagemId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .HasForeignKey(l => l.ArquivoImagemCostasId)
+                .OnDelete(DeleteBehavior.NoAction); // Mantém consistência
 
             builder.Entity<Pesagem>()
                 .Property(c => c.Peso1)

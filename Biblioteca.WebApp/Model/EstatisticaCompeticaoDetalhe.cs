@@ -48,167 +48,172 @@ namespace IFL.WebApp.Model
         public TimeSpan TempoDoGoldenScore { get; set; }
 
         [Display(Name = "Tecnica que Aplicou")]
-        public required Tecnica TecnicaAplicou { get; set; }
+        public Tecnica TecnicaAplicou { get; set; }
 
         [Display(Name = "Tecnica que Recebeu")]
-        public required Tecnica TecnicaRecebeu { get; set; }
+        public Tecnica TecnicaRecebeu { get; set; }
     }
 
     public enum Tecnica
     {
+
+        [Display(Name = "Não informada")]
+        [Description("Não informada")]
+        NaoInformado = 0,
+
         // -------- Te-waza --------
 
         [Display(Name = "Ippon Seoi Nage")]
         [Description("Te-waza")]
-        IpponSeoiNage,
+        IpponSeoiNage = 1,
 
         [Display(Name = "Morote Seoi Nage")]
         [Description("Te-waza")]
-        MoroteSeoiNage,
+        MoroteSeoiNage = 2,
 
         [Display(Name = "Seoi Otoshi")]
         [Description("Te-waza")]
-        SeoiOtoshi,
+        SeoiOtoshi = 3,
 
         [Display(Name = "Tai Otoshi")]
         [Description("Te-waza")]
-        TaiOtoshi,
+        TaiOtoshi = 4,
 
         [Display(Name = "Kata Guruma")]
         [Description("Te-waza")]
-        KataGuruma,
+        KataGuruma = 5,
 
         [Display(Name = "Sukui Nage")]
         [Description("Te-waza")]
-        SukuiNage,
+        SukuiNage = 6,
 
         [Display(Name = "Uki Otoshi")]
         [Description("Te-waza")]
-        UkiOtoshi,
+        UkiOtoshi = 7,
 
         [Display(Name = "Sumi Otoshi")]
         [Description("Te-waza")]
-        SumiOtoshi,
+        SumiOtoshi = 8,
 
 
         // -------- Koshi-waza --------
 
         [Display(Name = "O Goshi")]
         [Description("Koshi-waza")]
-        OGoshi,
+        OGoshi = 9,
 
         [Display(Name = "Uki Goshi")]
         [Description("Koshi-waza")]
-        UkiGoshi,
+        UkiGoshi = 10,
 
         [Display(Name = "Koshi Guruma")]
         [Description("Koshi-waza")]
-        KoshiGuruma,
+        KoshiGuruma = 11,
 
         [Display(Name = "Tsuri Komi Goshi")]
         [Description("Koshi-waza")]
-        TsuriKomiGoshi,
+        TsuriKomiGoshi = 12,
 
         [Display(Name = "Sode Tsuri Komi Goshi")]
         [Description("Koshi-waza")]
-        SodeTsuriKomiGoshi,
+        SodeTsuriKomiGoshi = 13,
 
         [Display(Name = "Harai Goshi")]
         [Description("Koshi-waza")]
-        HaraiGoshi,
+        HaraiGoshi = 14,
 
         [Display(Name = "Hane Goshi")]
         [Description("Koshi-waza")]
-        HaneGoshi,
+        HaneGoshi = 15,
 
 
         // -------- Ashi-waza --------
 
         [Display(Name = "O Soto Gari")]
         [Description("Ashi-waza")]
-        OSotoGari,
+        OSotoGari = 16,
 
         [Display(Name = "O Uchi Gari")]
         [Description("Ashi-waza")]
-        OUchiGari,
+        OUchiGari = 17,
 
         [Display(Name = "Ko Uchi Gari")]
         [Description("Ashi-waza")]
-        KoUchiGari,
+        KoUchiGari = 18,
 
         [Display(Name = "Ko Soto Gari")]
         [Description("Ashi-waza")]
-        KoSotoGari,
+        KoSotoGari = 19,
 
         [Display(Name = "Uchi Mata")]
         [Description("Ashi-waza")]
-        UchiMata,
+        UchiMata = 20,
 
         [Display(Name = "De Ashi Harai (ou Barai)")]
         [Description("Ashi-waza")]
-        DeAshiHarai,
+        DeAshiHarai = 21,
 
         [Display(Name = "Hiza Guruma")]
         [Description("Ashi-waza")]
-        HizaGuruma,
+        HizaGuruma = 22,
 
         [Display(Name = "Sasae Tsurikomi Ashi")]
         [Description("Ashi-waza")]
-        SasaeTsurikomiAshi,
+        SasaeTsurikomiAshi = 23,
 
         [Display(Name = "Okuri Ashi Harai")]
         [Description("Ashi-waza")]
-        OkuriAshiHarai,
+        OkuriAshiHarai = 24,
 
         [Display(Name = "Ashi Guruma")]
         [Description("Ashi-waza")]
-        AshiGuruma,
+        AshiGuruma = 25,
 
 
         // -------- Sutemi-waza --------
 
         [Display(Name = "Tomoe Nage")]
         [Description("Sutemi-waza")]
-        TomoeNage,
+        TomoeNage = 26,
 
         [Display(Name = "Sumi Gaeshi")]
         [Description("Sutemi-waza")]
-        SumiGaeshi,
+        SumiGaeshi = 27,
 
         [Display(Name = "Tani Otoshi")]
         [Description("Sutemi-waza")]
-        TaniOtoshi,
+        TaniOtoshi = 28,
 
         [Display(Name = "Yoko Tomoe Nage")]
         [Description("Sutemi-waza")]
-        YokoTomoeNage,
+        YokoTomoeNage = 29,
 
         [Display(Name = "Ura Nage")]
         [Description("Sutemi-waza")]
-        UraNage,
+        UraNage = 30,
 
 
         // -------- Imobilizações --------
 
         [Display(Name = "Kesa Gatame")]
         [Description("Imobilizações")]
-        KesaGatame,
+        KesaGatame = 31,
 
         [Display(Name = "Yoko Shiho Gatame")]
         [Description("Imobilizações")]
-        YokoShihoGatame,
+        YokoShihoGatame = 32,
 
         [Display(Name = "Kami Shiho Gatame")]
         [Description("Imobilizações")]
-        KamiShihoGatame,
+        KamiShihoGatame = 33,
 
         [Display(Name = "Juji Gatame (Ude-hishigi-juji-gatame)")]
         [Description("Imobilizações")]
-        JujiGatame,
+        JujiGatame = 34,
 
         [Display(Name = "Hadaka Jime")]
         [Description("Imobilizações")]
-        HadakaJime
+        HadakaJime = 35
     }
 
     public class EstatisticaCompeticaoDetalheVM : IPermiteMarcarParaExclusao

@@ -32,6 +32,9 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
         public ArquivoVM ArquivoImagem { get; set; } = new();
 
         [BindProperty]
+        public ArquivoVM ArquivoImagemCostas { get; set; } = new();
+
+        [BindProperty]
         public List<AvaliacaoNutricionalAnexoVM> Anexos { get; set; } = new();
 
         private void BindSelectLists()
@@ -113,6 +116,22 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
             );
         }
 
+        public async Task<IActionResult> OnGetConteudoDoArquivoCostasAsync(int avaliacaoId)
+        {
+            var avaliacao = await _repository.Query()
+                                .Include(x => x.ArquivoImagemCostas)
+                                .FirstOrDefaultAsync(x => x.Id == avaliacaoId);
+
+            if (avaliacao?.ArquivoImagemCostas == null)
+                return NotFound();
+
+            return File(
+                avaliacao.ArquivoImagemCostas.Conteudo,
+                avaliacao.ArquivoImagemCostas.ContentType
+            );
+        }
+
+
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
@@ -130,7 +149,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
 
             try
             {
-                await _avaliacaoService.UpdateAsync(AvaliacaoNutricional, ArquivoImagem, Anexos);
+                await _avaliacaoService.UpdateAsync(AvaliacaoNutricional, ArquivoImagem, ArquivoImagemCostas, Anexos);
             }
             catch (KeyNotFoundException)
             {

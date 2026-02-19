@@ -250,6 +250,21 @@ namespace IFL.WebApp.Pages
         public string Label { get; set; }
     }
 
+    public class DadosDecimalChartDTO
+    {
+        public DadosDecimalChartDTO()
+        {
+            Label = string.Empty;
+        }
+        public DadosDecimalChartDTO(Decimal valor, string label)
+        {
+            Valor = valor;
+            Label = label;
+        }
+
+        public Decimal Valor { get; set; }
+        public string Label { get; set; }
+    }
 
     [Serializable]
     public class EventoDTO

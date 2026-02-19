@@ -4,6 +4,7 @@ using IFL.WebApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IFL.WebApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260216191147_Add-AjuteClasseEstatistica")]
+    partial class AddAjuteClasseEstatistica
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -280,9 +283,6 @@ namespace IFL.WebApp.Migrations
                     b.Property<decimal?>("Altura")
                         .HasColumnType("decimal(3,2)");
 
-                    b.Property<int?>("ArquivoImagemCostasId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ArquivoImagemId")
                         .HasColumnType("int");
 
@@ -313,8 +313,6 @@ namespace IFL.WebApp.Migrations
                         .HasColumnType("decimal(6,2)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ArquivoImagemCostasId");
 
                     b.HasIndex("ArquivoImagemId");
 
@@ -843,15 +841,10 @@ namespace IFL.WebApp.Migrations
 
             modelBuilder.Entity("IFL.WebApp.Model.AvaliacaoNutricional", b =>
                 {
-                    b.HasOne("IFL.WebApp.Model.Arquivo", "ArquivoImagemCostas")
-                        .WithMany()
-                        .HasForeignKey("ArquivoImagemCostasId")
-                        .OnDelete(DeleteBehavior.NoAction);
-
                     b.HasOne("IFL.WebApp.Model.Arquivo", "ArquivoImagem")
                         .WithMany()
                         .HasForeignKey("ArquivoImagemId")
-                        .OnDelete(DeleteBehavior.NoAction);
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("IFL.WebApp.Model.Atleta", "Atleta")
                         .WithMany()
@@ -860,8 +853,6 @@ namespace IFL.WebApp.Migrations
                         .IsRequired();
 
                     b.Navigation("ArquivoImagem");
-
-                    b.Navigation("ArquivoImagemCostas");
 
                     b.Navigation("Atleta");
                 });

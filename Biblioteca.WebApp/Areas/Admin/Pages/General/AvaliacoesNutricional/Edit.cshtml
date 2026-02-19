@@ -116,7 +116,7 @@
 
             <div class="row">
                 <div class="col-md-6 mb3">
-                    <label class="form-label">Imagem</label>
+                    <label class="form-label">Imagem de Frente</label>
                     <input asp-for="ArquivoImagem.FormFile"
                            type="file"
                            class="form-control"
@@ -127,8 +127,32 @@
                 @if (Model.AvaliacaoNutricional.ArquivoImagemId > 0)
                 {
                     <div class="col-md-4 d-flex flex-column">
-                        <label class="form-label">Visualização Imagem</label>
+                        <label class="form-label">Visualização Imagem de Frente</label>
                         <img src="@Url.Page(null, "ConteudoDoArquivo", new { avaliacaoId = Model.AvaliacaoNutricional.Id })"
+                             class="img-thumbnail img-fluid align-self-start mt-2"
+                             style="max-height: 150px; width: auto; cursor: zoom-in;"
+                             data-bs-toggle="modal"
+                             data-bs-target="#modalImagemCapa" />
+                    </div>
+                }
+            </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb3">
+                        <label class="form-label">Imagem de Costas</label>
+                        <input asp-for="ArquivoImagemCostas.FormFile"
+                               type="file"
+                               class="form-control"
+                               accept="image/*" />
+                        <span asp-validation-for="ArquivoImagemCostas.FormFile" class="text-danger"></span>
+                    </div>
+                
+
+                @if (Model.AvaliacaoNutricional.ArquivoImagemId > 0)
+                {
+                    <div class="col-md-4 d-flex flex-column">
+                        <label class="form-label">Visualização Imagem de Costas</label>
+                        <img src="@Url.Page(null, "ConteudoDoArquivoCostas", new { avaliacaoId = Model.AvaliacaoNutricional.Id })"
                              class="img-thumbnail img-fluid align-self-start mt-2"
                              style="max-height: 150px; width: auto; cursor: zoom-in;"
                              data-bs-toggle="modal"

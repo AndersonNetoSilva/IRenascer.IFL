@@ -7,11 +7,13 @@ namespace IFL.WebApp.Infrastructure.Abstractions.Services
     {
         Task UpdateAsync(AvaliacaoNutricional avaliacaoNutricional,
                             ArquivoVM? arquivoImagem,
+                            ArquivoVM? arquivoImagemCostas,
                             IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
                         );
 
         Task AddAsync(AvaliacaoNutricional avaliacaoNutricional, 
                         ArquivoVM? arquivoImagem,
+                        ArquivoVM? arquivoImagemCostas,
                         IEnumerable<AvaliacaoNutricionalAnexoVM> anexos
                         );
     }

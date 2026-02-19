@@ -1,0 +1,59 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional.FiltroAvaliacaoNutricionalModel
+
+@{
+    ViewData["Title"] = "Avaliações";
+}
+
+<breadcrumb items="Cadastros, Gerais, Avaliacoes"></breadcrumb>
+
+<!-- filtro -->
+<natural-filter fields="Nome,Data"
+                placeholder="Pesquisar…"
+                example="Nome:João, Data:01/01/2026"
+                value="@Model.Search">
+</natural-filter>
+
+<!-- Dados -->
+<table class="table mb-3">
+    <thead>
+        <tr>         
+
+            <th class="text-center text-nowrap" style="width:1%;">
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacoes[0].Atleta.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Avaliacoes[0].Data)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Avaliacoes)
+        {
+            <tr>
+                 
+                <td class="text-center text-nowrap" style="width:1%">
+                    <a href="/Admin/Relatorios/AvaliacoesNutricional/Index?idAtleta=@item.AtletaId&idAvaliacao=@item.Id" class="btn btn-outline-secondary btn-sm p-1" data-bs-toggle="tooltip" title="Alterar" target="_blank">
+                        <i class="bi bi-printer"></i>
+                    </a>
+                </td>
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.Atleta.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- Paginação -->
+<pager page="/Admin/General/AvaliacoesNutricional/FiltroAvaliacaoNutricional"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

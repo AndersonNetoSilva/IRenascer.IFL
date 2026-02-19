@@ -53,6 +53,8 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.EstatisticasCompeticao
         public List<SelectListItem> Eventos { get; set; } = new();
         public List<SelectListItem> Atletas { get; set; } = new();
 
+        public List<SelectListItem> Tecnicas { get; set; } = new();
+
         [BindProperty]
         public EstatisticaCompeticao EstatisticaCompeticao { get; set; } = default!;
 

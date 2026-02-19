@@ -102,11 +102,18 @@ namespace IFL.WebApp.Model
         public string AguaCorporalAsString { get; set; }
 
         [ForeignKey(nameof(ArquivoImagem))]
-        [Display(Name = "Imagem")]
+        [Display(Name = "Imagem de Frente")]
         public int? ArquivoImagemId { get; set; }
 
-        [Display(Name = "Imagem")]
+        [Display(Name = "Imagem de Frente")]
         public Arquivo? ArquivoImagem { get; set; }
+
+        [ForeignKey(nameof(ArquivoImagemCostas))]
+        [Display(Name = "Imagem de Costas")]
+        public int? ArquivoImagemCostasId { get; set; }
+
+        [Display(Name = "Imagem de Costas")]
+        public Arquivo? ArquivoImagemCostas { get; set; }
 
         public List<AvaliacaoNutricionalAnexo> Anexos { get; set; } = new();
     }

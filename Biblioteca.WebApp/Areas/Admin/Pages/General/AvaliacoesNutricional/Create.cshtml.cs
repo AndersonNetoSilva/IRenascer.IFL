@@ -67,6 +67,9 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
         public ArquivoVM ArquivoImagem { get; set; } = new();
 
         [BindProperty]
+        public ArquivoVM ArquivoImagemCostas { get; set; } = new();
+
+        [BindProperty]
         public List<AvaliacaoNutricionalAnexoVM> Anexos { get; set; } = new();
 
         public static void ValidarValor(AvaliacaoNutricional avaliacaoNutricional)
@@ -137,7 +140,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.AvaliacoesNutricional
 
             try
             {
-                await _avaliacaoService.AddAsync(AvaliacaoNutricional, ArquivoImagem, Anexos);
+                await _avaliacaoService.AddAsync(AvaliacaoNutricional, ArquivoImagem, ArquivoImagemCostas, Anexos);
             }
             catch (KeyNotFoundException)
             {
