@@ -1,0 +1,85 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.Relatorios.Modalidades.IndexModel
+
+@{
+    ViewData["Title"] = "Modalidades";
+}
+
+<style>
+    @@page {
+        size: A4 landscape;
+        margin: 20mm;
+    }
+
+    @@media print {
+        body * {
+            visibility: hidden;
+        }
+
+        #print-area,
+        #print-area * {
+            visibility: visible;
+        }
+
+        #print-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+</style>
+
+<breadcrumb items="Relatorios, Modalidades"></breadcrumb>
+
+<!-- filtro -->
+<natural-filter fields="Nome"
+                placeholder="Pesquisar…"
+                example="Título:IFL;Nome:Hajime"
+                value="@Model.Search">
+</natural-filter>
+
+<button class="btn btn-primary" onclick="window.print()">Imprimir</button>
+
+<!-- Dados -->
+<div id="print-area">
+    <table id="reportTable" class="table mb-3">
+        <thead>
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Descrição
+                </th>
+                <th>
+                    Ativa
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model.ReportBaseViewList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Ativo)
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<pager page="/Admin/General/Autores/Index"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>

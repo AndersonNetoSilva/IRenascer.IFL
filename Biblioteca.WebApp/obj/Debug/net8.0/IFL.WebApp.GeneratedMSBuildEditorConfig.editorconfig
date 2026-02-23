@@ -298,8 +298,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xFc3RhdGlzdGljYXNDb21wZXRpY2FvXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Eventos/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xFdmVudG9zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Horarios/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xIb3Jhcmlvc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Livros/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xMaXZyb3NcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/Relatorios/Modalidades/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cUGFnZXNcUmVsYXRvcmlvc1xNb2RhbGlkYWRlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Projeto/IRenascer.IFL/Biblioteca.WebApp/Areas/Admin/Pages/_ValidationScriptsPartial.cshtml]

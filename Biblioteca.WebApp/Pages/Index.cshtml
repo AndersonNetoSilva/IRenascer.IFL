@@ -14,22 +14,6 @@
 
     <script type="text/javascript">
 
-            function drawAutoresPorLivroChart() {
-                var chartData = @Html.Raw(Json.Serialize(Model.AutoresPorLivroList))
-
-                Morris.Line({
-                    element: 'chart-AutoresPorLivro',
-                    data: chartData,
-                    xkey: 'livro',
-                    ykeys: ['quantidade'],
-                    labels: ['Total de Autores'],
-                    parseTime: false,
-                    hideHover: "auto",
-                    xLabelAngle: 60,
-                    lineColors: ['#2ECC71', '#0B62A4']
-                });
-            };
-
             function drawEventoChart() {
                 var chartData = @Html.Raw(Json.Serialize(Model.EventoDTOList))
 
@@ -86,48 +70,6 @@
 
              function drawAtletaGraducaoChart() {
                 var chartData = @Html.Raw(Json.Serialize(Model.AtlestaGraduacaoDTOList))
-                // var labels = chartData.map(x => x.label);
-                // var values = chartData.map(x => x.quantidade);
-
-                // console.log(labels);
-                // console.log(values);
-
-                // new Chart(document.getElementById("chart-AtletaGraducaoDTO"), {
-                // type: 'horizontalBar',
-                // data: {
-                //     labels: labels,
-                //     datasets: [
-                //     {
-                //         label: "Quantidade",
-                //                         backgroundColor:  [
-                //                                             '#F0F8FF', // Branca Gelo
-                //                                             '#D3D3D3', // Cinza Claro
-                //                                             '#808080', // Cinza
-                //                                             '#ADD8E6', // Azul Claro
-                //                                             '#4682B4', // Azul Médio (Steel Blue)
-                //                                             '#FFF9C4', // Amarela Médio (Claro suave)
-                //                                             '#FFFF00', // Amarelo
-                //                                             '#FFB74D', // Laranja Médio
-                //                                             '#FF8C00', // Laranja (Dark Orange)
-                //                                             '#228B22', // Verde
-                //                                             '#800080', // Roxa
-                //                                             '#A52A2A', // Marrom Claro
-                //                                             '#5D4037', // Marrom Escuro
-                //                                             '#333333', // Preto Claro
-                //                                             '#000000'  // Preto Escuro
-                //                                         ],
-                //         data: values
-                //     }]
-                //     },
-                //     options: {
-                //         legend: { display: false },
-                //         title: {
-                //             display: true,
-                //             text: 'Atletas por Classe'
-                //         }
-                //     }
-                // });
-
                 // 1. Encontrar o valor máximo de 'quantidade' nos dados
                 var maxQuantidade = Math.max.apply(Math, chartData.map(function(o) {
                     return o.quantidade;
@@ -167,30 +109,27 @@
                     });
             };
 
+        function drawSexoDonutsChart() {
+            var chartData = @Html.Raw(Json.Serialize(Model.SexoDonutsModeList));
 
-        function drawAutoresPorLivroDonutsChart()
-        {
-            var chartData = @Html.Raw(Json.Serialize(Model.DonutsModeList))
-
-            Morris.Donut({
-                element: 'chart-AutoresPorLivroDonuts',
-                data: chartData,
-                formatter: function (y) { return y }
-            });
-        };
-
-        function drawSexoDonutsChart()
-        {
-            var chartData = @Html.Raw(Json.Serialize(Model.SexoDonutsModeList))
+            // Calcula o valor total somando todos os itens do array
+            var total = 0;
+            for (var i = 0; i < chartData.length; i++) {
+                total += chartData[i].value;
+            }
 
             Morris.Donut({
                 element: 'chart-SexoDonuts',
                 data: chartData,
-                formatter: function (y) { return y },
-                    colors: [
-                                '#3498DB', // azul
-                                '#E74C3C'  // vermelho
-                            ]
+                formatter: function (y) {
+                    // Calcula o percentual: (parte / total) * 100
+                    var percentage = ((y / total) * 100).toFixed(1);
+                    return y + " (" + percentage + "%)";
+                },
+                colors: [
+                    '#E74C3C', // vermelho
+                    '#3498DB'  // azul
+                ]
             });
         };
 
@@ -258,9 +197,7 @@
         }
 
         $(document).ready(function () {
-                    //drawAutoresPorLivroChart();
                     drawEventoChart();
-                    //drawAutoresPorLivroDonutsChart();
                     drawSexoDonutsChart();
                     drawAtletaGraducaoChart();
                     drawHorizontalBarChart();

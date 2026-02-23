@@ -54,14 +54,24 @@
             {
                 new MenuItem
                 {
-                    Title = "Livros",
+                    Title = "Listagens",
                     Children = new List<MenuItem>
                     {
                         new MenuItem { Title = "Autores e Livros", Url = "/Admin/Relatorios/Livros/Index" },
                         new MenuItem { Title = "Atletas", Url = "/Admin/Relatorios/Atletas/Index" },
                         new MenuItem { Title = "Colaboradores", Url = "/Admin/Relatorios/Colaboradores/Index" },
+                        new MenuItem { Title = "Eventos", Url = "/Admin/Relatorios/Eventos/Index" },
+                        new MenuItem { Title = "Horários", Url = "/Admin/Relatorios/Horarios/Index" },
+                        new MenuItem { Title = "Modalidades", Url = "/Admin/Relatorios/Modalidades/Index" },
+                    }
+                },
+                new MenuItem
+                {
+                    Title = "Gerenciais",
+                    Children = new List<MenuItem>
+                    {
                         new MenuItem { Title = "Estatistica de Competição", Url = "/Admin/General/Atletas/FiltroEstatiscaCompeticao" },
-                        new MenuItem { Title = "Avaliações Nutricionais", Url = "/Admin/General/AvaliacoesNutricional/FiltroAvaliacaoNutricional" },
+                        new MenuItem { Title = "Avaliações Nutricionais", Url = "/Admin/General/AvaliacoesNutricional/FiltroAvaliacaoNutricional" }
                     }
                 }
             }

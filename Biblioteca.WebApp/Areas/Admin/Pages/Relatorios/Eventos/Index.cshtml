@@ -1,0 +1,104 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.Relatorios.Eventos.IndexModel
+
+@{
+    ViewData["Title"] = "Eventos";
+}
+
+<style>
+    @@page {
+        size: A4 landscape;
+        margin: 20mm;
+    }
+
+    @@media print {
+        body * {
+            visibility: hidden;
+        }
+
+        #print-area,
+        #print-area * {
+            visibility: visible;
+        }
+
+        #print-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+</style>
+
+<breadcrumb items="Relatorios, Eventos"></breadcrumb>
+
+<!-- filtro -->
+<natural-filter fields="Nome,Data,Ano"
+                placeholder="Pesquisar…"
+                example="Título:IFL;Nome:Hajime"
+                value="@Model.Search">
+</natural-filter>
+
+<button class="btn btn-primary" onclick="window.print()">Imprimir</button>
+
+<!-- Dados -->
+<div id="print-area">
+    <table id="reportTable" class="table mb-3">
+        <thead>
+            <tr>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Local
+                </th>
+                <th>
+                   Descrição 
+                </th>
+                <th>
+                    Tipo
+                </th>
+                <th>
+                    Encerrado
+                </th> 
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model.ReportEventosViewList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Nome)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Local)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descricao)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem =>  item.TipoEvento)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Encerrado)
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+<!-- Paginação -->
+<pager page="/Admin/General/Autores/Index"
+       page-number="Model.PageNumber"
+       total-pages="Model.TotalPages">
+</pager>
