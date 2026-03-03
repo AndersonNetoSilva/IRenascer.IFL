@@ -2,105 +2,127 @@
 @model IFL.WebApp.Areas.Admin.Pages.General.Horarios.CreateModel
 
 @{
-    ViewData["Title"] = "Inserir";
+    ViewData["Title"] = "Inserir Horário";
 }
 
 <breadcrumb items="Cadastros, Gerais, Horarios, Inserir"></breadcrumb>
 
-<div class="row">
-    <div class="col-md-10">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="row justify-content-center mt-4">
+    <div class="col-md-10 col-lg-8">
 
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label asp-for="Horario.Nome" class="control-label"></label>
-                        <input asp-for="Horario.Nome" class="form-control" />
-                        <span asp-validation-for="Horario.Nome" class="text-danger"></span>
+        <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="mb-0 text-primary fw-bold">Cadastrar Novo Horário</h5>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6 mb-3 mb-md-0">
+                            <label asp-for="Horario.Nome" class="form-label fw-semibold"></label>
+                            <input asp-for="Horario.Nome" class="form-control" placeholder="Ex: Manhã, Integral, Noturno..." />
+                            <span asp-validation-for="Horario.Nome" class="text-danger small"></span>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <label asp-for="Horario.HoraInicio" class="form-label fw-semibold">Início</label>
+                            <input asp-for="Horario.HoraInicio" type="time" class="form-control" />
+                            <span asp-validation-for="Horario.HoraInicio" class="text-danger small"></span>
+                        </div>
+                        <div class="col-6 col-md-2">
+                            <label asp-for="Horario.HoraFim" class="form-label fw-semibold">Fim</label>
+                            <input asp-for="Horario.HoraFim" type="time" class="form-control" />
+                            <span asp-validation-for="Horario.HoraFim" class="text-danger small"></span>
+                        </div>
+ 
                     </div>
-                </div>
 
-                <div class="col-md-2">
-                    <label>Início</label>
-                    <input asp-for="Horario.HoraInicio" type="time" class="form-control" />
-                </div>
-                <div class="col-md-2">
-                    <label>Fim</label>
-                    <input asp-for="Horario.HoraFim" type="time" class="form-control" />
-                </div>
+                    <div class="row mb-4">
+                        <div class="col-md-9 mb-3 mb-md-0">
+                            <label asp-for="Horario.Descricao" class="form-label fw-semibold"></label>
+                            <textarea asp-for="Horario.Descricao"
+                                      class="form-control"
+                                      rows="3"
+                                      placeholder="Adicione detalhes sobre o horário..."></textarea>
+                            <span asp-validation-for="Horario.Descricao" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-3 d-flex align-items-center pt-md-4">
+                            <div class="form-check form-switch">
+                                <input asp-for="Horario.Ativo" class="form-check-input" type="checkbox" role="switch" checked="checked" />
+                                <label asp-for="Horario.Ativo" class="form-check-label fw-semibold"></label>
+                                <span asp-validation-for="Horario.Ativo" class="text-danger small"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-light p-3 rounded mb-4 border">
+                        <h6 class="fw-bold text-secondary mb-3">Dias da Semana</h6>
+
+                        <div class="row g-2">
+                            @* Código de Domingo preservado conforme original *@
+                            @* <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Domingo" class="form-check-input" />
+                                    <label asp-for="Horario.Domingo" class="form-check-label"></label>
+                                </div>
+                            </div> *@
+
+                            <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Segunda" class="form-check-input" />
+                                    <label asp-for="Horario.Segunda" class="form-check-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Terca" class="form-check-input" />
+                                    <label asp-for="Horario.Terca" class="form-check-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Quarta" class="form-check-input" />
+                                    <label asp-for="Horario.Quarta" class="form-check-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Quinta" class="form-check-input" />
+                                    <label asp-for="Horario.Quinta" class="form-check-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Sexta" class="form-check-input" />
+                                    <label asp-for="Horario.Sexta" class="form-check-label"></label>
+                                </div>
+                            </div>
+
+                            <div class="col-6 col-md-2">
+                                <div class="form-check">
+                                    <input asp-for="Horario.Sabado" class="form-check-input" />
+                                    <label asp-for="Horario.Sabado" class="form-check-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="text-muted mb-4" />
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-page="./Index" class="btn btn-light border px-4">Voltar</a>
+                        <button type="submit" class="btn btn-primary px-4">Gravar Horário</button>
+                    </div>
+                </form>
             </div>
- 
+        </div>
 
-            <div class="col-md-9">
-                <div class="form-group">
-                    <label asp-for="Horario.Descricao" class="control-label"></label>
-                    <textarea asp-for="Horario.Descricao"
-                              class="form-control"
-                              rows="4"></textarea>
-                    <span asp-validation-for="Horario.Descricao" class="text-danger"></span>
-                </div>
-            </div>
-
-
-            <hr />
-
-            <h6>Dias da Semana</h6>
-
-            <div class="row mb-7">
-                @* <div class="col-md-2 form-check">
-                    <input asp-for="Horario.Domingo" class="form-check-input" />
-                    <label asp-for="Horario.Domingo" class="form-check-label"></label>
-                </div> *@
-
-                <div class="col-md-2 form-check">
-                    <input asp-for="Horario.Segunda" class="form-check-input" />
-                    <label asp-for="Horario.Segunda" class="form-check-label"></label>
-                </div>
-
-                <div class="col-md-2 form-check">
-                    <input asp-for="Horario.Terca" class="form-check-input" />
-                    <label asp-for="Horario.Terca" class="form-check-label"></label>
-                </div>
-
-                <div class="col-md-2 form-check">
-                    <input asp-for="Horario.Quarta" class="form-check-input" />
-                    <label asp-for="Horario.Quarta" class="form-check-label"></label>
-                </div>
-
-                <div class="col-md-2 form-check">
-                    <input asp-for="Horario.Quinta" class="form-check-input" />
-                    <label asp-for="Horario.Quinta" class="form-check-label"></label>
-                </div>
-
-                <div class="col-md-2 form-check">
-                    <input asp-for="Horario.Sexta" class="form-check-input" />
-                    <label asp-for="Horario.Sexta" class="form-check-label"></label>
-                </div>
-
-                <div class="col-md-1 form-check mt-2">
-                    <input asp-for="Horario.Sabado" class="form-check-input" />
-                    <label asp-for="Horario.Sabado" class="form-check-label"></label>
-                </div>
-            </div>
-
-            <hr />
-
- 
-
-            <div class="col-md-3">
-                <div class="form-group form-check">
-                    <input asp-for="Horario.Ativo" class="form-check-input" checked="checked" />
-                    <label asp-for="Horario.Ativo" class="form-check-label"></label>
-                    <span asp-validation-for="Horario.Ativo" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="form-group mt-3 d-flex justify-content-between">
-                <input type="submit" value="Gravar" class="btn btn-primary" />
-                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
-            </div>
-        </form>
     </div>
 </div>
 

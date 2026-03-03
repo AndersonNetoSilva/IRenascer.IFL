@@ -1,0 +1,152 @@
+﻿@page
+@model IFL.WebApp.Areas.Admin.Pages.General.Graduacoes.CreateModel
+
+@{
+    ViewData["Title"] = "Inserir";
+}
+
+<breadcrumb items="Cadastros, Gerais, Graduações, Inserir"></breadcrumb>
+
+<div class="row">
+    <div class="col-md-10">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="GraduacaoVM.Descricao" class="control-label"></label>
+                        <input asp-for="GraduacaoVM.Descricao" class="form-control" />
+                        <span asp-validation-for="GraduacaoVM.Descricao" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label asp-for="GraduacaoVM.Data" class="control-label"></label>
+                        <input asp-for="GraduacaoVM.Data" asp-format="{0:yyyy-MM-ddTHH:mm}" type="datetime-local" class="form-control" />
+                        <span asp-validation-for="GraduacaoVM.Data" class="text-danger"></span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="GraduacaoVM.HorarioId"></label>
+                        <select asp-for="GraduacaoVM.HorarioId" asp-items="Model.Horarios" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="GraduacaoVM.HorarioId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label asp-for="GraduacaoVM.ModalidadeId"></label>
+                        <select asp-for="GraduacaoVM.ModalidadeId" asp-items="Model.Modalidades" class="form-select">
+                            <option value="">Selecione</option>
+                        </select>
+                        <span asp-validation-for="GraduacaoVM.ModalidadeId" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <div class="col-md-2 d-flex align-items-end justify-content-end">
+                    <button id="btnFiltrar" class="btn btn-primary">Filtrar</button>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="form-group form-check">
+                    <input asp-for="GraduacaoVM.Encerrada" class="form-check-input" />
+                    <label asp-for="GraduacaoVM.Encerrada" class="form-check-label"></label>
+                    <span asp-validation-for="GraduacaoVM.Encerrada" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div id="registrosContainer" class="row mt-3">
+                @await Html.PartialAsync("_RegistrosAtletaGraduacaoGrid", Model.GraduacaoVM)
+            </div>
+
+            <div class="form-group mt-3 d-flex justify-content-between">
+                <input type="submit" value="Gravar" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        function marcarParaExclusao(button, arrayName) {
+            const row = button.closest('tr');
+
+            const hidden = row.querySelector(
+                `input[type="hidden"][name^="${arrayName}["][name$=".MarcadoParaExclusao"]`
+            );
+
+            if (!hidden) return;
+
+            hidden.value = "true";
+
+            row.classList.add('table-danger', 'text-muted');
+
+            button.disabled = true;
+        };
+    </script>
+
+    <script>
+        document.getElementById("btnFiltrar")
+            .addEventListener("click", function (event) {
+                event.preventDefault();
+
+                const idGraduacao = document.getElementById("GraduacaoVM_GraduacaoId")?.value;
+                const idModalidade = document.getElementById("GraduacaoVM_ModalidadeId")?.value;
+                const idHorario = document.getElementById("GraduacaoVM_HorarioId")?.value;
+
+                carregarRegistros(idGraduacao, idModalidade, idHorario);
+            });
+    </script>
+
+    <script>
+        async function carregarRegistros(idGraduacao, idModalidade, idHorario) {
+            const params = new URLSearchParams({
+                handler: "FillRegistrosGraduacaoAtleta",
+                idGraduacao: idGraduacao
+            });
+
+            if (idGraduacao) params.append("idGraduacao", idGraduacao);
+            if (idModalidade) params.append("idModalidade", idModalidade);
+            if (idHorario) params.append("idHorario", idHorario);
+
+            const response = await fetch(`?${params.toString()}`);
+            const html = await response.text();
+
+            document.getElementById("registrosContainer").innerHTML = html;
+        }
+
+        async function adicionarRegistro() {
+
+            const idGraduacao = document.getElementById("GraduacaoVM_GraduacaoId").value;
+            const tbody = document.getElementById("det-registros");
+            const index = tbody.querySelectorAll("tr").length;
+
+            const params = new URLSearchParams({
+                handler: "NewRegistroGraduacaoAtleta",
+                index: index,
+                idGraduacao: idGraduacao
+            });
+
+            const response = await fetch(`?${params.toString()}`);
+            const html = await response.text();
+
+            tbody.insertAdjacentHTML("afterbegin", html);
+        }
+    </script>
+}

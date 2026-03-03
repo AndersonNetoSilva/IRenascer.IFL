@@ -1,5 +1,6 @@
 using IFL.WebApp.Data;
 using IFL.WebApp.Infrastructure.Extensions;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace IFL.WebApp
@@ -17,6 +18,14 @@ namespace IFL.WebApp
                 options.UseSqlServer(connectionString));
 
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+            builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                options.SignIn.RequireConfirmedAccount = true;
+                options.Tokens.AuthenticatorTokenProvider = TokenOptions.DefaultAuthenticatorProvider;
+            })
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
 
             builder.Services.AddRazorPages();
 
@@ -42,9 +51,14 @@ namespace IFL.WebApp
 
             app.UseRouting();
 
+            app.UseAuthorization();
+
             app.MapRazorPages();
 
             DbInitializer.SeddAsync(app.Services).Wait();
+
+            DbInitializer.SeedRolesAndAdminAsync(app.Services).Wait();
+
 
             app.Run();
         }

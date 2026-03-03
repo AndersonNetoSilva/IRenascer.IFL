@@ -63,11 +63,11 @@ namespace IFL.WebApp.Infrastructure.Services
                     if (detalhe.Id.HasValue && detalhe.Id.Value > 0)
                     {
                         var estatisticaCompeticaoDetalhe = estatistica.Detalhes.First(p => p.Id == detalhe.Id);
-                        estatisticaCompeticaoDetalhe.Ippon       = detalhe.Ippon;
-                        estatisticaCompeticaoDetalhe.Shido       = detalhe.Shido;
-                        estatisticaCompeticaoDetalhe.Yuko        = detalhe.Yuko;
-                        estatisticaCompeticaoDetalhe.Wazari      = detalhe.Wazari;
-                        estatisticaCompeticaoDetalhe.Hansokumake = detalhe.Hansokumake;
+                        estatisticaCompeticaoDetalhe.Ippon       = detalhe.Ippon == null ? 0 : detalhe.Ippon; 
+                        estatisticaCompeticaoDetalhe.Shido       = detalhe.Shido == null ? 0 : detalhe.Shido;
+                        estatisticaCompeticaoDetalhe.Yuko        = detalhe.Yuko == null ? 0 : detalhe.Yuko;
+                        estatisticaCompeticaoDetalhe.Wazari      = detalhe.Wazari == null ? 0 : detalhe.Wazari;
+                        estatisticaCompeticaoDetalhe.Hansokumake = detalhe.Hansokumake == null ? 0 : detalhe.Hansokumake;
                         estatisticaCompeticaoDetalhe.Vitoria     = detalhe.Vitoria;
                         estatisticaCompeticaoDetalhe.GoldenScore = detalhe.GoldenScore;
                         estatisticaCompeticaoDetalhe.TempoDaLuta = detalhe.TempoDaLuta;
@@ -80,11 +80,11 @@ namespace IFL.WebApp.Infrastructure.Services
                     {
                         estatistica.Detalhes.Add(new EstatisticaCompeticaoDetalhe
                         {
-                            Ippon = detalhe.Ippon,
-                            Shido = detalhe.Shido,
-                            Yuko = detalhe.Yuko,
-                            Wazari = detalhe.Wazari,
-                            Hansokumake = detalhe.Hansokumake,
+                            Ippon = detalhe.Ippon == null ? 0 : detalhe.Ippon,
+                            Shido = detalhe.Shido == null ? 0 : detalhe.Shido,
+                            Yuko = detalhe.Yuko == null ? 0 : detalhe.Yuko,
+                            Wazari = detalhe.Wazari == null ? 0 : detalhe.Wazari,
+                            Hansokumake = detalhe.Hansokumake == null ? 0 : detalhe.Hansokumake,
                             Vitoria = detalhe.Vitoria,
                             GoldenScore = detalhe.GoldenScore,
                             TempoDaLuta = detalhe.TempoDaLuta,

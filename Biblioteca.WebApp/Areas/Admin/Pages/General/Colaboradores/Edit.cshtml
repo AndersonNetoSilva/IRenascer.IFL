@@ -2,159 +2,127 @@
 @model IFL.WebApp.Areas.Admin.Pages.General.Colaboradores.EditModel
 
 @{
-    ViewData["Title"] = "Alterar";
+    ViewData["Title"] = "Alterar Colaborador";
 }
 
 <breadcrumb items="Cadastros, Gerais, Colaboradores, Alterar"></breadcrumb>
 
-<div class="row">
-    <div class="col-md-10">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="row justify-content-center mt-4">
+    <div class="col-md-12 col-lg-10">
 
-
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Nome" class="control-label"></label>
-                        <input asp-for="Colaborador.Nome" class="form-control" />
-                        <span asp-validation-for="Colaborador.Nome" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.DataNascimento" class="control-label"></label>
-                        <input asp-for="Colaborador.DataNascimento" type="date" class="form-control" />
-                        <span asp-validation-for="Colaborador.DataNascimento" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-1">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Idade" class="control-label"></label>
-                        <input asp-for="Colaborador.Idade" class="form-control" readonly />
-                        <span asp-validation-for="Colaborador.Idade" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.InicioAtividade" class="control-label"></label>
-                        <input asp-for="Colaborador.InicioAtividade" type="date" class="form-control" />
-                        <span asp-validation-for="Colaborador.InicioAtividade" class="text-danger"></span>
-                    </div>
-                </div>
+        <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="mb-0 text-primary fw-bold">Alterar Colaborador</h5>
             </div>
 
-            <div class="row">
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.CPF" class="control-label"></label>
-                        <input asp-for="Colaborador.CPF" class="form-control" />
-                        <span asp-validation-for="Colaborador.CPF" class="text-danger"></span>
-                    </div>
-                </div>
+            <div class="card-body p-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
 
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.RG" class="control-label"></label>
-                        <input asp-for="Colaborador.RG" class="form-control" />
-                        <span asp-validation-for="Colaborador.RG" class="text-danger"></span>
-                    </div>
-                </div>
+                    <input type="hidden" asp-for="Colaborador.Id" />
 
-                <div class="col-md-7">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Email" class="control-label"></label>
-                        <input asp-for="Colaborador.Email" class="form-control" />
-                        <span asp-validation-for="Colaborador.Email" class="text-danger"></span>
+                    <div class="row mb-3">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.Nome" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Nome" class="form-control" placeholder="Nome completo" />
+                            <span asp-validation-for="Colaborador.Nome" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.DataNascimento" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.DataNascimento" type="date" class="form-control" />
+                            <span asp-validation-for="Colaborador.DataNascimento" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-2 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.Idade" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Idade" class="form-control bg-light" readonly />
+                            <span asp-validation-for="Colaborador.Idade" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-2">
+                            <label asp-for="Colaborador.InicioAtividade" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.InicioAtividade" type="date" class="form-control" />
+                            <span asp-validation-for="Colaborador.InicioAtividade" class="text-danger small"></span>
+                        </div>
                     </div>
-                </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.CPF" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.CPF" class="form-control" placeholder="000.000.000-00" />
+                            <span asp-validation-for="Colaborador.CPF" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.RG" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.RG" class="form-control" />
+                            <span asp-validation-for="Colaborador.RG" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="Colaborador.Email" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Email" type="email" class="form-control" placeholder="exemplo@dominio.com" />
+                            <span asp-validation-for="Colaborador.Email" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.TelefonePrincipal" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.TelefonePrincipal" class="form-control" placeholder="(00) 00000-0000" />
+                            <span asp-validation-for="Colaborador.TelefonePrincipal" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.Profissao" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Profissao" class="form-control" placeholder="Ex: Professor, Recepcionista..." />
+                            <span asp-validation-for="Colaborador.Profissao" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.TipoColaborador" class="form-label fw-semibold"></label>
+                            <select asp-for="Colaborador.TipoColaborador"
+                                    class="form-select"
+                                    asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.TipoColaborador>()">
+                            </select>
+                            <span asp-validation-for="Colaborador.TipoColaborador" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-center pt-md-4">
+                            <div class="form-check form-switch">
+                                <input asp-for="Colaborador.Ativo" class="form-check-input" type="checkbox" role="switch" />
+                                <label asp-for="Colaborador.Ativo" class="form-check-label fw-semibold"></label>
+                                <span asp-validation-for="Colaborador.Ativo" class="text-danger small"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-5 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.Logradouro" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Logradouro" class="form-control" placeholder="Rua, Avenida..." />
+                            <span asp-validation-for="Colaborador.Logradouro" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-3 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.Bairro" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Bairro" class="form-control" />
+                            <span asp-validation-for="Colaborador.Bairro" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-2 mb-3 mb-md-0">
+                            <label asp-for="Colaborador.Municipio" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.Municipio" class="form-control" />
+                            <span asp-validation-for="Colaborador.Municipio" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-2">
+                            <label asp-for="Colaborador.CEP" class="form-label fw-semibold"></label>
+                            <input asp-for="Colaborador.CEP" class="form-control" placeholder="00000-000" />
+                            <span asp-validation-for="Colaborador.CEP" class="text-danger small"></span>
+                        </div>
+                    </div>
+
+                    <hr class="text-muted mb-4" />
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-page="./Index" class="btn btn-light border px-4">Voltar</a>
+                        <button type="submit" class="btn btn-primary px-4">Gravar Alterações</button>
+                    </div>
+                </form>
             </div>
+        </div>
 
-
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.TelefonePrincipal" class="control-label"></label>
-                        <input asp-for="Colaborador.TelefonePrincipal" class="form-control" />
-                        <span asp-validation-for="Colaborador.TelefonePrincipal" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Profissao" class="control-label"></label>
-                        <input asp-for="Colaborador.Profissao" class="form-control" />
-                        <span asp-validation-for="Colaborador.Profissao" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <span class="text-danger">*</span>
-                        <label asp-for="Colaborador.TipoColaborador" class="control-label"></label>
-                        <select asp-for="Colaborador.TipoColaborador"
-                                class="form-select"
-                                asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.TipoColaborador>()">
-                        </select>
-                        <span asp-validation-for="Colaborador.TipoColaborador" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Logradouro" class="control-label"></label>
-                        <input asp-for="Colaborador.Logradouro" class="form-control" />
-                        <span asp-validation-for="Colaborador.Logradouro" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Bairro" class="control-label"></label>
-                        <input asp-for="Colaborador.Bairro" class="form-control" />
-                        <span asp-validation-for="Colaborador.Bairro" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.Municipio" class="control-label"></label>
-                        <input asp-for="Colaborador.Municipio" class="form-control" />
-                        <span asp-validation-for="Colaborador.Municipio" class="text-danger"></span>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
-                    <div class="form-group">
-                        <label asp-for="Colaborador.CEP" class="control-label"></label>
-                        <input asp-for="Colaborador.CEP" class="form-control" />
-                        <span asp-validation-for="Colaborador.CEP" class="text-danger"></span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="form-group form-check">
-                    <input asp-for="Colaborador.Ativo" class="form-check-input" />
-                    <label asp-for="Colaborador.Ativo" class="form-check-label"></label>
-                    <span asp-validation-for="Colaborador.Ativo" class="text-danger"></span>
-                </div>
-            </div>
-
-            <input type="hidden" asp-for="Colaborador.Id" />
-
-            <div class="form-group mt-3 d-flex justify-content-between">
-                <input type="submit" value="Gravar" class="btn btn-primary" />
-
-                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
-            </div>
-        </form>
     </div>
 </div>
 

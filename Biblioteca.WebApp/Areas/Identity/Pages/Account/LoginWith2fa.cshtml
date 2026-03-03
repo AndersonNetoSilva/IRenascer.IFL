@@ -1,0 +1,101 @@
+﻿@page
+@model LoginWith2faModel
+@{
+    ViewData["Title"] = "Autenticação com 2 Fatores - 2FA";
+}
+
+<h1>@ViewData["Title"]</h1>
+<hr />
+<p>Seu login está protegido com um aplicativo autenticador. Insira seu código de autenticação abaixo.</p>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
+            <input asp-for="RememberMe" type="hidden" />
+            
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+
+            <div class="mb-3">
+                <label class="form-label">Código de verificação</label>
+
+                <div class="d-flex gap-2" id="twoFactorGroup">
+                    @for (var i = 0; i < 6; i++)
+                    {
+                        <input type="text"
+                               inputmode="numeric"
+                               pattern="[0-9]*"
+                               maxlength="1"
+                               class="form-control text-center twofactor-digit"
+                               style="width:3rem;"
+                               autocomplete="one-time-code" />
+                    }
+                </div>
+
+                <input type="hidden" asp-for="Input.TwoFactorCode" id="TwoFactorCode" />
+
+                <span asp-validation-for="Input.TwoFactorCode" class="text-danger"></span>
+            </div>
+            <div class="checkbox mb-3">
+                <label asp-for="Input.RememberMachine" class="form-label">
+                    <input asp-for="Input.RememberMachine" />
+                    @Html.DisplayNameFor(m => m.Input.RememberMachine)
+                </label>
+            </div>
+            <div>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+            </div>
+        </form>
+    </div>
+</div>
+<p>
+    Não tem acesso ao seu dispositivo autenticador? Você pode
+    <a id="recovery-code-login" asp-page="./LoginWithRecoveryCode" asp-route-returnUrl="@Model.ReturnUrl">Logar com um código de recuperação.</a>.
+</p>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const inputs = document.querySelectorAll('.twofactor-digit');
+            const hidden = document.getElementById('TwoFactorCode');
+
+            const updateHidden = () => {
+                hidden.value = Array.from(inputs).map(i => i.value).join('');
+            };
+
+            inputs.forEach((input, index) => {
+
+                input.addEventListener('input', e => {
+                    const value = e.target.value.replace(/\D/g, '');
+                    e.target.value = value;
+
+                    if (value && index < inputs.length - 1) {
+                        inputs[index + 1].focus();
+                    }
+
+                    updateHidden();
+                });
+
+                input.addEventListener('keydown', e => {
+                    if (e.key === 'Backspace' && !input.value && index > 0) {
+                        inputs[index - 1].focus();
+                    }
+                });
+
+                input.addEventListener('paste', e => {
+                    e.preventDefault();
+                    const paste = (e.clipboardData || window.clipboardData)
+                        .getData('text')
+                        .replace(/\D/g, '')
+                        .slice(0, inputs.length);
+
+                    paste.split('').forEach((char, i) => {
+                        inputs[i].value = char;
+                    });
+
+                    updateHidden();
+                });
+            });
+        });
+    </script>
+}

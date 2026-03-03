@@ -361,3 +361,10 @@ C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\IFL.
 C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\IFL.Tests.genruntimeconfig.cache
 C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\ref\IFL.Tests.dll
 C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\obj\Debug\net8.0\IFL.Tests.sourcelink.json
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.Tests\Biblioteca.Tests\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

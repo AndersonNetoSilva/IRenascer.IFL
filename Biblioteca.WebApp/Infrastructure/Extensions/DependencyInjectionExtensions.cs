@@ -26,11 +26,13 @@ namespace IFL.WebApp.Infrastructure.Extensions
             services.AddScoped<IAvaliacaoNutricionalRepository, AvaliacaoNutricionalRepository>();
             services.AddScoped<IPrecoDeVendaRepository, PrecoDeVendaRepository>();
             services.AddScoped<IEstatisticaCompeticaoRepository, EstatisticaCompeticaoRepository>();
+            services.AddScoped<IGraduacaoRepository, GraduacaoRepository>();
 
             //Serviços
             services.AddScoped<IAvaliacaoNutricionalService, AvaliacaoNutricionalService>();
             services.AddScoped<IAtletaService, AtletaService>();
             services.AddScoped<IEstatisticaCompeticaoService, EstatisticaCompeticaoService>();
+            services.AddScoped<IGraduacaoService, GraduacaoService>();
 
             // Unit of Work
             services.AddScoped<IUnitOfWork, UnitOfWork<ApplicationDbContext>>();

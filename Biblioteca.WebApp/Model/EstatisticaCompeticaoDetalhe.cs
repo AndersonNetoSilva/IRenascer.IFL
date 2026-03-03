@@ -19,27 +19,27 @@ namespace IFL.WebApp.Model
         public EstatisticaCompeticao? EstatisticaCompeticao { get; set; }
 
         [Display(Name = "Vitória")]
-        public bool? Vitoria { get; set; } 
+        public bool? Vitoria { get; set; }
 
         [Range(0, 5)]
         [Display(Name = "Yuko")]
-        public int? Yuko { get; set; }
+        public int? Yuko { get; set; } = 0;
 
         [Range(0, 2)]
         [Display(Name = "Wazari")]
-        public int? Wazari { get; set; }
+        public int? Wazari { get; set; } = 0;
 
         [Range(0, 1)]
         [Display(Name = "Ippon")]
-        public int? Ippon { get; set; }
+        public int? Ippon { get; set; } = 0;
 
         [Range(0, 5)]
         [Display(Name = "Shido")]
-        public int? Shido { get; set; }
+        public int? Shido { get; set; } = 0;
 
         [Range(0, 1)]
         [Display(Name = "Hansoku-make")]
-        public int? Hansokumake { get; set; }
+        public int? Hansokumake { get; set; } = 0;
 
         [Display(Name = "Golden Score")]
         public bool? GoldenScore { get; set; }=false;

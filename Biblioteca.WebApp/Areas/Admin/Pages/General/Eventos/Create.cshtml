@@ -2,80 +2,85 @@
 @model IFL.WebApp.Areas.Admin.Pages.General.Eventos.CreateModel
 
 @{
-    ViewData["Title"] = "Inserir";
+    ViewData["Title"] = "Inserir Evento";
 }
 
 <breadcrumb items="Cadastros, Gerais, Eventos, Inserir"></breadcrumb>
 
-<div class="row">
-    <div class="col-md-10">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="row justify-content-center mt-4">
+    <div class="col-md-10 col-lg-8">
 
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Evento.Nome" class="control-label"></label>
-                        <input asp-for="Evento.Nome" class="form-control" />
-                        <span asp-validation-for="Evento.Nome" class="text-danger"></span>
+        <div class="card shadow-sm border-0 rounded-3">
+            <div class="card-header bg-white border-bottom py-3">
+                <h5 class="mb-0 text-primary fw-bold">Cadastrar Novo Evento</h5>
+            </div>
+
+            <div class="card-body p-4">
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger" role="alert"></div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-8 mb-3 mb-md-0">
+                            <label asp-for="Evento.Nome" class="form-label fw-semibold"></label>
+                            <input asp-for="Evento.Nome" class="form-control" placeholder="Digite o nome do evento..." />
+                            <span asp-validation-for="Evento.Nome" class="text-danger small"></span>
+                        </div>
+                        <div class="col-md-4">
+                            <label asp-for="Evento.Data" class="form-label fw-semibold"></label>
+                            <input asp-for="Evento.Data" type="date" class="form-control" />
+                            <span asp-validation-for="Evento.Data" class="text-danger small"></span>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <label asp-for="Evento.Data" class="control-label"></label>
-                        <input asp-for="Evento.Data" type="date" class="form-control" />
-                        <span asp-validation-for="Evento.Data" class="text-danger"></span>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4 mb-3 mb-md-0">
+                            <label asp-for="Evento.TipoEvento" class="form-label fw-semibold">
+                                <span class="text-danger">*</span> @Html.DisplayNameFor(m => m.Evento.TipoEvento)
+                            </label>
+                            <select asp-for="Evento.TipoEvento"
+                                    class="form-select"
+                                    asp-items="@(Html.GetEnumSelectList<IFL.WebApp.Model.TipoEvento>())">
+                                <option value="">Selecione...</option>
+                            </select>
+                            <span asp-validation-for="Evento.TipoEvento" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-8">
+                            <label asp-for="Evento.Local" class="form-label fw-semibold"></label>
+                            <input asp-for="Evento.Local" class="form-control" placeholder="Informe o local do evento..." />
+                            <span asp-validation-for="Evento.Local" class="text-danger small"></span>
+                        </div>
                     </div>
-                </div>
-            </div>
 
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="form-group">
-                        <span class="text-danger">*</span>
-                        <label asp-for="Evento.TipoEvento" class="control-label"></label>
-                        <select asp-for="Evento.TipoEvento"
-                                class="form-select"
-                                asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.TipoEvento>()">
-                        </select>
-                        <span asp-validation-for="Evento.TipoEvento" class="text-danger"></span>
+                    <div class="row mb-4">
+                        <div class="col-md-9 mb-3 mb-md-0">
+                            <label asp-for="Evento.Descricao" class="form-label fw-semibold"></label>
+                            <textarea asp-for="Evento.Descricao"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Adicione detalhes sobre o evento..."></textarea>
+                            <span asp-validation-for="Evento.Descricao" class="text-danger small"></span>
+                        </div>
+
+                        <div class="col-md-3 d-flex align-items-center pt-md-4">
+                            <div class="form-check form-switch">
+                                <input asp-for="Evento.Encerrado" class="form-check-input" type="checkbox" role="switch" />
+                                <label asp-for="Evento.Encerrado" class="form-check-label fw-semibold"></label>
+                                <span asp-validation-for="Evento.Encerrado" class="text-danger small"></span>
+                            </div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label asp-for="Evento.Local" class="control-label"></label>
-                        <input asp-for="Evento.Local" class="form-control" />
-                        <span asp-validation-for="Evento.Local" class="text-danger"></span>
+                    <hr class="text-muted mb-4" />
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a asp-page="./Index" class="btn btn-light border px-4">Voltar</a>
+                        <button type="submit" class="btn btn-primary px-4">Gravar Evento</button>
                     </div>
-                </div>
+                </form>
             </div>
+        </div>
 
-
-
-            <div class="col-md-9">
-                <div class="form-group">
-                    <label asp-for="Evento.Descricao" class="control-label"></label>
-                    <textarea asp-for="Evento.Descricao"
-                              class="form-control"
-                              rows="4"></textarea>
-                    <span asp-validation-for="Evento.Descricao" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="col-md-3">
-                <div class="form-group form-check">
-                    <input asp-for="Evento.Encerrado" class="form-check-input"   />
-                    <label asp-for="Evento.Encerrado" class="form-check-label"></label>
-                    <span asp-validation-for="Evento.Encerrado" class="text-danger"></span>
-                </div>
-            </div>
-
-            <div class="form-group mt-3 d-flex justify-content-between">
-                <input type="submit" value="Gravar" class="btn btn-primary" />
-                <a asp-page="./Index" class="btn btn-secondary">Voltar</a>
-            </div>
-        </form>
     </div>
 </div>
 

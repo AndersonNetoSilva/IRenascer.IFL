@@ -290,3 +290,11 @@ C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.pdb
 C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.genruntimeconfig.cache
 C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\ref\IFL.WebApp.dll
 C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.sourcelink.json
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Projeto\IRenascer.IFL\Biblioteca.WebApp\obj\Debug\net8.0\IFL.WebApp.MvcApplicationPartsAssemblyInfo.cs

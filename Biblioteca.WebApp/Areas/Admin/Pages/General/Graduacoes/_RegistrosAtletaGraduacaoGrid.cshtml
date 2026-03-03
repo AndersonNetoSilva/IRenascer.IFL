@@ -1,0 +1,47 @@
+﻿@model IFL.WebApp.Model.GraduacaoVM
+
+<table class="table mb-5">
+    <thead>
+        <tr>
+
+            <th class="text-center text-nowrap" style="width:1%;">
+                <button type="button" class="btn btn-outline-primary btn-sm p-1"
+                        onclick="adicionarRegistro();">
+                    <i class="bi bi-plus-circle"></i>
+                </button>
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].Atleta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].FaixaAtual)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].AtletaId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].Aprovado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].NotaEscrita)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].NotaPratica)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GraduacaoAtletasVM[0].FaixaNova)
+            </th>
+        </tr>
+    </thead>
+    <tbody id="det-registros">
+        @for (int i = 0; i < Model.GraduacaoAtletasVM.Count; i++)
+        {
+            Model.GraduacaoAtletasVM[i].Index = i;
+
+            @await Html.PartialAsync(
+            "_RegistrosAtletaGraduacaoGridRow",
+                Model.GraduacaoAtletasVM[i])
+                ;
+        }
+    </tbody>
+</table>

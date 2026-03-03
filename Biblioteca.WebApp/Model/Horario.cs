@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IFL.WebApp.Model
 {
@@ -40,6 +41,7 @@ namespace IFL.WebApp.Model
 
         [Display(Name = "Ativo")]
         public bool Ativo { get; set; } = true;
+
     }
 
     public enum DiaDaSemana

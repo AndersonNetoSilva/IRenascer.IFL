@@ -27,6 +27,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Colaboradores[0].Nome)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Colaboradores[0].TipoColaborador)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -38,6 +41,9 @@
                 <action-link-button action="IFL.WebApp.TagHelpers.ButtonActionType.Delete" route-id="@item.Id"></action-link-button>
                 <td>
                     @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TipoColaborador)
                 </td>
             </tr>
         }

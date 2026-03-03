@@ -1,12 +1,13 @@
 ﻿using IFL.WebApp.Model;
 using IFL.WebApp.Model.Views;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection.Emit;
 
 namespace IFL.WebApp.Data
 {
-    public class ApplicationDbContext: DbContext
+    public class ApplicationDbContext: IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             :base(options) 
@@ -29,7 +30,7 @@ namespace IFL.WebApp.Data
         public DbSet<Pesagem> Pesagens { get; set; }
         public DbSet<AvaliacaoNutricional> AvaliacoesNutricionais { get; set; }
         public DbSet<Arquivo> Arquivos { get; set; }
-
+        public DbSet<Graduacao> Graduacoes { get; set; }
         public DbSet<EstatisticaCompeticao> EstatisticasCompeticao { get; set; }
 
         public DbSet<ReportLivrosView> ReportLivrosViewSet => Set<ReportLivrosView>();
@@ -93,6 +94,9 @@ namespace IFL.WebApp.Data
 
             builder.Entity<EstatisticaCompeticao>()
                 .HasMany(p => p.Detalhes);
+
+            builder.Entity<Graduacao>()
+                .HasMany(p => p.GraduacaoAtletas);
 
         }
     }

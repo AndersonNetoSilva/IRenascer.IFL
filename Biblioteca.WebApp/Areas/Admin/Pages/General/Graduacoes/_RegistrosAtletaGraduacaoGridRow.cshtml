@@ -1,0 +1,67 @@
+﻿@model IFL.WebApp.Model.GraduacaoAtletaVM
+
+@{
+    ViewData.TemplateInfo.HtmlFieldPrefix = $"GraduacaoVM.GraduacaoAtletasVM[{Model.Index}]";
+}
+
+<tr data-index="@Model.Index" class="@(Model.Id <=   0 ? "table-warning" : "")">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="GraduacaoId" />
+    <input type="hidden" asp-for="MarcadoParaExclusao" />
+
+    <td>
+        <button type="button"
+                class="btn btn-outline-danger btn-sm p-1"
+                onclick="marcarParaExclusao(this, 'GraduacaoVM.GraduacaoAtletasVM');">
+            <i class="bi bi-trash"></i>
+        </button>
+    </td>
+
+    <td>
+        @Model.Atleta
+    </td>
+
+    <td>
+        @Model.FaixaAtual
+    </td>
+    <td style="width: 90px;">
+        <input asp-for="AtletaId" class="form-control" readonly />
+        <span asp-validation-for="AtletaId" class="text-danger"></span>
+    </td>
+
+    <td class="align-middle text-center">
+        <div class="form-check d-flex justify-content-center mb-0">
+            <input type="checkbox"
+                   class="form-check-input"
+                   name="@Html.NameFor(m => m.Aprovado)"
+                   value="true"
+                   @(Model.Aprovado == true ? "checked" : "") />
+
+            <input type="hidden" name="@Html.NameFor(m => m.Aprovado)" value="false" />
+        </div>
+        <span asp-validation-for="Aprovado" class="text-danger"></span>
+    </td>
+
+    <td style="width: 90px;">
+        <input asp-for="NotaEscritaAsString" class="form-control" />
+        <span asp-validation-for="NotaEscritaAsString" class="text-danger"></span>
+    </td>
+
+    <td style="width: 90px;">
+        <input asp-for="NotaPraticaAsString" class="form-control" />
+        <span asp-validation-for="NotaPraticaAsString" class="text-danger"></span>
+    </td>
+
+    <td style="min-width: 150px;">
+        <div class="form-group mb-0">
+            <label asp-for="FaixaNova" class="control-label visually-hidden"></label>
+            <select asp-for="FaixaNova"
+                    class="form-select"
+                    asp-items="Html.GetEnumSelectList<IFL.WebApp.Model.GraduacaoJudo>()">
+            </select>
+            <span asp-validation-for="FaixaNova" class="text-danger"></span>
+        </div>
+    </td>
+
+
+</tr>
