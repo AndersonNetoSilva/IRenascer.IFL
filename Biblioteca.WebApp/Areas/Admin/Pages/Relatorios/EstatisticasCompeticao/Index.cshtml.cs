@@ -1,5 +1,6 @@
 ﻿using IFL.WebApp.Data;
 using IFL.WebApp.Infrastructure.Abstractions.Repositories;
+using IFL.WebApp.Infrastructure.Extensions;
 using IFL.WebApp.Infrastructure.Repositories;
 using IFL.WebApp.Model;
 using IFL.WebApp.Model.Views;
@@ -33,10 +34,10 @@ namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
         public List<DonutsModel> LutasDonutsModeList { get; set; }
         public List<DadosChartDTO> PontucaoDTOList { get; set; }
         public List<DadosPontuacaoChartDTO> PontuacaoxLutaDTOList { get; set; }
-
         public List<DadosTempoChartDTO> TempoxLutaDTOList { get; set; }
+        public List<DonutsModel> FinalizacoesDTOList { get; set; }
+        public List<DadosChartDTO> GolpesDTOList { get; set; }
 
-        
         [BindProperty]
         public ArquivoVM ArquivoImagem { get; set; } = new();
 
@@ -88,8 +89,50 @@ namespace IFL.WebApp.Areas.Admin.Pages.Relatorios.EstatisticasCompeticao
             PontucaoDTOList       = GetPontuacaoChartDTO(idAtleta, idEvento);
             PontuacaoxLutaDTOList = GetPontuacaoxLutaChartDTO(idAtleta, idEvento);
             TempoxLutaDTOList     = GetTempoxLutaChartDTO(idAtleta, idEvento);
+            FinalizacoesDTOList   = GetFinalizacoes(idAtleta, idEvento);
+            GolpesDTOList         = GetGolpes(idAtleta, idEvento);
 
             GetInfo(idAtleta, idEvento);
+        }
+
+        private List<DadosChartDTO> GetGolpes(int idAtleta, int idEvento)
+        {
+            List<DadosChartDTO> returnList = new List<DadosChartDTO>();
+
+            EstatisticaCompeticao estatistica = _estatisticaRepository
+                                                    .Query()
+                                                    .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
+                                                    .Include(x => x.Detalhes)
+                                                    .FirstOrDefault();
+
+            if (estatistica != null)
+                returnList = estatistica.Detalhes
+                                .Where(x=> x.TecnicaAplicou != Tecnica.NaoInformado)
+                                .GroupBy(x => x.TecnicaAplicou)
+                                .Select(x => new DadosChartDTO(x.Count(), x.Key.GetDisplayName()))
+                                .ToList();
+
+            return returnList;
+        }
+
+        private List<DonutsModel> GetFinalizacoes(int idAtleta, int idEvento)
+        {
+            List<DonutsModel> returnList = new List<DonutsModel>();
+
+            EstatisticaCompeticao estatistica = _estatisticaRepository
+                                                    .Query()
+                                                    .Where(x => x.AtletaId == idAtleta && x.EventoId == idEvento)
+                                                    .Include(x => x.Detalhes)
+                                                    .FirstOrDefault();
+
+            if (estatistica != null)
+                returnList = estatistica.Detalhes
+                                .Where(x => x.TecnicaAplicou != Tecnica.NaoInformado)
+                                .GroupBy(x => x.TecnicaAplicou.GetDescription())
+                                .Select(x => new DonutsModel(x.Count(), x.Key.ToString()))
+                                .ToList();
+
+            return returnList;
         }
 
         private List<DadosTempoChartDTO> GetTempoxLutaChartDTO(int idAtleta, int idEvento)

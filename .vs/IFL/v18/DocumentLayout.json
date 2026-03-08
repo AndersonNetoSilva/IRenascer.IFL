@@ -1,12 +1,138 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Projeto\\IRenascer.IFL\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\model\\estatisticacompeticaodetalhe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\model\\estatisticacompeticaodetalhe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\infrastructure\\services\\estatisticacompeticaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\infrastructure\\services\\estatisticacompeticaoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\edit.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\areas\\admin\\pages\\general\\estatisticascompeticao\\create.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
+              "ViewState": "AgIAAHYAAAAAAAAAAAAwwH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-08T02:26:48.21Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
+              "ViewState": "AgIAACEBAAAAAAAAAAAuwCoBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-08T02:26:42.409Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EstatisticaCompeticaoService.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\EstatisticaCompeticaoService.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Services\\EstatisticaCompeticaoService.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\EstatisticaCompeticaoService.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Infrastructure\\Services\\EstatisticaCompeticaoService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwEkAAABkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T03:02:15.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EstatisticaCompeticaoDetalhe.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAmwD0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T02:54:59.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T02:49:28.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Create.cshtml.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAwwHQAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-03T02:42:49.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml",
+              "RelativeToolTip": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAwwKsAAACpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-03T02:36:59.383Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

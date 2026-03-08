@@ -43,6 +43,36 @@
             });
         };
 
+        function drawFinalizacoesDonutsChart() {
+            var chartData = @Html.Raw(Json.Serialize(Model.FinalizacoesDTOList))
+            //console.log("Dados do Gráfico de Finalizações:", chartData);
+
+            // Soma total dinâmica (já suporta N itens)
+            var total = chartData.reduce(function (acc, item) {
+                return acc + item.value;
+            }, 0);
+
+            Morris.Donut({
+                element: 'chart-Finalizacoes',
+                data: chartData,
+                formatter: function (y) {
+                    if (total === 0)
+                        return '0%';
+
+                    var percentual = (y / total) * 100;
+                    return percentual.toFixed(1).replace('.', ',') + '%';
+                },
+                colors: [
+                    '#3498DB', // 1. Azul
+                    '#E74C3C', // 2. Vermelho
+                    '#2ECC71', // 3. Verde
+                    '#F1C40F', // 4. Amarelo
+                    '#9B59B6', // 5. Roxo
+                    '#E67E22'  // 6. Laranja
+                ]
+            });
+        };
+
          function drawPontuacaoChart() {
                 var chartData = @Html.Raw(Json.Serialize(Model.PontucaoDTOList))
 
@@ -71,6 +101,36 @@
                             }
                         });
          };
+         
+         function drawGolpesChart() {
+                var chartData = @Html.Raw(Json.Serialize(Model.GolpesDTOList))
+
+                    Morris.Bar({
+                        element: 'chart-GolpesDTO',
+                        data: chartData,
+                        xkey: 'label',
+                        ykeys: ['quantidade'],
+                        labels: ['Qtd'],
+                        hideHover: 'auto',
+                        xLabelAngle: 0,
+
+                        barColors: function (row, series, type) {
+
+                            var colors = [
+                                '#2ECC71',
+                                '#3498DB',
+                                '#9B59B6',
+                                '#F1C40F',
+                                '#E67E22',
+                                '#E74C3C',
+                                '#1ABC9C'
+                            ];
+
+                            return colors[row.x % colors.length];
+                        }
+                    });
+         };
+
 
          function drawHorizontalBarAgrupadoChart() {
 
@@ -242,6 +302,8 @@
                                 drawPontuacaoChart();
                                 drawHorizontalBarAgrupadoChart();
                                 drawLineDecimalChart();
+                                drawFinalizacoesDonutsChart();
+                                drawGolpesChart();
                                 })
     </script>
 }
@@ -488,7 +550,25 @@
                     <canvas id="line-decimal-chart" style="height:250px!important" ;></canvas>
                 </div>
                 
+                <div class="col-md-6 col-print-6">
+                    <div class="chart-container">
+                        <h4 class="text-center mb-4 text-secondary"
+                            style="font-size:20px; font-weight:700;">
+                            Finalizações
+                        </h4>
+                        <div id="chart-Finalizacoes" style="height:15rem!important;"></div>
+                    </div>
+                </div>
 
+                <div class="col-md-6 col-print-6">
+                    <div class="chart-container">
+                        <h4 class="text-center mb-4 text-secondary"
+                            style="font-size:20px; font-weight:700;">
+                            Golpes Efetivos
+                        </h4>
+                        <div id="chart-GolpesDTO" style="height:15rem!important;"></div>
+                    </div>
+                </div>
 
                 <div class="row margin-bottom-20" style="margin-top:20px!important;">
                     <div class="col-md-12">

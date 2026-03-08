@@ -193,27 +193,51 @@ namespace IFL.WebApp.Model
         UraNage = 30,
 
 
-        // -------- Imobilizações --------
+        // -------- Osaekomi-waza --------
 
         [Display(Name = "Kesa Gatame")]
-        [Description("Imobilizações")]
+        [Description("Osaekomi-waza")]
         KesaGatame = 31,
 
         [Display(Name = "Yoko Shiho Gatame")]
-        [Description("Imobilizações")]
+        [Description("Osaekomi-waza")]
         YokoShihoGatame = 32,
 
         [Display(Name = "Kami Shiho Gatame")]
-        [Description("Imobilizações")]
+        [Description("Osaekomi-waza")]
         KamiShihoGatame = 33,
 
-        [Display(Name = "Juji Gatame (Ude-hishigi-juji-gatame)")]
-        [Description("Imobilizações")]
-        JujiGatame = 34,
+        [Display(Name = "Tate Shiho Gatame")]
+        [Description("Osaekomi-waza")]
+        TateShihoGatame = 34,
 
-        [Display(Name = "Hadaka Jime")]
-        [Description("Imobilizações")]
-        HadakaJime = 35
+        [Display(Name = "Kata Gatame")]
+        [Description("Osaekomi-waza")]
+        KataGatame = 35,
+
+        [Display(Name = "Kuzure Kesa Gatame")]
+        [Description("Osaekomi-waza")]
+        KuzureKesaGatame = 36,
+
+        [Display(Name = "Kuzure Kami Shiho Gatame")]
+        [Description("Osaekomi-waza")]
+        KuzureKamiShihoGatame = 37,
+
+        [Display(Name = "Ushiro Kesa Gatame")]
+        [Description("Osaekomi-waza")]
+        UshiroKesaGatame = 38,
+
+        [Display(Name = "Makura Kesa Gatame")]
+        [Description("Osaekomi-waza")]
+        MakuraKesaGatame = 39,
+
+        [Display(Name = "Uki Gatame")]
+        [Description("Osaekomi-waza")]
+        UkiGatame = 40,
+
+        [Display(Name = "Ura Gatame")]
+        [Description("Osaekomi-waza")]
+        UraGatame = 41
     }
 
     public class EstatisticaCompeticaoDetalheVM : IPermiteMarcarParaExclusao

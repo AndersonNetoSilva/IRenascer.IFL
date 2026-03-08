@@ -64,6 +64,7 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.EstatisticasCompeticao
         // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            Validar(Detalhes);
 
             EstatisticaCompeticao.Atleta = _atletaRepository.Query().Where(a => EstatisticaCompeticao.AtletaId == a.Id).FirstOrDefault();
             EstatisticaCompeticao.Evento = _eventoRepository.Query().Where(a => EstatisticaCompeticao.EventoId == a.Id).FirstOrDefault();
@@ -94,6 +95,31 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.EstatisticasCompeticao
             }
 
             return RedirectToPage("./Index");
+        }
+
+        private void Validar(List<EstatisticaCompeticaoDetalheVM> destalhes)
+        {
+            foreach (var item in destalhes)
+            {
+                if (item.Yuko == null)
+                    item.Yuko = 0;
+
+                if (item.Wazari == null)
+                    item.Wazari  = 0;
+
+                if (item.Ippon == null)
+                    item.Ippon = 0;
+
+                if (item.Shido == null)
+                    item.Shido = 0;
+
+                if (item.Hansokumake == null)
+                    item.Hansokumake = 0;
+
+                if (item.TempoDoGoldenScore == null)
+                   item.TempoDoGoldenScore = TimeSpan.Parse("00:00:00");
+
+            }
         }
     }
 }
