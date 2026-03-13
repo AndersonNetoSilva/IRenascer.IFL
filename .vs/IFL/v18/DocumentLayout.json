@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Projeto\\IRenascer.IFL\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|solutionrelative:biblioteca.webapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6FA5F2D3-9491-43A0-90E4-135C40125759}|Biblioteca.WebApp\\IFL.WebApp.csproj|c:\\projeto\\irenascer.ifl\\biblioteca.webapp\\areas\\admin\\pages\\relatorios\\estatisticascompeticao\\index.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -46,11 +50,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Program.cs",
+              "RelativeDocumentMoniker": "Biblioteca.WebApp\\Program.cs",
+              "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Program.cs",
+              "RelativeToolTip": "Biblioteca.WebApp\\Program.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAD4vzkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T01:00:42.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\appsettings.json",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\appsettings.json",
@@ -63,19 +80,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "DbInitializer.cs",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Data\\DbInitializer.cs",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Data\\DbInitializer.cs",
               "ToolTip": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Data\\DbInitializer.cs",
               "RelativeToolTip": "Biblioteca.WebApp\\Data\\DbInitializer.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAUwEsAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAowF8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T21:43:43.011Z"
+              "WhenOpened": "2026-03-11T21:43:43.011Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml.cs",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml.cs",
@@ -87,7 +105,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\Relatorios\\EstatisticasCompeticao\\Index.cshtml",
@@ -99,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "EstatisticaCompeticaoService.cs",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Infrastructure\\Services\\EstatisticaCompeticaoService.cs",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Infrastructure\\Services\\EstatisticaCompeticaoService.cs",
@@ -111,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "EstatisticaCompeticaoDetalhe.cs",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Model\\EstatisticaCompeticaoDetalhe.cs",
@@ -123,7 +141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Edit.cshtml.cs",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Edit.cshtml.cs",
@@ -135,7 +153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Create.cshtml.cs",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml.cs",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml.cs",
@@ -147,7 +165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Projeto\\IRenascer.IFL\\Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml",
               "RelativeDocumentMoniker": "Biblioteca.WebApp\\Areas\\Admin\\Pages\\General\\EstatisticasCompeticao\\Create.cshtml",

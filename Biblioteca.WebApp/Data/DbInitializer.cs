@@ -107,6 +107,7 @@ namespace IFL.WebApp.Data
                 {
                     var logger = serviceProvider.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "Ocorreu um erro ao popular a base de dados (Data Seeding).");
+                    throw;
                 }
             }
         }
