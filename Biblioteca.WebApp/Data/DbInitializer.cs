@@ -64,7 +64,25 @@ namespace IFL.WebApp.Data
                             UserName = "gviegas@hotmail.com",
                             Email = "gviegas@hotmail.com",
                             EmailConfirmed = true
-                        }
+                        },
+                        new IdentityUser
+                        {
+                            UserName = "luandasfragoso@gmail.com",
+                            Email = "luandasfragoso@gmail.com",
+                            EmailConfirmed = true
+                        },
+                        new IdentityUser
+                        {
+                            UserName = "gerbsonslopes@gmail.com",
+                            Email = "gerbsonslopes@gmail.com",
+                            EmailConfirmed = true
+                        },
+                        new IdentityUser
+                        {
+                            UserName = "andreiardossantoss@gmail.com",
+                            Email = "andreiardossantoss@gmail.com",
+                            EmailConfirmed = true
+                        },
                     };
 
 
