@@ -157,7 +157,13 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Graduacoes
 
             try
             {
-                ValidarGraduacao(GraduacaoVM);
+                // A sua validação de regra de negócio customizada
+                if (!ValidarGraduacao(GraduacaoVM))
+                {
+                    BindSelectLists();
+                    return Page(); // Retorna para a tela; o ModelState já contém a sua mensagem de erro.
+                }
+
                 ValidarValor(GraduacaoVM);
                 Graduacao graduacao = SetGraduacao(GraduacaoVM);
 
@@ -181,12 +187,15 @@ namespace IFL.WebApp.Areas.Admin.Pages.General.Graduacoes
             return RedirectToPage("./Index");
         }
 
-        private void ValidarGraduacao(GraduacaoVM graduacaoVM)
+        private bool ValidarGraduacao(GraduacaoVM graduacaoVM)
         {
             if (_graduacaoService.ExisteGraduacaoNoPeriodo(graduacaoVM))
             {
-                throw new Exception("Existe Graduação para esse horário cadastrado.");
+                ModelState.AddModelError(string.Empty, "Existe Graduação para esse horário cadastrado.");
+                return false;
             }
+
+            return true;
         }
 
         public static void ValidarValor(GraduacaoVM graduacaoVM)
